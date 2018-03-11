@@ -1,0 +1,8 @@
+- primeniti ikonicu za bookmark i tab
+- dodati log u navbar
+- promeniti background sliku (1450x750)
+- svuda upisati odgovarajuci tekst
+- prmeniti sliku za features (skloni iphone)
+- promeniti ikonice za features
+- dodati tekst za tim
+- dodati slike za članove tima(400x400)
