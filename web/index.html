@@ -347,7 +347,7 @@
                     </div>
                     <div class="modal-footer text-center">
                         <a href="#pablo" class="btn btn-primary btn-simple btn-wd btn-lg">Get Started</a>
-                        <a href="pass-reset.html">
+                        <a href="" data-toggle="modal" data-target="#forgot-pass-modal">
                             <p>Forgot your password?</p>
                         </a> 
                     </div>
@@ -355,7 +355,40 @@
             </div>
         </div>
     </div>
-    <!--  End Modal -->
+    <!--  End login Modal -->
+
+    <!-- Forgot password Modal -->
+   <div class="modal fade" id="forgot-pass-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="card card-signup card-plain">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <i class="material-icons">clear</i>
+                        </button>
+
+                        <div class="header header-primary text-center">
+                            <h3 class="card-title">Reset password</h3>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form" method="" action="">
+                            <div class="card-content">
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Email</label>
+                                    <input type="email" class="form-control">
+                                </div>                                
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <a href="" class="btn btn-primary btn-simple btn-wd btn-lg">Send me reset link</a>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Forgot password Modal -->
 
 
 
