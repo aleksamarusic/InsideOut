@@ -18,14 +18,16 @@
 
     <!-- CSS Files -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
     <link href="assets/css/material-kit.css?v=1.2.1" rel="stylesheet" />
+
     <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 
-<body class="landing-page">
+<body class="">
 
     <!-- Navbar -->
-    <nav class=" navbar navbar-danger">
+    <nav class=" navbar navbar-success">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -50,6 +52,11 @@
                             <i class="material-icons">people</i> Team
                         </a>
                     </li>
+                    <li>
+                        <a href="index.html">
+                            <i class="material-icons">input</i> Sign out
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -57,153 +64,216 @@
     </nav>
     <!-- end navbar -->
 
+
     <div class="wrapper">
-
         <!-- header -->
-        <!--
-        <div class="page-header">
-            <div class="container">
+        <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/bg3.jpg');">
 
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="title">Your Story Starts With Us.</h1>
+                        <h4>Every landing page needs a small description after the big bold title, that's why we added this text
+                            here. Add here all the information that can make you or your product create the first impression.
+                        </h4>
+                    </div>
+                </div>
             </div>
-            <!-- end container -->
-        <!--
-        </div>-->
+
+        </div>
         <!-- end header -->
 
-
-
-        <div class="main">
+        <!-- main content -->
+        <div class="main main-raised">
             <div class="container">
+                <div class="card">
+                    <div class="card-header" data-background-color="green">
+                        <h4 class="title text-center">Companies and Accounts</h4>
+                        <p class="text-center">View details about all companies and all accounts in the system</p>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th width="20px">#</th>
+                                    <th width="90%">Company</th>
+                                    <th width="20px">&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <a data-toggle="collapse" href="#collapse1" role="button" aria-expanded="true" aria-controls="collapse1">
+                                            Montenegro Airlines
+                                        </a>
+                                        <div class="collapse table-responsive" id="collapse1">
+                                            <table class="table">
 
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Firm</th>
-                                <th class="text-right">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>
-                                    <a data-toggle="collapse" href="#collapse1" role="button" aria-expanded="true" aria-controls="collapse1">
-                                        Montenegro Airlines
-                                    </a>
-                                    <div class="collapse table-responsive" id="collapse1">
-                                        <table class="table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">1</td>
+                                                        <td>Andrew</td>
+                                                        <td>Mike</td>
+                                                        <td>mike@gmail.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">2</td>
+                                                        <td>John </td>
+                                                        <td>Doe</td>
+                                                        <td>john@hotmail.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">3</td>
+                                                        <td>Alex</td>
+                                                        <td>Mike</td>
+                                                        <td>mike@live.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <a data-toggle="collapse" href="#collapse2" role="button" aria-expanded="true" aria-controls="collapse2">
+                                            Air Serbia
+                                        </a>
+                                        <div class="collapse table-responsive" id="collapse2">
+                                            <table class="table">
 
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center">1</td>
-                                                    <td>Andrew</td>
-                                                    <td>Mike</td>
-                                                    <td>mike@gmail.com</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">2</td>
-                                                    <td>John </td>
-                                                    <td>Doe</td>
-                                                    <td>john@hotmail.com</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">3</td>
-                                                    <td>Alex</td>
-                                                    <td>Mike</td>
-                                                    <td>mike@live.com</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">1</td>
+                                                        <td>Andrew</td>
+                                                        <td>Mike</td>
+                                                        <td>mike@gmail.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">2</td>
+                                                        <td>John </td>
+                                                        <td>Doe</td>
+                                                        <td>john@hotmail.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">3</td>
+                                                        <td>Alex</td>
+                                                        <td>Mike</td>
+                                                        <td>mike@live.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
 
-                                    </div>
-                                </td>
-                                <td class="td-actions text-right" data-toggle="collapse" data-target="#collapseOne">
-                                    <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>
-                                    <a data-toggle="collapse" href="#collapse2" role="button" aria-expanded="true" aria-controls="collapse2">
-                                        Air Serbia
-                                    </a>
-                                    <div class="collapse table-responsive" id="collapse2">
-                                        <table class="table">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>
+                                        <a data-toggle="collapse" href="#collapse3" role="button" aria-expanded="true" aria-controls="collapse3">
+                                            ETF
+                                        </a>
+                                        <div class="collapse table-responsive" id="collapse3">
+                                            <table class="table">
 
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center">1</td>
-                                                    <td>Andrew</td>
-                                                    <td>Mike</td>
-                                                    <td>mike@gmail.com</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">2</td>
-                                                    <td>John </td>
-                                                    <td>Doe</td>
-                                                    <td>john@hotmail.com</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">3</td>
-                                                    <td>Alex</td>
-                                                    <td>Mike</td>
-                                                    <td>mike@live.com</td>
-                                                    <td class="td-actions text-right">
-                                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                                            <i class="material-icons">close</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">1</td>
+                                                        <td>Andrew</td>
+                                                        <td>Mike</td>
+                                                        <td>mike@gmail.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">2</td>
+                                                        <td>John </td>
+                                                        <td>Doe</td>
+                                                        <td>john@hotmail.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">3</td>
+                                                        <td>Alex</td>
+                                                        <td>Mike</td>
+                                                        <td>mike@live.com</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
 
-                                    </div>
-                                </td>
-                                <td class="td-actions text-right" data-toggle="collapse" data-target="#collapseOne">
-                                    <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" rel="tooltip" class="btn btn-danger btn-simple">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>
+    <!-- end main content -->
+    </div>
     <!-- end wrapper -->
-
-
-
+    </div>
 </body>
 
 
