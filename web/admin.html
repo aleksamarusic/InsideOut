@@ -3,11 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Table with Expand/Collapse | Propeller - Admin Dashboard">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-    <title>Table with Expand/Collapse | Propeller - Admin Dashboard</title>
-    <link rel="shortcut icon" type="image/x-icon" href="themes/images/favicon.ico">
+
+    <title>Inside Out</title>
 
     <!-- Google icon -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,7 +28,7 @@
 
 </head>
 
-<body>
+<body style="background: #4acc8e">
 
     <!--Start Nav bar -->
     <nav class="navbar navbar-default navbar-fixed-top pmd-navbar primary-navbar">
@@ -58,49 +60,244 @@
         <div class="pmd-sidebar-overlay"></div>
     </nav>
     <!-- End Navbar -->
-    <!--End Nav bar -->
-
-
 
     <!--content area start-->
-    <div id="content" class="pmd-content inner-page">
-        <!--tab start-->
+    <div id="content" class="pmd-content inner-page" style="padding-top: 100px">
         <div class="container">
             <!-- Table -->
             <div class="table-responsive pmd-card pmd-z-depth">
-                <table class="table table-mc-red pmd-table" >
+                <table class="table pmd-table table-hover" width="100%">
                     <thead>
-                        
+                        <td>#</td>
+                        <td width="65%">Company</td>
+                        <td>No of acc</td>
+                        <td>Actions</td>
                     </thead>
                     <tbody>
-                        
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <a role="button" data-toggle="collapse" href="#coll1" aria-expanded="false" aria-controls="coll1">
+                                    Montenegro Airlines
+                                </a>
+                                <div class="collapse" id="coll1">
+                                    <!-- child table -->
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td>Andrew</td>
+                                                <td>Mike</td>
+                                                <td>mike@gmail.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td>John </td>
+                                                <td>Doe</td>
+                                                <td>john@hotmail.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">3</td>
+                                                <td>Alex</td>
+                                                <td>Mike</td>
+                                                <td>mike@live.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- end child table -->
+                                </div>
+                            </td>
+                            <td>3/5</td>
+                            <td class="pmd-table-row-action">
+                                <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                    <i class="material-icons md-dark pmd-sm">delete</i>
+                                </a>
+                            </td>
+                        </tr>
 
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <a role="button" data-toggle="collapse" href="#coll2" aria-expanded="false" aria-controls="coll2">
+                                    Air Serbia
+                                </a>
+                                <div class="collapse" id="coll2">
+                                    <!-- child table -->
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td>Andrew</td>
+                                                <td>Mike</td>
+                                                <td>mike@gmail.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td>John </td>
+                                                <td>Doe</td>
+                                                <td>john@hotmail.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">3</td>
+                                                <td>Alex</td>
+                                                <td>Mike</td>
+                                                <td>mike@live.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- end child table -->
+                                </div>
+
+                            </td>
+                            <td>3/5</td>
+                            <td class="pmd-table-row-action">
+                                <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                    <i class="material-icons md-dark pmd-sm">delete</i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <a role="button" data-toggle="collapse" href="#coll3" aria-expanded="false" aria-controls="coll3">
+                                    ETF
+                                </a>
+                                <div class="collapse" id="coll3">
+                                    <!-- child table -->
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td>Andrew</td>
+                                                <td>Mike</td>
+                                                <td>mike@gmail.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td>John </td>
+                                                <td>Doe</td>
+                                                <td>john@hotmail.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">3</td>
+                                                <td>Alex</td>
+                                                <td>Mike</td>
+                                                <td>mike@live.com</td>
+                                                <td class="pmd-table-row-action">
+                                                    <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                                        <i class="material-icons md-dark pmd-sm">delete</i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- end child table -->
+                                </div>
+                            </td>
+                            <td>3/5</td>
+                            <td class="pmd-table-row-action">
+                                <a type="button" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm" data-toggle="modal" data-target="#delete-modal">
+                                    <i class="material-icons md-dark pmd-sm">delete</i>
+                                </a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
+                <!-- end table -->
             </div>
-            
+
         </div>
     </div>
-    <!--tab start-->
-
     <!--content area end-->
 
-
-
-
-    </div>
-
     <!-- Footer Starts -->
-    <footer class="admin-footer">
-
+    <footer class="footer admin-footer">
+        <div class="container">
+            <!-- Copyrights -->
+            <div class="copyright pull-right">
+                <div class="site-info text-right">
+                    <span class="crafted">
+                        &copy;
+                        <script>document.write(new Date().getFullYear())</script> , made with
+                        <i class="material-icons pmd-xs">favorite</i>
+                        by F4nt4stic
+                    </span>
+                </div>
+            </div>
+            <!-- End Copyrights -->
+        </div>
     </footer>
     <!-- Footer Ends -->
+
+
+    <!-- delete modal -->
+    <div id="delete-modal" class="modal fade " tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Do you really want to delete this row?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default">Yes</button>
+                    <button type="button" class="btn" data-dismiss="modal" style="background: #4acc8e">No</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts Starts -->
     <script src="assets/js/jquery-1.12.2.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/propeller.min.js"></script>
-    <!-- Scripts Ends -->    
+    <!-- Scripts Ends -->
 
 </body>
 
