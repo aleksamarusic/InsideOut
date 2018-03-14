@@ -1,0 +1,51 @@
+index.html
+    - popraviti meni
+
+promeniti boje u zelene
+promeniti boje ikonica
+
+sign-up.html
+    -popup za cenu i confirm
+
+main-admin.html
+    - skloniti pojedinacne naloge
+
+fali
+    - kreiranje invite linka
+    - kreiranje tima
+    - kreiranje taska (gde je dugme?)
+
+lista taskova
+    - obrisati short description i action
+    - svaki task ima dugme za brisanje i za izmenu taska
+    - kraci naziv taska
+    - smanjiti font?
+
+izmena taska
+    - modal, pop up forma
+        naziv   
+        status
+        vreme kraja
+        opis
+
+popraviti side bar (smanjiti font?)
+
+stavit sign out u gornji desni ugao
+
+stranica tima
+    - manja statistika
+    - ko je menadžer? staivit na vrh tabele
+    - u tabeli skloniti kolonu action. Ime radnika je link ka njegovom profilu
+
+starnica radnika kada je neko drugi gleda
+    - u info o radniku dodati ime, prezime, mejl
+    - dodati kolonu sa zadacima koje je odbio
+
+accounts.html
+    - dodati invite link
+    - ime radnika je link ka stranici
+    - popup za menjanje broja naloga
+
+    - nova stranica sa spiskom timova
+
+povezati linkove kako treba!
