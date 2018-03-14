@@ -1,18 +1,11 @@
-index.html
-    - popraviti meni
 
 promeniti boje u zelene
 promeniti boje ikonica
 
-sign-up.html
-    -popup za cenu i confirm
-
 main-admin.html
-    - skloniti pojedinacne naloge
+    - skloniti pojedinacne naloge // OVO JE SAMO ZAKOMENTARISANO! DA LI STVARNO TREBA OBRISATI OVU FUNKCIONALNOST???
 
 fali
-    - kreiranje invite linka
-    - kreiranje tima
     - kreiranje taska (gde je dugme?)
 
 lista taskova
@@ -40,12 +33,5 @@ stranica tima
 starnica radnika kada je neko drugi gleda
     - u info o radniku dodati ime, prezime, mejl
     - dodati kolonu sa zadacima koje je odbio
-
-accounts.html
-    - dodati invite link
-    - ime radnika je link ka stranici
-    - popup za menjanje broja naloga
-
-    - nova stranica sa spiskom timova
 
 povezati linkove kako treba!

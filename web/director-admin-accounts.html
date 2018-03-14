@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="InsideOut - Blank Page">
+    <meta name="description" content="Inside Out - Blank Page">
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-    <title>Main Page | InsideOut - Dashboard</title>
+    <title>Main Page | Inside Out - Dashboard</title>
     <link rel="shortcut icon" type="image/x-icon" href="themes/img/favicon.ico">
 
     <!-- Google icon -->
@@ -122,7 +122,8 @@
 				</div>
 				
 				
-            </div> <!-- End notifications -->-->
+            </div> -->
+                <!-- End notifications -->
             </div>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -131,7 +132,7 @@
                     <i class="material-icons md-light">menu</i>
                 </a>
                 <a href="index.html" class="navbar-brand">
-                    InsideOut
+                    Inside Out
                 </a>
             </div>
         </div>
@@ -174,26 +175,15 @@
                 </a>
             </li>
 
-            <li class="dropdown pmd-dropdown">
-                <a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" href="javascript:void(0);">
+            <li>
+                <a class="pmd-ripple-effect" href="director-admin-teams.html">
                     <i class="material-icons md-white media-left media-middle">people</i>
                     <span class="media-body">Teams</span>
-                    <div class="media-right media-bottom">
-                        <i class="dic-more-vert dic"></i>
-                    </div>
                 </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="teamMachineLearning.html">Machine Learning</a>
-                    </li>
-                    <li>
-                        <a href="teamDataScience.html">Data Science</a>
-                    </li>
-                </ul>
             </li>
 
             <li>
-                <a class="pmd-ripple-effect" href="accounts.html">
+                <a class="pmd-ripple-effect" href="director-admin-accounts.html">
                     <i class="material-icons md-white media-left media-middle">people</i>
                     <span class="media-body">Accounts</span>
                 </a>
@@ -211,18 +201,20 @@
     <!-- Sidebar Ends -->
 
 
-
-
-
-
-
-
     <!--content area start-->
     <div id="content" class="pmd-content dashboard">
         <!--tab start-->
         <div class="container-fluid full-width-container">
             <div class="row">
-
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" style="margin-bottom: 20px">
+                    <i class="btn btn-success pmd-ripple-effect" style="font-style:normal"> Create invite link </i>
+                    <p style="display: inline"> &nbsp; &nbsp; www.insideout.com/invite-link.html </p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="margin-bottom: 20px">
+                    <i class="btn btn-success pmd-ripple-effect pull-right" style="font-style:normal" data-target="#num-of-accounts-modal" data-toggle="modal">Change number of accounts</i>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-12">
                     <!-- responsive table example -->
                     <div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -231,16 +223,22 @@
                                 <tr>
                                     <th>First name</th>
                                     <th>Last name</th>
-                                    <th>email</th>
-                                    <th>teams</th>
-                                    <th>manager</th>
-                                    <th>Actions</th>
+                                    <th>Email</th>
+                                    <th>Teams</th>
+                                    <th style="text-align: center">Manager</th>
+                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
+
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -253,25 +251,26 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -284,25 +283,26 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -315,25 +315,27 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
+
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -346,25 +348,27 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
+
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -377,25 +381,27 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
+
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -408,25 +414,27 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
+
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -439,25 +447,27 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
+
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -470,25 +480,27 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
+
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>Doe</td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">John</a>
+                                    </td>
+                                    <td>
+                                        <a href="employee-kako-me-drugi-vide.html">Doe</a>
+                                    </td>
                                     <td>john.doe@gmail.com</td>
                                     <td>
                                         <select class="multiselect" multiple="multiple">
@@ -501,17 +513,15 @@
                                         </select>
 
                                     </td>
-                                    <td>
+                                    <td style="text-align: center">
                                         <div class="checkbox pmd-default-theme">
                                             <label class="pmd-checkbox pmd-checkbox-ripple-effect">
                                                 <input type="checkbox" value="">
                                             </label>
                                         </div>
                                     </td>
-                                    <td class="pmd-table-row-action">
-                                        <a href="profileJohnDoe.html" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
-                                            <i class="material-icons md-dark pmd-sm">info</i>
-                                        </a>
+                                    <td class="pmd-table-row-action" style="text-align: center">
+
                                         <a href="javascript:void(0);" class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm">
                                             <i class="material-icons md-dark pmd-sm">delete</i>
                                         </a>
@@ -538,6 +548,59 @@
 
 
 
+    <!-- num of accounts modal -->
+    <div tabindex="-1" class="modal fade" id="num-of-accounts-modal" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button" style="color:black;">×</button>
+                    <h2 class="pmd-card-title-text text-center">Change number of accounts</h2>
+                    <h6 class="text-center">Increase or decrease the number of available accounts for your company</h6>
+                    <h6 class="text-center alert alert-danger">
+                        <span style="font-weight: bold">WARNING:</span> Decreasing the number of accounts might lead to a loss of data and automatic deletion
+                        of employee profiles. </h6>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <table class="table" style="width:60%; margin-left:auto; margin-right:auto; margin-top:50px">
+                            <tr>
+                                <td>Number of accounts</td>
+                                <td style="text-align: center">15</td>
+                            </tr>
+                            <tr>
+                                <td class="form-group pmd-textfield">
+                                    New number of accounts
+                                </td>
+                                <td>
+                                    <input type="number" id="name" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="pmd-modal-action text-center">
+                    <a hred="" data-dismiss="modal" class="btn pmd-ripple-effect btn-success" type="button" data-target="#price-modal" data-toggle="modal">Calculate price</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- price modal -->
+    <div tabindex="-1" class="modal fade" id="price-modal" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <p class="text-center" style="margin-top:10px">New price is <span style="font-weight: bold">$100.00</span></p>
+                <div class="pmd-modal-action text-center">
+                    <a href="director-admin-accounts.html" class="btn pmd-ripple-effect btn-success" type="button">Confirm</a>
+                    <a href="" data-dismiss="modal" class="btn pmd-ripple-effect btn-success" type="button">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Footer Starts -->
