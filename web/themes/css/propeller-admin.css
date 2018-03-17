@@ -199,11 +199,7 @@ h2.typo-fill-secondary{ color:rgba(77, 87, 93, 0.68); font-size:22px;}
 .admin-footer a:hover svg path, .admin-footer a:focus svg path { fill: #4d575d;}
 .admin-footer a:hover { color: #4d575d;}
 .admin-footer .list-inline{ line-height:1.2;}
-<<<<<<< HEAD
-.admin-footer .download-now, .admin-footer .for-support{max-width: 260px; padding:0 15px;}
-=======
-.admin-footer .download-now, .admin-footer .for-support{max-width: 240px; padding:0 15px;}
->>>>>>> feature-admin
+.admin-footer .download-now, .admin-footer .for-support{max-width: 290px; padding:0 15px;}
 .admin-footer .download-now a > div, .admin-footer .for-support a > div,
 .admin-footer .download-now a > div svg, .admin-footer .for-support a > div svg{ display:inline-block; vertical-align:middle; line-height:1;}
 .admin-footer .download-now a > div svg, .admin-footer .for-support a > div svg{ margin-right:10px;}

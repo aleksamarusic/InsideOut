@@ -1,20 +1,20 @@
 
 promeniti boje u zelene
-promeniti boje ikonica
+promeniti boje ikonica - done
 
 main-admin.html
     - skloniti pojedinacne naloge // OVO JE SAMO ZAKOMENTARISANO! DA LI STVARNO TREBA OBRISATI OVU FUNKCIONALNOST???
 
 fali
-    - kreiranje taska (gde je dugme?)
+    - kreiranje taska (gde je dugme?) - done
 
 lista taskova
-    - obrisati short description i action
-    - svaki task ima dugme za brisanje i za izmenu taska
-    - kraci naziv taska
+    - obrisati short description i action - done
+    - svaki task ima dugme za brisanje i za izmenu taska - done
+    - kraci naziv taska - done
     - smanjiti font?
 
-izmena taska
+izmena taska - done
     - modal, pop up forma
         naziv   
         status
@@ -26,12 +26,12 @@ popraviti side bar (smanjiti font?)
 stavit sign out u gornji desni ugao
 
 stranica tima
-    - manja statistika
+    - manja statistika - done
     - ko je menadžer? staivit na vrh tabele
     - u tabeli skloniti kolonu action. Ime radnika je link ka njegovom profilu
 
 starnica radnika kada je neko drugi gleda
     - u info o radniku dodati ime, prezime, mejl
-    - dodati kolonu sa zadacima koje je odbio
+    - dodati kolonu sa zadacima koje je odbio - done
 
-povezati linkove kako treba!
+povezati linkove kako treba! - done
