@@ -1,0 +1,89 @@
+I.
+director-dashboard.html:
+director-admin-teams.html:
+director-admin-accounts.html:
+	1)da sredimo konacno ovaj sidebar sto buga
+	2)obrisati iz sidebara tab Teams (jer ono tu se izbacuje lista, a ima dosta timova, ima ode dole u picku
+ 	materinu, a vec u Team Management ima listu svih timova tako da je nepotrebna)
+	3)nazvati tab Team management sa Teams
+	4)Settings tab(i o tome smo pricali, to nemamo u SSU?)
+	5)dead link u Edit buttonu
+	6)dead link u CREATE TASK
+	7)dead link u Accounts kad se klikne na ime zaposlenog
+	8)dead link u Team Management tabu i na ime tima i na menadzera
+	DONE 9)U Change Number of Accounts Warning = "To successfully decrease number of accounts remaining accounts must 	
+	 be free, have no owner" (kao sto pise u SSU)
+	DONE 10)dodati prilikom brisanja naloga prompt : "Do you really want to delete this account (employee information)?"
+		
+
+II.
+employee-dashboard.html:
+	1)popup za delete task
+	2)takodje sidebar?
+	3)CREATE TASK popup
+		1)Pise vamo u gitk Marusicev late commit, delete select status option while GIVING TASK, ali da li nam zaista treba
+		 while CREATING OWN TASK, ne kapiram, ja napravim zadatak, i kazem da je Done?, pa sto	
+		 bih ga pravio ako je Done, vrv je resenje da odma ide u open, pa ako vec planiram da ga ne stavim 	
+	     samo kao podsetnik, tj. da krenem odma da ga radim ici cu na edit task pa cu ga prebaciti u 
+		 In progress deo.
+		2)Expected Start Date i Expected End Date iz nekog razloga razlicitog formata (2018-04-09 03:09:17, 04/09/2018 3:11 AM), verovatno
+		 jer je id, takodje u employee-dashboard.html otvara neki kalendar(da li to hocemo?), dok u manager-dashboard.html ne otvara takav
+		 kalendar za selekciju, i razlicitog su formata datumi u oba fajla.
+		 
+		3)Takodje, jedina razlika fajlova employee-dashboard.html i manager-dashboard.html (kada se uradi diff u VSCode koji Maki obozava)
+		 je koliko vidim u tom propeller linku za kalendar stil, i dole u nekoj funkciji smsChart(), koja ne znam ni sta znaci, ali pretpostavljam
+		 da je ne koristimo, kaze nesto Last 7 days comparison, tako da nam ni ona ne pretpostavljam ne treba.
+		 Jos jedna razlika koju diff nalazi 
+		 je da employee-dashboard.html linkuje na employee-team-machine-learning.html, a manager-dashboard.html na manager-team-machine-learning.html, iz dropdown
+		 menija timova. Jasno je da ce se taj dropdown meni generisati PHP-om i da to nije toliko krucijalno.
+		 E sad, jedina razlika stranica employee-team-machine-learning.html i manager-team-machine-learning.html je opet u tome sto jedna linkuje na
+		 employee-employee-view.html, a druga na manager-employee-view.html.
+		 E sad, jedina razlika stranica employee-employee-view.html i manager-employee-view.html je u akciji GIVE TASK, i tabeli Denied Tasks.
+		 
+		 Zakljucak: Dakle mi smo zbog ove male razlike u ova dva poslednja fajla, duplirali krs fajlova, i samim tim sebi zakomplikovali REPO i zivot
+		 kasnije, a i u toku formalne inspekcije. Naravno o razlikama ova dva fajla smo pricali, i dogovorili smo se da to bude ove razlike, i ova
+		 dva fajla treba zadrzati(dakle employee-employee-view.html i manager-employee-view.html), ali ove duplikate odozgo mislim da treba obrisati,
+		 jedino sto ce nam employee-team-machine-learning.html predstavljati sada i menadzera (mozemo da ga
+		 preimenujemo, ostavimo ime samo team-machine-learning.html), i kad se udje tu od strane menadzera linkovace na employee-employee-view.html,
+		 ali to na sta ce da linkuje (kakav tip stranice) ce se svejedno generisati PHP-om u zavisnosti od toga ko je logovan (menadzer ili zaposleni), 
+		 kao i sam sidebar za machine learning, dok ce team stranica zapravo biti ista (prototipski), sa razlicitim linkovima u zavisnosti od PHP-a.
+		 Kako se ovo realizuje u PHP-u jos uvek ne znam, ali rekavsi sve ovo mislim da su nam bespotrebni ovi duplikati, dakle samo employee-dashboard,
+		 i samo team-machine-learning.html (team-data-science.html) i samo employee-settings.html, dok employee-employee-view.html i manager-employee-view.html
+		 ostaju kao zasebni fajlovi. Ajde ovi director-settings.html, director-team-machine-learning... i da ostanu, oni moraju zbog sidebar-a?
+	4)Nema polje za razlog odbijanja zadatka(sem eventualno additional comments?), u SSU-8 (pogledati SSU-8) pise da moze da ima?, 
+	  to bi zapravo onda trebao biti drugaciji popup koji se pojavljuje samo u 
+	  info za denied tasks iz manager-employee-view.html, i za info za pending tasks prilikom odbijanja, i prilikom pritiska na x popup?
+		 
+III.
+team-machine-learning.html:
+	DONE 1)Mozda da linkujemo kao i u director-dashboard.html (radi konzistentosti), preko imena John, a ne Actions kolone(i info buttona) da bismo otisli na njegovu stranicu
+	2)Nema imena menadzera tima na stranici? U SSU pise da ima.
+	2a) Nema naziva tima na stranici tima
+	3)Eventualno da se razmisli sta bi zaista mogla da bude statistika???
+
+IV.
+manager-employee-view.html:
+	1)Sliku bih eventualno pomerio u gornji desni cosak ako nju uopste zelimo da imamo, a Denied tasks tabelu gore, cisto radi izgleda.
+	2)Ne otvara nista klikom na info-button, pretpostavljam treba nesto slicno kao u edit task.
+	3)U SSU pise da na ovoj stranici vidimo i ime zaposlenog koga gledamo, a toga nemamo u prototipu. Moglo bi se stavitiu gornji desni cosak
+	 pored ove planirano pomerene slike?
+
+V.
+employee-employee-view.html:
+	1)Slicno kao manager-employee-view.html
+	
+VI.
+index.html:
+	DONE 1)You can give tasks yourself or you can declare team managers who manage the tasks for you?
+	 -Kakvo sad deklarisanje team managera od strane employee-a, nismo o tome pricali? 
+	 Tekst je pisan za direktora firme
+	 
+
+VII.	 
+- jel nije tesko da se doda kad se hoveruje misem preko ovih okruglih buttona da pise samo sta taj button radi, tipa na x u pending tasks -> "Decline (task)"?
+- mozda preimenovati employee u worker kao ja u bazi, ili ja da menjam u bazi worker u employee, jer mi nekako employee dvosmisleno, jer je i manager employee(zaposleni u firmi).
+	
+VIII.
+I na kraju, nisu SSU ni meni ni Stefanu toliko dobri, jer kako sam ja shvatio u SSU se pise STA se radi, a ne i KAKO, a mi smo ubacili taj KAKO deo da bismo ih povecali
+u kolicini, jer su realno mogli da budu skoro veoma mali da to nismo ubacili :D, ali boze moj, samo da nam budu konzistenti sa prototipom zbog formalne inspekcije
+kako je rekao Drazen, a to u principu jesu koliko vidim.
