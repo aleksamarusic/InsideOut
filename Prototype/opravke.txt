@@ -2,15 +2,15 @@ I.
 director-dashboard.html:
 director-admin-teams.html:
 director-admin-accounts.html:
-	1)da sredimo konacno ovaj sidebar sto buga
-	2)obrisati iz sidebara tab Teams (jer ono tu se izbacuje lista, a ima dosta timova, ima ode dole u picku
+	DONE 1)da sredimo konacno ovaj sidebar sto buga
+	DONE 2)obrisati iz sidebara tab Teams (jer ono tu se izbacuje lista, a ima dosta timova, ima ode dole u picku
  	materinu, a vec u Team Management ima listu svih timova tako da je nepotrebna)
-	3)nazvati tab Team management sa Teams
-	4)Settings tab(i o tome smo pricali, to nemamo u SSU?)
-	5)dead link u Edit buttonu
-	6)dead link u CREATE TASK
-	7)dead link u Accounts kad se klikne na ime zaposlenog
-	8)dead link u Team Management tabu i na ime tima i na menadzera
+	DONE 3)nazvati tab Team management sa Teams
+	DONE 4)Settings tab(i o tome smo pricali, to nemamo u SSU?)
+	DONE 5)dead link u Edit buttonu
+	DONE 6)dead link u CREATE TASK
+	DONE 7)dead link u Accounts kad se klikne na ime zaposlenog
+	DONE 8)dead link u Team Management tabu i na ime tima i na menadzera
 	DONE 9)U Change Number of Accounts Warning = "To successfully decrease number of accounts remaining accounts must 	
 	 be free, have no owner" (kao sto pise u SSU)
 	DONE 10)dodati prilikom brisanja naloga prompt : "Do you really want to delete this account (employee information)?"
@@ -18,8 +18,8 @@ director-admin-accounts.html:
 
 II.
 employee-dashboard.html:
-	1)popup za delete task
-	2)takodje sidebar?
+	DONE 1)popup za delete task
+	DONE 2)takodje sidebar?
 	3)CREATE TASK popup
 		1)Pise vamo u gitk Marusicev late commit, delete select status option while GIVING TASK, ali da li nam zaista treba
 		 while CREATING OWN TASK, ne kapiram, ja napravim zadatak, i kazem da je Done?, pa sto	
@@ -50,27 +50,27 @@ employee-dashboard.html:
 		 Kako se ovo realizuje u PHP-u jos uvek ne znam, ali rekavsi sve ovo mislim da su nam bespotrebni ovi duplikati, dakle samo employee-dashboard,
 		 i samo team-machine-learning.html (team-data-science.html) i samo employee-settings.html, dok employee-employee-view.html i manager-employee-view.html
 		 ostaju kao zasebni fajlovi. Ajde ovi director-settings.html, director-team-machine-learning... i da ostanu, oni moraju zbog sidebar-a?
-	4)Nema polje za razlog odbijanja zadatka(sem eventualno additional comments?), u SSU-8 (pogledati SSU-8) pise da moze da ima?, 
+	DONE 4)Nema polje za razlog odbijanja zadatka(sem eventualno additional comments?), u SSU-8 (pogledati SSU-8) pise da moze da ima?, 
 	  to bi zapravo onda trebao biti drugaciji popup koji se pojavljuje samo u 
 	  info za denied tasks iz manager-employee-view.html, i za info za pending tasks prilikom odbijanja, i prilikom pritiska na x popup?
 		 
 III.
 team-machine-learning.html:
 	DONE 1)Mozda da linkujemo kao i u director-dashboard.html (radi konzistentosti), preko imena John, a ne Actions kolone(i info buttona) da bismo otisli na njegovu stranicu
-	2)Nema imena menadzera tima na stranici? U SSU pise da ima.
-	2a) Nema naziva tima na stranici tima
+	DONE 2)Nema imena menadzera tima na stranici? U SSU pise da ima.
+	DONE 2a) Nema naziva tima na stranici tima
 	3)Eventualno da se razmisli sta bi zaista mogla da bude statistika???
 
 IV.
 manager-employee-view.html:
-	1)Sliku bih eventualno pomerio u gornji desni cosak ako nju uopste zelimo da imamo, a Denied tasks tabelu gore, cisto radi izgleda.
-	2)Ne otvara nista klikom na info-button, pretpostavljam treba nesto slicno kao u edit task.
-	3)U SSU pise da na ovoj stranici vidimo i ime zaposlenog koga gledamo, a toga nemamo u prototipu. Moglo bi se stavitiu gornji desni cosak
+	DECLINED :D 1)Sliku bih eventualno pomerio u gornji desni cosak ako nju uopste zelimo da imamo, a Denied tasks tabelu gore, cisto radi izgleda.
+	DONE 2)Ne otvara nista klikom na info-button, pretpostavljam treba nesto slicno kao u edit task.
+	DONE 3)U SSU pise da na ovoj stranici vidimo i ime zaposlenog koga gledamo, a toga nemamo u prototipu. Moglo bi se stavitiu gornji desni cosak
 	 pored ove planirano pomerene slike?
 
 V.
 employee-employee-view.html:
-	1)Slicno kao manager-employee-view.html
+	DONE 1)Slicno kao manager-employee-view.html
 	
 VI.
 index.html:
@@ -79,7 +79,7 @@ index.html:
 	 Tekst je pisan za direktora firme
 	 
 
-VII.	 
+VII. 
 - jel nije tesko da se doda kad se hoveruje misem preko ovih okruglih buttona da pise samo sta taj button radi, tipa na x u pending tasks -> "Decline (task)"?
 - mozda preimenovati employee u worker kao ja u bazi, ili ja da menjam u bazi worker u employee, jer mi nekako employee dvosmisleno, jer je i manager employee(zaposleni u firmi).
 	

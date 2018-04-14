@@ -10,7 +10,7 @@ Autori:
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="InsideOut - Blank Page">
 <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
-<title>Main Page | InsideOut - Dashboard</title>
+<title>John Doe profile | InsideOut - Dashboard</title>
 <link rel="shortcut icon" type="image/x-icon" href="themes/img/favicon.ico">
 
 <!-- Google icon -->
@@ -127,7 +127,7 @@ Autori:
 		</div>
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<a href="javascript:void(0);" data-target="basicSidebar" data-placement="left" data-position="slidepush" is-open="false" is-open-width="1000" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pull-left margin-r8 pmd-sidebar-toggle"><i class="material-icons md-light">menu</i></a>	
+			<!-- <a href="javascript:void(0);" data-target="basicSidebar" data-placement="left" data-position="slidepush" is-open="false" is-open-width="1000" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pull-left margin-r8 pmd-sidebar-toggle"><i class="material-icons md-light">menu</i></a> -->	
 		  <a href="index.html" class="navbar-brand">
 		  	Inside Out
 		  </a>
@@ -176,12 +176,13 @@ Autori:
 				<li><a href="manager-team-data-science.html">Data Science</a></li>
 			</ul>
 		</li>
+		<!--
 		<li> 
 			<a class="pmd-ripple-effect" href="manager-settings.html">	
 				<i class="material-icons md-white media-left media-middle">settings</i> 
 				<span class="media-body">Settings</span>
 			</a> 
-		</li>
+		</li> -->
 	</ul>
 </aside><!-- End Left sidebar -->
 <!-- Sidebar Ends -->
@@ -249,7 +250,7 @@ Autori:
                                 	
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">check</i></button>
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#info-pending-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">info</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#decline-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -259,7 +260,7 @@ Autori:
                                 	
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">check</i></button>
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#info-pending-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">info</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#decline-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -269,7 +270,7 @@ Autori:
                                 	
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">check</i></button>
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#info-pending-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">info</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#decline-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr> 
@@ -318,7 +319,7 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-open-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -326,8 +327,8 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
                                 	
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-task-open-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-open-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -335,8 +336,8 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
                                 	
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-task-open-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-open-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -344,8 +345,8 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
                                 	
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-task-open-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-open-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -353,8 +354,8 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
                                 	
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-task-open-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-open-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -405,7 +406,7 @@ Autori:
                                 <td class="td-actions text-right">
                                 	
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-in-progress-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -414,7 +415,7 @@ Autori:
                                 <td class="td-actions text-right">
                                 	
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-in-progress-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -423,7 +424,7 @@ Autori:
                                 <td class="td-actions text-right">
                                 	
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-in-progress-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -432,7 +433,7 @@ Autori:
                                 <td class="td-actions text-right">
                                 	
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-in-progress-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -441,7 +442,7 @@ Autori:
                                 <td class="td-actions text-right">
                                 	
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-in-progress-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -491,14 +492,14 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
 	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-done-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>                                	
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>                                	
                                 </td>
                             </tr>
                             <tr>
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
                                 	<button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-done-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -506,7 +507,7 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
                                 	<button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-done-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -514,7 +515,7 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
                                 	<button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-done-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -522,7 +523,7 @@ Autori:
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
                                 <td class="td-actions text-right">
                                 	<button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs" type="button" style="display: block;" data-target="#edit-done-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">edit</i></button>
-	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;"><i class="material-icons pmd-xs">clear</i></button>
+	                                    <button class="btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs" type="button" style="display: block;" data-target="#delete-private-task-modal" data-toggle="modal"><i class="material-icons pmd-xs">clear</i></button>
                                 	
                                 </td>
                             </tr>
@@ -865,7 +866,45 @@ Autori:
 	</div>
 </div>
 
+<div tabindex="-1" class="modal fade" id="decline-task-modal" style="display: none;" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bordered">
+					<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					<h2 class="pmd-card-title-text">Decline task</h2>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+							<label class="control-label">Description</label>
+							<textarea required class="form-control">Please provide a reason for declining this taks</textarea>
+						</div>
+					</form>
+				</div>
+				<div class="pmd-modal-action">
+					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="button">Decline</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<div tabindex="-1" class="modal fade" id="delete-private-task-modal" style="display: none;" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bordered">
+					<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					<h2 class="pmd-card-title-text">Remove task</h2>
+				</div>
+				<div class="modal-body">
+					Are you sure? This will permanently remove selected task from your list.
+				</div>
+				<div class="pmd-modal-action">
+					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="button">Yes, remove it</button>
+					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-default pmd-btn-flat" type="button">Discard</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
