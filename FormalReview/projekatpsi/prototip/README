@@ -1,0 +1,10 @@
+## README
+
+Pocetna stranica je "index.html".
+
+Prilikom Login-a (Prijave) pratiti uputstva vezana za email adrese:
+* Ukoliko zelite pristupiti prototipu za funkcionalnosti studenta, email mora zavrsavati sa "@student.etf.bg.ac.rs"
+* Ukoliko zelite pristupiti prototipu za funkcionalnosti nastavnika, email mora zavrsavati sa "@etf.bg.ac.rs"
+* Ukoliko zelite pristupiti prototipu za funkcionalnosti administratora, email mora zavrsavati sa "@admin.etf.bg.ac.rs"
+
+Za funkcionalnosti studenta koji nije prijavljen na predmet, otvoriti fajl "./prototip/student/coursesite_no_request/index.html".

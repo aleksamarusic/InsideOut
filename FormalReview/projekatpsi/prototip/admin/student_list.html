@@ -1,0 +1,337 @@
+<!-- Natalija Radic -->
+<!-- 0043/2014 -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>RTI - Admin</title>
+  <link rel="stylesheet" href="../css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">RTI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Pocetna</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="password_change.html">Promena lozinke</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../logout.html">Odjava</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main role="main">
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>Administracija / Studenti</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col text-right">
+                <a href="student_add.html" class="btn btn-primary">Dodaj</a>
+                <a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteAllModal">Ukloni oznacene</a>
+              </div>
+            </div>
+            <div class="table-responsive mt-3">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <input type="checkbox" id="allCheckbox">
+                    </th>
+                    <th scope="col">Ime</th>
+                    <th scope="col">Prezime</th>
+                    <th scope="col">Indeks</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>1</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>2</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>3</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>4</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>5</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>6</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>7</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>8</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>9</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>10</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>11</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>12</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>13</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>14</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>15</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>16</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>17</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>18</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>19</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox">
+                    </td>
+                    <td>Student</td>
+                    <td>20</td>
+                    <td>GGGG/BBBB</td>
+                    <td><a href="student_edit.html" class="btn btn-warning">Izmeni</a></td>
+                    <td><a href="student_list.html" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Ukloni</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Nazad na vrh</a>
+        <br>
+        <a href="#">Kontakt</a>
+      </p>
+      <p>Katedra za računarsku tehniku i informatiku</p>
+      <p><a href="http://etf.bg.ac.rs">Elektrotehnički fakultet, Univerzitet u Beogradu POB 35-54, 11120 Beograd, Srbija</a></p>
+    </div>
+  </footer>
+  <!-- Modals -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Potvrda akcije</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Zaista zelite da obrisete ovog studenta? Akciju nije moguce ponistiti.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Nastavi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="deleteAllModal" tabindex="-1" role="dialog" aria-labelledby="deleteAllModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteAllModalLabel">Potvrda akcije</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Zaista zelite da obrisete ove studente? Akciju nije moguce ponistiti.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Odustani</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Nastavi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

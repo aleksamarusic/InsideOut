@@ -1,0 +1,147 @@
+<!-- Natalija Radic -->
+<!-- 0043/2014 -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Predmet 1 - Obavestenja</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">PRDMT 1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../home.html">Moj profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="notification_list.html">Obavestenja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="material_list.html">Materijali</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="access_request_list.html">Zahtevi za pristup</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../../logout.html">Odjava</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main role="main">
+    <section class="jumbotron text-center mb-0">
+      <div class="container">
+        <h1 class="jumbotron-heading">Predmet 1</h1>
+        <p class="lead text-muted">Katedra za računarsku tehniku i informatiku
+          <br>Elektrotehnički fakultet, Univerzitet u Beogradu</p>
+      </div>
+    </section>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>Obavestenja</h3>
+          </div>
+          <div class="col">
+            <p class="text-right">
+              <a href="notification_add.html" class="btn btn-primary">Dodaj</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="list-group">
+              <div href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <small class="text-muted">pre 3 sata</small>
+                </div>
+                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, animi iste. Iste error quis reprehenderit, similique sunt officia consequuntur esse in molestias quaerat distinctio qui quidem earum nulla, laborum. Necessitatibus!</p>
+                <small>prof. Profesor 1</small>
+                <p class="text-right">
+                  <a href="notification_edit.html" class="btn btn-warning">Izmeni</a>
+                  <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteNotificationModal">Ukloni</a>
+                </p>
+              </div>
+              <div href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <small class="text-muted">16:05, 27/12/2018</small>
+                </div>
+                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, animi iste. Iste error quis reprehenderit, similique sunt officia consequuntur esse in molestias quaerat distinctio qui quidem earum nulla, laborum. Necessitatibus!</p>
+                <small>prof. Profesor 2</small>
+                <p class="text-right">
+                  <a href="notification_edit.html" class="btn btn-warning">Izmeni</a>
+                  <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteNotificationModal">Ukloni</a>
+                </p>
+              </div>
+              <div href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <small class="text-muted">16:05, 27/12/2018</small>
+                </div>
+                <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, animi iste. Iste error quis reprehenderit, similique sunt officia consequuntur esse in molestias quaerat distinctio qui quidem earum nulla, laborum. Necessitatibus!</p>
+                <small>prof. Profesor 3</small>
+                <p class="text-right">
+                  <a href="notification_edit.html" class="btn btn-warning">Izmeni</a>
+                  <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteNotificationModal">Ukloni</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container py-5">
+      <p class="float-right">
+        <a href="#">Nazad na vrh</a>
+        <br>
+        <a href="#">Kontakt</a>
+      </p>
+      <p><a href="../index.html">Katedra za računarsku tehniku i informatiku</a></p>
+      <p><a href="http://etf.bg.ac.rs">Elektrotehnički fakultet, Univerzitet u Beogradu POB 35-54, 11120 Beograd, Srbija</a></p>
+    </div>
+  </footer>
+  <!-- Modals -->
+  <div class="modal fade" id="deleteNotificationModal" tabindex="-1" role="dialog" aria-labelledby="deleteNotificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteNotificationModalLabel">Ukloni obavestenje</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Zaista zelite da uklonite ovo obavestenje?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ne</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Da, ukloni ovo obavestenje</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

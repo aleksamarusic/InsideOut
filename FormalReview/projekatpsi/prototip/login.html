@@ -1,0 +1,110 @@
+<!-- Natalija Radic -->
+<!-- 0043/2014 -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>RTI - Prijava</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">RTI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="course_list.html">Predmeti</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="teacher_list.html">Nastavno osoblje</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="login.html">Prijava</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Registracija</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main role="main">
+    <section class="jumbotron text-center mb-0">
+      <div class="container">
+        <h1 class="jumbotron-heading">Katedra za računarsku tehniku i informatiku</h1>
+        <p class="lead text-muted">Elektrotehnički fakultet, Univerzitet u Beogradu POB 35-54, 11120 Beograd, Srbija</p>
+      </div>
+    </section>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 offset-4">
+            <h3>Prijava</h3>
+            <form action="#" class="needs-validation" novalidate>
+              <div class="form-group">
+                <label for="">Email:</label>
+                <input type="email" class="form-control" aria-describedby="emailHelp" required>
+                <small id="emailHelp" class="form-text text-muted">Koristite samo fakultetske mejlove. (@student.etf.bg.ac.rs, @etf.bg.ac.rs, ili @admin.etf.bg.ac.rs)</small>
+              </div>
+              <div class="form-group">
+                <label for="">Lozinka:</label>
+                <input type="password" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+              <div class="form-group">
+                <a href="forgot_password.html">Zaboravili ste lozinku?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Nazad na vrh</a>
+        <br>
+        <a href="#">Kontakt</a>
+      </p>
+      <p>Katedra za računarsku tehniku i informatiku</p>
+      <p><a href="http://etf.bg.ac.rs">Elektrotehnički fakultet, Univerzitet u Beogradu POB 35-54, 11120 Beograd, Srbija</a></p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+  // Dummy script to determine and change login form action based on email field value
+  $(".btn-primary").on("click", function(e) {
+    e.preventDefault();
+    let email = $("input[type='email']").val();
+    if (email.endsWith('@student.etf.bg.ac.rs')) {
+      $('form').attr('action', "student/home.html").submit();
+    } else if (email.endsWith('@etf.bg.ac.rs')) {
+      $('form').attr('action', "teacher/home.html").submit();
+    } else if (email.endsWith('@admin.etf.bg.ac.rs')) {
+      $('form').attr('action', "admin/home.html").submit();
+    }
+  });
+  </script>
+</body>
+
+</html>

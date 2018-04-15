@@ -1,0 +1,257 @@
+<!-- Natalija Radic -->
+<!-- 0043/2014 -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Predmet 1 - Obavestenja</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">PRDMT 1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../home.html">Moj profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="notification_list.html">Obavestenja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="material_list.html">Materijali</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="access_request_list.html">Zahtevi za pristup</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../../logout.html">Odjava</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main role="main">
+    <section class="jumbotron text-center mb-0">
+      <div class="container">
+        <h1 class="jumbotron-heading">Predmet 1</h1>
+        <p class="lead text-muted">Katedra za računarsku tehniku i informatiku
+          <br>Elektrotehnički fakultet, Univerzitet u Beogradu</p>
+      </div>
+    </section>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>Zahtevi za pristup</h3>
+          </div>
+          <div class="col">
+            <p class="text-right">
+              <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#acceptAllModal">Prihvati sve</a>
+              <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#denyAllModal">Odbij sve</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ime</th>
+                    <th scope="col">Indeks</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Datum</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Student 1</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student1@student.etf.bg.ac.rs</td>
+                    <td>1/1/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Student 2</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student2@student.etf.bg.ac.rs</td>
+                    <td>2/2/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Student 3</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student3@student.etf.bg.ac.rs</td>
+                    <td>3/3/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>Student 4</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student4@student.etf.bg.ac.rs</td>
+                    <td>4/4/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>Student 5</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student5@student.etf.bg.ac.rs</td>
+                    <td>5/5/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>Student 6</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student6@student.etf.bg.ac.rs</td>
+                    <td>6/6/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Student 7</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student7@student.etf.bg.ac.rs</td>
+                    <td>7/7/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Student 8</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student8@student.etf.bg.ac.rs</td>
+                    <td>8/8/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>Student 9</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student9@student.etf.bg.ac.rs</td>
+                    <td>9/9/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td>Student 10</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student10@student.etf.bg.ac.rs</td>
+                    <td>10/10/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td>Student 11</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student11@student.etf.bg.ac.rs</td>
+                    <td>11/11/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td>Student 12</td>
+                    <td>GGGG/BBBB</td>
+                    <td>student12@student.etf.bg.ac.rs</td>
+                    <td>12/12/2010</td>
+                    <td><a href="#" class="btn btn-success">Prihvati</a></td>
+                    <td><a href="#" class="btn btn-warning">Odbij</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container py-5">
+      <p class="float-right">
+        <a href="#">Nazad na vrh</a>
+        <br>
+        <a href="#">Kontakt</a>
+      </p>
+      <p><a href="../index.html">Katedra za računarsku tehniku i informatiku</a></p>
+      <p><a href="http://etf.bg.ac.rs">Elektrotehnički fakultet, Univerzitet u Beogradu POB 35-54, 11120 Beograd, Srbija</a></p>
+    </div>
+  </footer>
+  <!-- Modals -->
+  <div class="modal fade" id="acceptAllModal" tabindex="-1" role="dialog" aria-labelledby="acceptAllModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="acceptAllModalLabel">Prihvati sve</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Zaista zelite da prihvatite sve zahteve za pristup?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ne</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Da, prihvati sve zahteve</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="denyAllModal" tabindex="-1" role="dialog" aria-labelledby="denyAllModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="denyAllModalLabel">Odbij sve</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Zaista zelite da odbijete sve zahteve za pristup?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ne</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Da, odbij sve zahteve</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

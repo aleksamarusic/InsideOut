@@ -1,0 +1,485 @@
+<!-- Natalija Radic -->
+<!-- 0043/2014 -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Predmet 1 - Obavestenja</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">PRDMT 1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" aria-controls="collapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="collapsingNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../home.html">Moj profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="notification_list.html">Obavestenja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="material_list.html">Materijali</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="access_request_list.html">Zahtevi za pristup</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../../logout.html">Odjava</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main role="main">
+    <section class="jumbotron text-center mb-0">
+      <div class="container">
+        <h1 class="jumbotron-heading">Predmet 1</h1>
+        <p class="lead text-muted">Katedra za računarsku tehniku i informatiku
+          <br>Elektrotehnički fakultet, Univerzitet u Beogradu</p>
+      </div>
+    </section>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>Materijali</h3>
+          </div>
+          <div class="col">
+            <p class="text-right">
+              <a href="material_add.html" class="btn btn-primary">Dodaj</a>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="heading1">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link d-block w-100 text-left" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        Nastava
+                      </button>
+                    </h5>
+                </div>
+                <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Naziv</th>
+                            <th scope="col">Datum objave</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Naziv fajla 1</td>
+                            <td>1/1/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Naziv fajla 2</td>
+                            <td>2/2/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Naziv fajla 3</td>
+                            <td>3/3/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Naziv fajla 4</td>
+                            <td>4/4/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Naziv fajla 5</td>
+                            <td>5/5/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Naziv fajla 6</td>
+                            <td>6/6/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>Naziv fajla 7</td>
+                            <td>7/7/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>Naziv fajla 8</td>
+                            <td>8/8/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading2">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link d-block w-100 text-left" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                        Rezultati
+                      </button>
+                    </h5>
+                </div>
+                <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Naziv</th>
+                            <th scope="col">Datum objave</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Naziv fajla 1</td>
+                            <td>1/1/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Naziv fajla 2</td>
+                            <td>2/2/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Naziv fajla 3</td>
+                            <td>3/3/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Naziv fajla 4</td>
+                            <td>4/4/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Naziv fajla 5</td>
+                            <td>5/5/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Naziv fajla 6</td>
+                            <td>6/6/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>Naziv fajla 7</td>
+                            <td>7/7/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>Naziv fajla 8</td>
+                            <td>8/8/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="heading3">
+                  <h5 class="mb-0">
+                      <button class="btn btn-link d-block w-100 text-left" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                        Rokovi
+                      </button>
+                    </h5>
+                </div>
+                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordion">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Naziv</th>
+                            <th scope="col">Datum objave</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Naziv fajla 1</td>
+                            <td>1/1/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Naziv fajla 2</td>
+                            <td>2/2/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Naziv fajla 3</td>
+                            <td>3/3/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Naziv fajla 4</td>
+                            <td>4/4/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Naziv fajla 5</td>
+                            <td>5/5/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>Naziv fajla 6</td>
+                            <td>6/6/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>Naziv fajla 7</td>
+                            <td>7/7/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>Naziv fajla 8</td>
+                            <td>8/8/2010</td>
+                            <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                            <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                            <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="heading4">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link d-block w-100 text-left" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                        Ostalo
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Naziv</th>
+                              <th scope="col">Datum objave</th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Naziv fajla 1</td>
+                              <td>1/1/2010</td>
+                              <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                              <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                              <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Naziv fajla 2</td>
+                              <td>2/2/2010</td>
+                              <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                              <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                              <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Naziv fajla 3</td>
+                              <td>3/3/2010</td>
+                              <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                              <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                              <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">4</th>
+                              <td>Naziv fajla 4</td>
+                              <td>4/4/2010</td>
+                              <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                              <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                              <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">5</th>
+                              <td>Naziv fajla 5</td>
+                              <td>5/5/2010</td>
+                              <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                              <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                              <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">6</th>
+                              <td>Naziv fajla 6</td>
+                              <td>6/6/2010</td>
+                              <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                              <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                              <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">7</th>
+                              <td>Naziv fajla 7</td>
+                              <td>7/7/2010</td>
+                              <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                              <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                              <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">8</th>
+                              <td>Naziv fajla 8</td>
+                              <td>8/8/2010</td>
+                              <td><a href="#" class="btn btn-link">Preuzmi</a></td>
+                              <td><a href="material_edit.html" class="btn btn-warning">Izmeni</a></td>
+                              <td><a href="#" class="btn btn-danger" data-toggle="modal" data-target="#deleteMaterialModal">Ukloni</a></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <footer class="text-muted">
+    <div class="container py-5">
+      <p class="float-right">
+        <a href="#">Nazad na vrh</a>
+        <br>
+        <a href="#">Kontakt</a>
+      </p>
+      <p><a href="../index.html">Katedra za računarsku tehniku i informatiku</a></p>
+      <p><a href="http://etf.bg.ac.rs">Elektrotehnički fakultet, Univerzitet u Beogradu POB 35-54, 11120 Beograd, Srbija</a></p>
+    </div>
+  </footer>
+  <!-- Modals -->
+  <div class="modal fade" id="deleteMaterialModal" tabindex="-1" role="dialog" aria-labelledby="deleteMaterialLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteMaterialLabel">Obrisi fajl</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Zaista zelite da obrisete ovaj fajl?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ne</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Da, obrisi ovaj fajl</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
