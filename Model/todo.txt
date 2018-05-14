@@ -1,0 +1,1 @@
+1) Logical View -> Radnik -> web application model -> Radnik_class -> izmedju dashboard.html i deleteTask.php treba da ide popup forma kao za declineTask nazvana deleteTaskForm
