@@ -1,4 +1,8 @@
 
+DROP DATABASE IF EXISTS `inside_out`;
+CREATE DATABASE IF NOT EXISTS `inside_out` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `inside_out`;
+
 CREATE TABLE ACCOUNT
 (
 	email                CHAR(35) NOT NULL,
@@ -47,9 +51,9 @@ CREATE TABLE TASK
 	taskId               CHAR(18) NOT NULL,
 	teamName             CHAR(20) NULL,
 	companyName          CHAR(25) NULL,
-	statusPrivacy        CHAR NOT NULL DEFAULT P CHECK ( statusPrivacy IN ('P', 'M') ),
-	statusCompletition   CHAR(2) NOT NULL DEFAULT NS CHECK ( statusCompletition IN ('NS', 'IP', 'CP') ),
-	statusAcceptance     CHAR(2) NOT NULL DEFAULT A CHECK ( statusAcceptance IN ('D', 'A', 'NA') ),
+	statusPrivacy        CHAR NOT NULL DEFAULT 'P' CHECK ( statusPrivacy IN ('P', 'M') ),
+	statusCompletition   CHAR(2) NOT NULL DEFAULT 'NS' CHECK ( statusCompletition IN ('NS', 'IP', 'CP') ),
+	statusAcceptance     CHAR(2) NOT NULL DEFAULT 'A' CHECK ( statusAcceptance IN ('D', 'A', 'NA') ),
 	taskName             CHAR(30) NOT NULL,
 	description          VARCHAR(300) NULL,
 	comment              VARCHAR(100) NULL,
