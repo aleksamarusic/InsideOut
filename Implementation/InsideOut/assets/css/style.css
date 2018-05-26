@@ -1,0 +1,41 @@
+/* index.html*/
+
+#joinUs {
+    /*background-image: url('../img/bg9.jpg');*/
+    background: black;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+#joinUs .title {
+    padding-top: 30px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+#joinUs a {
+    margin-bottom: 20px;
+}
+
+#joinUs a:hover {
+    text-decoration: none;
+}
+
+/* end index.html */
+
+
+
+/* sign-up.html */
+
+.card form {
+    margin: 0 auto;
+    width: 70%;
+}
+
+/* end sign-up.html */
