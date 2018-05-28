@@ -13,5 +13,13 @@ class ModelEmployee extends CI_Model{
         $result=$query->row();
         return $result;
     }
+
+    public function getEmployeeByCompany($company, $tip){
+        $this->db->where("$tip.companyName", $company);
+        $this->db->from($tip);
+        $this->db->join("Account", "account.email = $tip.email");
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
 

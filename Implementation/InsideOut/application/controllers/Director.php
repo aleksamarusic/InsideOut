@@ -9,6 +9,8 @@ class Director extends Employee {
         parent::__construct();
         
         $this->load->model("ModelCompany");
+        $this->load->model("ModelEmployee");
+        $this->load->model("ModelTeam");
 
         if ($this->session->userdata('director') == NULL){
             if ($this->session->userdata('worker') == 1)
@@ -27,11 +29,30 @@ class Director extends Employee {
 		$this->accounts();
 	}
 
-    public function accounts(){
-        //TO DO
+    public function accounts($message = NULL, $accountId = NULL){
         $data = array();
         $data['reg_link'] = $this->ModelCompany->getCompanyByName($this->session->userdata('employee')->companyName);
-        //print_r($data['reg_link']);
+        $data['menadzeri'] = $this->ModelEmployee->getEmployeeByCompany($this->session->userdata('employee')->companyName, 'Manager');
+        $data['radnici'] = $this->ModelEmployee->getEmployeeByCompany($this->session->userdata('employee')->companyName, 'Worker');
+        $data['timovi'] = $this->ModelTeam->getTeamsByCompany($this->session->userdata('employee')->companyName);
+        $data['message'] = $message;
+        $data['accid'] = $accountId;
+
+        for ($i=0; $i<count($data['menadzeri']); ++$i){
+            $data['menadzeri'][$i] = (array)$data['menadzeri'][$i];
+            $data['menadzeri'][$i]['teams'] = $this->ModelTeam->getTeamsByEmail($data['menadzeri'][$i]['email']);
+        }
+
+        //print("<pre>".print_r($data['menadzeri'], true)."</pre>");
+        
+
+        for ($i=0; $i<count($data['radnici']); ++$i){
+            $data['radnici'][$i] = (array)$data['radnici'][$i];
+            $data['radnici'][$i]['teams'] = $this->ModelTeam->getTeamsByEmailWorker($data['radnici'][$i]['email']);
+        }
+
+        //print("<pre>".print_r($data['radnici'], true)."</pre>");
+
         $this->load_view('director/accounts', $data);
     }
 
@@ -41,11 +62,41 @@ class Director extends Employee {
         redirect("Director");
     }
 
+    public function editAccountManager($accountId){
+        $message = NULL;
+        $checkbox = $this->input->post("ismngr$accountId");
+        var_dump($_POST);
+        if($checkbox == NULL){
+            //checkbox je odcekiran
+            //manager -> worker
+            
+        }
+
+        //redirect("Director/$message/$accountId");
+    }
+
+    public function editAccountWorker($accountId){
+        $message = NULL;
+        $checkbox = $this->input->post("ismngr$accountId");
+        var_dump($_POST);
+        if($checkbox != NULL){
+            //checkbox je cekiran
+            //worker -> manager
+
+        }
+
+        //redirect("Director/$message/$accountId");
+    }
+
     public function teams(){
         //TO DO
     }
 
     public function tasks(){
+        //TO DO
+    }
+
+    public function viewEmployee($employeeId){
         //TO DO
     }
 }

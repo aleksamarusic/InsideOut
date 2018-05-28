@@ -25,14 +25,12 @@ Autori:
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/propeller.min.css">
 
 	<!-- Propeller theme css-->
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>themes/css/propeller-theme.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>themes/css/propeller-theme.css">
 
 	<!-- Propeller admin theme css-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>themes/css/propeller-admin.css">
     
     <!-- Multiselect css-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap-multiselect.css">
-
     <style>
         tr a {
             display: block;
