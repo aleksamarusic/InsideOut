@@ -64,10 +64,25 @@
 	<!-- Initialize the plugin: -->
     <script type="text/javascript">
         
-
 		// $(document).ready(function () {
-        //     $('#select2').multiselect();
+        //     $('.multiselect').multiselect();
         // });
+
+		<?php 
+        if (isset($calcModal)) {
+            echo
+            "$(document).ready(function(){
+                $('#num-of-accounts-modal').modal('show');
+            })";
+		}
+		if (isset($priceModal)) {
+            echo
+            "$(document).ready(function(){
+                $('#price-modal').modal('show');
+            })";
+        }
+    ?>
+		
     </script>
 
 </body>

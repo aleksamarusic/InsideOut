@@ -15,7 +15,7 @@ class Employee extends CI_Controller{
 
 		$this->load->view("templates/$controller"."_header.php", $data);
         $this->load->view($name, $data);
-        $this->load->view("templates/$controller"."_footer.php");
+        $this->load->view("templates/$controller"."_footer.php", $data);
 	}
 
     public function signout(){

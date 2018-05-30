@@ -38,5 +38,11 @@ class ModelCompany extends CI_Model{
         $this->db->where("companyName", $company);
         $this->db->update("Company");
     }
+
+    public function setNumOfAccounts($company, $numberOfAcconts) {
+        $this->db->set("numAccounts", $numberOfAcconts);
+        $this->db->where("companyName", $company);
+        $this->db->update("Company");
+    }
 }
 

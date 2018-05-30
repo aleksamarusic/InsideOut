@@ -6,6 +6,12 @@ class ModelTeam extends CI_Model{
         parent::__construct();
     }
 
+    public function getTeam($teamName) {
+        $this->db->where("teamName", $teamName);
+        $query = $this->db->get('Team');
+        return $query->row();
+    }
+
     public function getTeamsByEmail($email){
         $this->db->where("email", $email);
         $query = $this->db->get('Team');
@@ -23,5 +29,26 @@ class ModelTeam extends CI_Model{
         $query = $this->db->get('Team');
         return $query->result();
     }
+
+    public function deleteTeam($team, $companyName){
+        $this->db->where("teamName", $team);
+        $this->db->where("companyName", $companyName);
+        $this->db->delete('Team');
+    }
+
+    public function createTeam($teamName, $companyName) {
+        $team = array(
+            'teamName' => $teamName,
+            'companyName' => $companyName,
+        );
+        $this->db->insert('Team', $team);
+    }
+
+    /*public function decrementNumOfWorkers($team, $company) {
+        $this->db->set('numWorkers', 'numWorkers+1', FALSE);
+        $this->db->where('teamName', $teamName);
+        $this->db->where('companyName', $companyName);
+        $this->db->update('Team');
+    }*/
 }
 

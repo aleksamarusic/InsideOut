@@ -1,3 +1,7 @@
+tr a {
+    display: block;
+}
+
 /* index.html*/
 
 #joinUs {
@@ -39,3 +43,18 @@
 }
 
 /* end sign-up.html */
+
+.pmd-sidebar {
+    background-color: #1c6341 !important;
+    border: none !important;
+}
+
+
+.navbar-inverse {
+    background-color: #32b376 !important;
+    border: none !important;
+}
+
+.pmd-sidebar-left .nav > li.pmd-user-info > a {
+    border: none !important;
+}

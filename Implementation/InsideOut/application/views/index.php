@@ -247,21 +247,20 @@ Autori:
 
             <form class="form-inverse" action="<?php echo site_url('Guest/login')?>" method="post">
                 <div class="text-left">
-                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label for="inputError1" class="control-label pmd-input-group-label">Email</label>
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="material-icons pmd-sm">email</i></div>
-                                    <input type="email" name="email" class="form-control">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                                <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="material-icons pmd-sm">lock_outline</i></div>
-                                    <input type="password" name="password" class="form-control">
-                                </div>
-                            </div>
+                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                        <label for="inputError1" class="control-label pmd-input-group-label">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="material-icons pmd-sm">email</i></div>
+                            <input type="email" name="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                        <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="material-icons pmd-sm">lock_outline</i></div>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+                    </div>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary pmd-ripple-effect btn-lg">Log in</button>

@@ -14,6 +14,33 @@ Nikola: Pri kraju su funkcionalnosti 16,17,18, bice gotove 1og.
 pa ako moze neko da proba da resi nekim drugim css-om ili bilo cime, ja nisam uspeo.. Ne znam da li mozda treba ona $document skripta da se dira.
 U principu pogledajte kako izgleda bez te klase.
 
+                                                                          
+1. Pregled glavne sranice sajta                         |Nikola |DONE   |      
+2. Kreiranje naloga Direktora                           |       |       |
+3. Kreiranje naloga Radnika                             |       |       |
+4. Autorizacija korisnika                               |Nikola |DONE   | 
+5. Resetovanje lozinke                                  |       |       |
+6. Radnik - Kreiranje privatnog zadatka                 |       |       |
+7. Radnik - Brisanje privatnog zadatka                  |       |       |
+8. Radnik - Prihvaranja ili odbijanje zadatog zadatka   |       |       |
+9. Radnik - Ažuriranje svojih zadataka                  |       |       |
+10. Radnik - Pristup stranici svog tima                 |       |       |        
+11. Radnik - Pregled stranice drugog Radnika            |       |       |
+12. Menadžer - Kreiranje Zadatog zadatka                |       |       |
+13. Menadžer - Brisanje Zadatog zadatka                 |       |       |
+14. Direktor - Kreiranje tima                           |Marija |DONE   |
+15. Direktor - Brisanje tima                            |Marija |DONE   |
+16. Direktor - Podela radnika u timove                  |Nikola |       |
+17. Direktor - Promena statusa zaposlenog               |Nikola |       |
+18. Direktor - Podela Menadžera u timove                |Nikola |       |
+19. Direktor - Kreiranje Zadatog zadatka                |Marija |       |
+20. Direktor - Generisanje novog prijavnog linka        |Nikola |DONE   | 
+21. Direktor - Resetovanje naloga unutar firme          |Marija |DONE   | triger?
+22. Direktor - Promena broja naloga firme               |Marija |       |
+23. Administrator - Uklanjanje firme                    |Nikola |DONE   | 
+
+
+
 *****
 PLANS
 *****

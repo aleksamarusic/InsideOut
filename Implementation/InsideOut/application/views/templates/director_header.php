@@ -12,7 +12,7 @@ Autori:
 	<meta name="description" content="InsideOut - Blank Page">
 	<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
 	<title>Main Page | InsideOut - Dashboard</title>
-	<link rel="shortcut icon" type="image/x-icon" href="themes/img/favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url()?>/assets/img/favicon.ico">
 
 	<!-- Google icon -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -30,12 +30,13 @@ Autori:
 	<!-- Propeller admin theme css-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>themes/css/propeller-admin.css">
     
+	<!-- custom css -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/style.css">
+    
     <!-- Multiselect css-->
-    <style>
-        tr a {
-            display: block;
-        }
-    </style>
+	<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/bootstrap-multiselect.css"> -->
+
+ 
 
 </head>
 
@@ -52,12 +53,13 @@ Autori:
 				 is-open-width="1200" class="btn btn-sm pmd-btn-fab pmd-btn-flat pmd-ripple-effect pull-left margin-r8 pmd-sidebar-toggle">
 					<i class="material-icons md-light">menu</i>
 				</a> -->
-				<a href="index.html" class="navbar-brand">
+				<a href= "<?php echo base_url()?>index.php/Director" class="navbar-brand">
 					Inside Out
 				</a>
+				
 			</div>
+			<a href='<?php echo base_url()."index.php/$controller/signout"?>' class="navbar-right navbar-brand">Logout</a>
 		</div>
-
 	</nav>
 	<!--End Nav bar -->
 	<!-- Header Ends -->
@@ -71,8 +73,10 @@ Autori:
 		<ul class="nav pmd-sidebar-nav">
 
 			<!-- User info -->
-			<li class="dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg">
-				<a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" aria-expandedhref="javascript:void(0);">
+			<!-- <li class="dropdown pmd-dropdown pmd-user-info visible-xs visible-md visible-sm visible-lg"> -->
+			<li>
+				<!-- <a aria-expanded="false" data-toggle="dropdown" class="btn-user dropdown-toggle media" data-sidebar="true" aria-expandedhref="javascript:void(0);"> -->
+				<a>	
 					<!-- <div class="media-left">
 						<img src="assets/img/johndoesmall.jpg" alt="New User">
 					</div> -->
@@ -81,11 +85,11 @@ Autori:
 						<i class="dic-more-vert dic"></i>
 					</div>
 				</a>
-				<ul class="dropdown-menu">
+				<!-- <ul class="dropdown-menu">
 					<li>
 						<a href='<?php echo base_url()."index.php/$controller/signout"?>'>Logout</a>
 					</li>
-				</ul>
+				</ul> -->
 			</li>
 			<!-- End user info -->
 
