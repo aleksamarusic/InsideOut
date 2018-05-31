@@ -193,8 +193,8 @@ CREATE TABLE IF NOT EXISTS `task` (
 DROP TABLE IF EXISTS `team`;
 CREATE TABLE IF NOT EXISTS `team` (
   `teamName` char(20) COLLATE utf8_unicode_ci NOT NULL,
-  `numWorkers` int(11) NOT NULL,
-  `numInProgressTasks` int(11) NOT NULL,
+  `numWorkers` int(11) NOT NULL DEFAULT '0',
+  `numInProgressTasks` int(11) NOT NULL DEFAULT '0',
   `companyName` char(25) COLLATE utf8_unicode_ci NOT NULL,
   `email` char(35) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`teamName`,`companyName`),

@@ -219,4 +219,25 @@
         </div>
     </div>
 
+    <!-- delete modal -->
+    <div id='delete-modal' class='modal fade ' tabindex='-1' role='dialog'>
+        <div class='modal-dialog modal-md' role='document'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                        <span aria-hidden='true'>&times;</span>
+                    </button>
+                    <div class='modal-title' id='myModalLabel'>Do you really want to delete this account?</div>
+                </div>
+                <div class='modal-footer'>
+                    <form name="deleteForm" method="post" action="<?php echo base_url()."index.php/Director/resetAccount/" ?> ">
+                        <input type="hidden" name="id">
+                        <input type="reset" value="NO" class="btn btn-default" data-dismiss="modal">
+                        <input type="submit" value="YES" class="btn btn-success">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     

@@ -26,9 +26,9 @@ Resene su funkcionalnosti 1.,4.,20.,23., jer mi je tako bilo najpotrebnije i naj
 13. Menadžer - Brisanje Zadatog zadatka                 |       |       |
 14. Direktor - Kreiranje tima                           |Marija |DONE   |
 15. Direktor - Brisanje tima                            |Marija |DONE   |
-16. Direktor - Podela radnika u timove                  |Nikola |       |
-17. Direktor - Promena statusa zaposlenog               |Nikola |       |
-18. Direktor - Podela Menadžera u timove                |Nikola |       |
+16. Direktor - Podela radnika u timove                  |Nikola |DONE   |
+17. Direktor - Promena statusa zaposlenog               |Nikola |DONE   |
+18. Direktor - Podela Menadžera u timove                |Nikola |DONE   |
 19. Direktor - Kreiranje Zadatog zadatka                |Marija |       |
 20. Direktor - Generisanje novog prijavnog linka        |Nikola |DONE   | 
 21. Direktor - Resetovanje naloga unutar firme          |Marija |DONE   | triger?

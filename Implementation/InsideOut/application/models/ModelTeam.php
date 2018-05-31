@@ -4,14 +4,7 @@ class ModelTeam extends CI_Model{
     
     public function __construct() {
         parent::__construct();
-    }
-
-    public function getTeam($teamName) {
-        $this->db->where("teamName", $teamName);
-        $query = $this->db->get('Team');
-        return $query->row();
-    }
-
+    }    
     public function getTeamsByEmail($email){
         $this->db->where("email", $email);
         $query = $this->db->get('Team');
@@ -50,6 +43,7 @@ class ModelTeam extends CI_Model{
         $this->db->where('companyName', $companyName);
         $this->db->update('Team');
     }*/
+    
     public function getTeam($team, $company){
         $this->db->where("teamName", $team);
         $this->db->where("companyName", $company);

@@ -185,12 +185,14 @@ class Director extends Employee {
         $message = null;
 
         $teamName = $this->input->post("teamName");
+        $companyName = $this->session->userdata('employee')->companyName;
+
         if ($teamName == null) {
             $message = "Team name cannot be empty";
         } else {
             $companyName = $this->session->userdata('employee')->companyName;
 
-            $team = $this->ModelTeam->getTeam($teamName);
+            $team = $this->ModelTeam->getTeam($teamName, $companyName);
             if ($team != null) {
                 $message = "Team $teamName already exists. Please choose another name for the new team";
             } else {
