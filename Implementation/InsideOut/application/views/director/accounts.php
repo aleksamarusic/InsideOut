@@ -179,8 +179,12 @@
                                     </tr>";
                                 }
                             ?>
-                            <tr>
+                             <tr>
                                 <td>Number of accounts</td>
+                                <td style="text-align: center"><?php echo $company->numAccounts ?></td>
+                            </tr>
+                            <tr>
+                                <td>Number of accounts used</td>
                                 <td style="text-align: center"><?php echo $company->numAccountsUsed ?></td>
                             </tr>
                             <tr>
