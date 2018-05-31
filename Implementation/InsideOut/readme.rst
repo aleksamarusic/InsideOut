@@ -24,8 +24,8 @@ U principu pogledajte kako izgleda bez te klase.
 7. Radnik - Brisanje privatnog zadatka                  |       |       |
 8. Radnik - Prihvaranja ili odbijanje zadatog zadatka   |       |       |
 9. Radnik - Ažuriranje svojih zadataka                  |       |       |
-10. Radnik - Pristup stranici svog tima                 |       |       |        
-11. Radnik - Pregled stranice drugog Radnika            |       |       |
+10. Radnik - Pristup stranici svog tima                 |       |       | odradjen pregled tima za direktora       
+11. Radnik - Pregled stranice drugog Radnika            |       |       | 
 12. Menadžer - Kreiranje Zadatog zadatka                |       |       |
 13. Menadžer - Brisanje Zadatog zadatka                 |       |       |
 14. Direktor - Kreiranje tima                           |Marija |DONE   |
@@ -36,7 +36,7 @@ U principu pogledajte kako izgleda bez te klase.
 19. Direktor - Kreiranje Zadatog zadatka                |Marija |       |
 20. Direktor - Generisanje novog prijavnog linka        |Nikola |DONE   | 
 21. Direktor - Resetovanje naloga unutar firme          |Marija |DONE   | triger?
-22. Direktor - Promena broja naloga firme               |Marija |       |
+22. Direktor - Promena broja naloga firme               |Marija |DONE   |
 23. Administrator - Uklanjanje firme                    |Nikola |DONE   | 
 
 
