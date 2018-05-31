@@ -65,27 +65,75 @@ class Director extends Employee {
     public function editAccountManager($accountId){
         $message = NULL;
         $checkbox = $this->input->post("ismngr$accountId");
-        var_dump($_POST);
+        $selection = $this->input->post("select$accountId");
+        $account = $this->ModelEmployee->getAccountById($accountId);
+        $email = $account -> email;
+
+        //var_dump($_POST);
         if($checkbox == NULL){
             //checkbox je odcekiran
-            //manager -> worker
-            
+            //manager -> worker 
+            if ($selection != NULL){
+                $message = "error1";
+                redirect("Director/accounts/$message/$accountId");
+            }
+           
+            //izbrisi sve veze menadzerstva
+            $this->ModelEmployee->delete('Manager', $email);
+            //prebaci u radnika
+            $this->ModelEmployee->add('Worker', $email, $this->session->userdata('employee')->companyName);
+            redirect("Director");
         }
 
-        //redirect("Director/$message/$accountId");
+        //ostaje isti tip
+        foreach($selection as $team){
+            $tim = $this->ModelTeam->getTeam($team, $this->session->userdata('employee')->companyName);
+            if ($tim->email != NULL && $tim->email != $email){
+                //selektovan tim vec ima menadzera, greska
+                $message = $team;
+                redirect("Director/accounts/$message/$accountId");
+            }
+        }
+
+        //izbrisi sve veze menadzerstva
+        $this->ModelEmployee->delete('Manager', $email);
+        //dodaj nove
+        $this->ModelEmployee->add('Manager', $email, $this->session->userdata('employee')->companyName);
+        foreach($selection as $team)
+            $this->ModelTeam->setTeamManager($team, $this->session->userdata('employee')->companyName, $email);
+        redirect("Director");
     }
 
     public function editAccountWorker($accountId){
         $message = NULL;
         $checkbox = $this->input->post("ismngr$accountId");
-        var_dump($_POST);
+        $selection = $this->input->post("select$accountId");
+        $account = $this->ModelEmployee->getAccountById($accountId);
+        $email = $account -> email;
+
+        //var_dump($_POST);
         if($checkbox != NULL){
             //checkbox je cekiran
             //worker -> manager
-
+            if ($selection != NULL){
+                $message = "error1";
+                redirect("Director/accounts/$message/$accountId");
+            }
+            
+            //izbrisi veze radnika
+            $this->ModelEmployee->delete('Worker', $email);
+            //prebaci u menadzera
+            $this->ModelEmployee->add('Manager', $email, $this->session->userdata('employee')->companyName);
+            redirect("Director");
         }
 
-        //redirect("Director/$message/$accountId");
+        //izbrisi sve veze radnika
+        $this->ModelEmployee->delete('Worker', $email);
+        //dodaj nove
+        $this->ModelEmployee->add('Worker', $email, $this->session->userdata('employee')->companyName);
+        foreach($selection as $team)
+            $this->ModelTeam->addWorkerTeam($team, $this->session->userdata('employee')->companyName, $email);
+        redirect("Director");
     }
 
     public function teams(){

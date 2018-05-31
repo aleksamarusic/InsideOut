@@ -7,16 +7,15 @@ Za koriscenje bi trebalo da je dovoljno samo da se podesi u config/database.php 
 ************
 WHAT IS DONE
 ************
+Resene su funkcionalnosti 1.,4.,20.,23., jer mi je tako bilo najpotrebnije i najlogicnije da bih testirao da sve radi.
 
-Nikola: Resene su funkcionalnosti 1.,4.,20.,23., jer mi je tako bilo najpotrebnije i najlogicnije da bih testirao da sve radi.
-Nikola: Pri kraju su funkcionalnosti 16,17,18, bice gotove 1og.
-(Problem) Imam jedan problem, ne salje mi multiple select u $POST kada dodam klasu "multiselect",
-pa ako moze neko da proba da resi nekim drugim css-om ili bilo cime, ja nisam uspeo.. Ne znam da li mozda treba ona $document skripta da se dira.
-U principu pogledajte kako izgleda bez te klase.
 
 *****
 PLANS
 *****
+Ja i Marija nastavljamo odozdo direktora, vi(Aleksa, Stefan) krecite polako odozgo zagrevanje Gosta sta je ostalo, pa na Radnika/Menadzera.
 
-Marija radi funkcionalnosti 14,15,19(pomaze za 12,13 ako treba),21,22.
-Aleksa i Stefan rade ostatak kako se raspodele.
+Pored funkcionalnosti sredjen je i framework(prilagodjen aplikaciji), kao i dodate odgovarajuce klase i metode u njima koje cete i vi koristiti, i nadam
+se da sve radi dobro, i da je i vama olaksano, ako nesto nije jasno, pitajte.
+	
+Hint: Novi Bunar firma FTW! (podaci kao i baza su u inside_out.sql, koji je u folderu gde i gledate ovaj readme)
