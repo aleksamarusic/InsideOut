@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 31, 2018 at 01:51 PM
+-- Generation Time: May 31, 2018 at 03:21 PM
 -- Server version: 5.7.20-log
 -- PHP Version: 5.6.35
 
@@ -134,9 +134,10 @@ CREATE TABLE IF NOT EXISTS `is_working` (
 
 INSERT INTO `is_working` (`email`, `teamName`, `companyName`) VALUES
 ('milan@gmail.com', 'Tim1', 'Novi Bunar'),
+('milan@gmail.com', 'Tim2', 'Novi Bunar'),
 ('milinko@gmail.com', 'Tim2', 'Novi Bunar'),
-('milinko@gmail.com', 'Tim3', 'Novi Bunar'),
-('milan@gmail.com', 'Tim4', 'Novi Bunar');
+('milan@gmail.com', 'Tim3', 'Novi Bunar'),
+('milinko@gmail.com', 'Tim3', 'Novi Bunar');
 
 --
 -- Triggers `is_working`
@@ -184,6 +185,28 @@ INSERT INTO `manager` (`email`, `companyName`) VALUES
 ('nenadko@gmail.com', 'Novi Bunar'),
 ('ranko@gmail.com', 'Novi Bunar');
 
+--
+-- Triggers `manager`
+--
+DROP TRIGGER IF EXISTS `DeleteTriggerManagerAcc`;
+DELIMITER $$
+CREATE TRIGGER `DeleteTriggerManagerAcc` BEFORE DELETE ON `manager` FOR EACH ROW BEGIN
+UPDATE company
+SET numAccountsUsed = numAccountsUsed-1
+WHERE companyName = OLD.companyName;
+END
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `InsertTriggerManagerAcc`;
+DELIMITER $$
+CREATE TRIGGER `InsertTriggerManagerAcc` BEFORE INSERT ON `manager` FOR EACH ROW BEGIN
+UPDATE company
+SET numAccountsUsed = numAccountsUsed+1
+WHERE companyName = NEW.companyName;
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -218,8 +241,8 @@ CREATE TABLE IF NOT EXISTS `task` (
 DROP TABLE IF EXISTS `team`;
 CREATE TABLE IF NOT EXISTS `team` (
   `teamName` char(20) COLLATE utf8_unicode_ci NOT NULL,
-  `numWorkers` int(11) NOT NULL,
-  `numInProgressTasks` int(11) NOT NULL,
+  `numWorkers` int(11) NOT NULL DEFAULT '0',
+  `numInProgressTasks` int(11) NOT NULL DEFAULT '0',
   `companyName` char(25) COLLATE utf8_unicode_ci NOT NULL,
   `email` char(35) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`teamName`,`companyName`),
@@ -233,9 +256,9 @@ CREATE TABLE IF NOT EXISTS `team` (
 
 INSERT INTO `team` (`teamName`, `numWorkers`, `numInProgressTasks`, `companyName`, `email`) VALUES
 ('Tim1', 1, 0, 'Novi Bunar', 'ranko@gmail.com'),
-('Tim2', 1, 0, 'Novi Bunar', 'nenadko@gmail.com'),
-('Tim3', 1, 0, 'Novi Bunar', 'ranko@gmail.com'),
-('Tim4', 1, 0, 'Novi Bunar', 'nenadko@gmail.com');
+('Tim2', 2, 0, 'Novi Bunar', 'nenadko@gmail.com'),
+('Tim3', 2, 0, 'Novi Bunar', 'ranko@gmail.com'),
+('Tim4', 0, 0, 'Novi Bunar', 'nenadko@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -266,6 +289,24 @@ DROP TRIGGER IF EXISTS `DeleteTriggerWorker`;
 DELIMITER $$
 CREATE TRIGGER `DeleteTriggerWorker` BEFORE DELETE ON `worker` FOR EACH ROW BEGIN
 DELETE FROM is_working WHERE email = OLD.email;
+END
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `DeleteTriggerWorkerAcc`;
+DELIMITER $$
+CREATE TRIGGER `DeleteTriggerWorkerAcc` BEFORE DELETE ON `worker` FOR EACH ROW BEGIN
+UPDATE company
+SET numAccountsUsed = numAccountsUsed-1
+WHERE companyName = OLD.companyName;
+END
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `InsertTriggerWorkerAcc`;
+DELIMITER $$
+CREATE TRIGGER `InsertTriggerWorkerAcc` BEFORE INSERT ON `worker` FOR EACH ROW BEGIN
+UPDATE company
+SET numAccountsUsed = numAccountsUsed+1
+WHERE companyName = NEW.companyName;
 END
 $$
 DELIMITER ;
