@@ -3,8 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once('Employee.php');
 
-class Director extends Employee {
+/**
+ * Nikola Nedeljkovic 15/0058
+ * Director Controller - klasa za metode specificne ulozi direktora
+ * 
+ * @version 1.0.0
+ */
 
+class Director extends Employee {
+    /**
+     * Kreiranje kontrolera
+     * 
+     * @return void
+     */
 	public function __construct() {
         parent::__construct();
         
@@ -24,10 +35,22 @@ class Director extends Employee {
         }
     }
 
+    /**
+     * Redirektuje na accounts
+     * 
+     * @return void
+     */
+
     public function index()
 	{
 		$this->accounts();
 	}
+
+    /**
+     * Prikazuje stranicu sa nalozima direktora
+     * 
+     * @return void
+     */
 
     public function accounts($message = NULL, $accountId = NULL){
         $data = array();
@@ -56,12 +79,23 @@ class Director extends Employee {
         $this->load_view('director/accounts', $data);
     }
 
+    /**
+     * Generise i postavlja random string kao link za kreiranja naloga
+     *
+     * @return void
+     */
     public function generate(){
         for ($s = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 20; $x = rand(0,$z), $s .= $a{$x}, $i++); 
         $this->ModelCompany->setGeneratedLink($this->session->userdata('employee')->companyName, $s);
         redirect("Director");
     }
 
+    /**
+     * Reaguje na promenu statusa menadzera i raspodelu timova
+     *
+     * @param int $accountId
+     * @return void
+     */ 
     public function editAccountManager($accountId){
         $message = NULL;
         $checkbox = $this->input->post("ismngr$accountId");
@@ -104,6 +138,12 @@ class Director extends Employee {
         redirect("Director");
     }
 
+    /**
+     * Reaguje na promenu statusa radnika i raspodelu timova
+     *
+     * @param int $accountId
+     * @return void
+     */ 
     public function editAccountWorker($accountId){
         $message = NULL;
         $checkbox = $this->input->post("ismngr$accountId");

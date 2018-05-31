@@ -1,7 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Nikola Nedeljkovic 15/0058
+ * Guest Controller - klasa za metode specificne ulozi gosta
+ * 
+ * @version 1.0.0
+ */
+
 class Guest extends CI_Controller {
+	/**
+     * Kreiranje kontrolera
+     * 
+     * @return void
+     */
 	public function __construct() {
         parent::__construct();
         $this->load->model("ModelEmployee");
@@ -16,19 +28,37 @@ class Guest extends CI_Controller {
 		else if ($this->session->userdata('director') == 1)
 			redirect("Director");
     }
-
+	/**
+	 * Ucitava css i js fajlove
+	 *
+	 * @param String $name
+	 * @param array $data
+	 * @return void
+	 */
 	private function load_view($name, $data=[]){
 		$this->load->view("templates/css_guest.php", $data);
         $this->load->view($name, $data);
         $this->load->view("templates/js_guest.php");
 	}
 
+	/**
+	 * Prikazuje gresku pri logovanju
+	 *
+	 * @return void
+	 */
 	private function bad_login(){
 		$data = array();
 		$data['bad_login'] = 1;
 		$this->load_view('index', $data);
 	}
 
+	/**
+	 * Provera postojeceg naloga sa $email i $password
+	 *
+	 * @param String $email
+	 * @param String $password
+	 * @return String
+	 */
 	private function check($email, $password){
 		$controllers = array('Admin', 'Director', 'Manager', 'Worker');
 		if ($this->ModelEmployee->getAccount($email, 'Account') != NULL){
@@ -40,11 +70,21 @@ class Guest extends CI_Controller {
 		}
 	}
 
+	/**
+	 * Ucitava pocetnu stranicu aplikacije
+	 *
+	 * @return void
+	 */
 	public function index()
 	{
 		$this->load_view('index');
 	}
 
+	/**
+	 * Loguje korisnika odgovarajuce, ili vraca na pocetnu stranicu sa greskom
+	 *
+	 * @return void
+	 */
 	public function login(){
 		if ($this->input->post('email') == NULL || $this->input->post('password') == NULL)
 			return $this->bad_login();
@@ -68,6 +108,12 @@ class Guest extends CI_Controller {
 		//TO DO
 	}
 
+	/**
+	 * Prihvata registracioni link i upucuje na stranicu sa greskom u slucaju pogresnog linka, ili na sign-up stranicu
+	 *
+	 * @param String $reg_link
+	 * @return void
+	 */
 	public function create($reg_link = NULL){
 		//TO DO
 		if ($reg_link == NULL)
