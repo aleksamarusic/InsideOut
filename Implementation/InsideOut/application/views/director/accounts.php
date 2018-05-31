@@ -44,8 +44,13 @@
                                         <a href=\"".base_url()."index.php/Director/viewEmployee/$id"."\">$name $surname</a>
                                     </td>
                                     <td>$email"; 
-                                    if (isset($message) && isset($accid) && $accid == $id)
+                                    if (isset($message) && isset($accid) && $accid == $id){
+                                        if ($message == "error1")
+                                            $message = "You must first deselect all teams before changing Manager status!";
+                                        else
+                                            $message = "There already exists a manager for $message !";
                                         echo "<font class='pull-right' color='red'> $message </font>";
+                                    }
                                     echo "</td>
                                     <td>
                                         <select name=\"select" . "$id" . "[]\" id=\"select" . "$id" . "\" ". "multiple=\"multiple\">";
@@ -92,9 +97,17 @@
                                     <td>
                                         <a href=".base_url()."index.php/Director/viewEmployee/"."$id".">$name $surname</a>
                                     </td>
-                                    <td>$email</td>
+                                    <td>$email"; 
+                                    if (isset($message) && isset($accid) && $accid == $id){
+                                        if ($message == "error1")
+                                            $message = "You must first deselect all teams before changing Manager status!";
+                                        else
+                                            $message = "There already exists a manager for $message";
+                                        echo "<font class='pull-right' color='red'> $message </font>";
+                                    }
+                                    echo "</td>
                                     <td>
-                                         <select class=\"multiselect\" name=\"select$id" . "[ ]\"" . "class='multiselect' multiple='multiple'>";
+                                         <select name=\"select" . "$id" . "[]\" id=\"select" . "$id" . "\" ". "multiple=\"multiple\">";
                                             foreach($timovi as $tim){
                                                 $imetima = $tim->teamName;
                                                 $selektovan = "";

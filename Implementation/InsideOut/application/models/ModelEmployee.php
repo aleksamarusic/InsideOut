@@ -44,5 +44,23 @@ class ModelEmployee extends CI_Model{
         $this->db->where("id", $id);
         $this->db->delete('Account');
     }
+    
+    public function getAccountById($idAccount){
+        $this->db->where("Id", $idAccount);
+        $query = $this->db->get('Account');
+        return $query->row();
+    }
+
+    public function delete($tip, $email){
+        $this->db->where("email", $email);
+        $this->db->delete($tip);
+    }
+
+    public function add($tip, $email, $company){
+        $this->db->set("email", $email);
+        $this->db->set("companyName", $company);
+        $this->db->insert($tip);
+    }
+    
 }
 
