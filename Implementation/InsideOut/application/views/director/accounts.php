@@ -79,7 +79,10 @@
                                     </td>
                                 </form>
                                     <td class='pmd-table-row-action' style='text-align: center'>
-                                        <button onclick=\"(function(){document.deleteForm.id.value=$id})()\"
+                                        <button onclick=\"(function(){
+                                                            document.deleteForm.email.value='$email';
+                                                            document.deleteForm.tip.value='manager';
+                                                        })()\"
                                             class='btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm' data-toggle='modal' data-target=\"#delete-modal\">
                                             <i class='material-icons md-dark pmd-sm'>delete</i>
                                         </button>
@@ -87,7 +90,7 @@
                                 </tr>";
                                 }
 
-                                foreach($radnici as $radnik){
+                                foreach($radnici as $radnik) {
                                     $email = $radnik['email'];
                                     $id = $radnik['Id'];
                                     $name = $radnik['name'];
@@ -133,7 +136,10 @@
                                     </td>
                                 </form>
                                     <td class='pmd-table-row-action' style='text-align: center'>
-                                        <button onclick=\"(function(){document.deleteForm.id.value=$id})()\"
+                                        <button onclick=\"(function(){
+                                                            document.deleteForm.email.value='$email';
+                                                            document.deleteForm.tip.value='worker';
+                                                        })()\"
                                                 class='btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-default btn-sm' data-toggle='modal' data-target=\"#delete-modal\">
                                             <i class='material-icons md-dark pmd-sm'>delete</i>
                                         </button>
@@ -235,7 +241,8 @@
                 </div>
                 <div class='modal-footer'>
                     <form name="deleteForm" method="post" action="<?php echo base_url()."index.php/Director/resetAccount/" ?> ">
-                        <input type="hidden" name="id">
+                        <input type="hidden" name="email">
+                        <input type="hidden" name="tip" >
                         <input type="reset" value="NO" class="btn btn-default" data-dismiss="modal">
                         <input type="submit" value="YES" class="btn btn-success">
                     </form>

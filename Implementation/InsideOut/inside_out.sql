@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 28, 2018 at 04:10 AM
+-- Generation Time: May 31, 2018 at 03:21 PM
 -- Server version: 5.7.20-log
 -- PHP Version: 5.6.35
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `company` (
 --
 
 INSERT INTO `company` (`companyName`, `numAccounts`, `numAccountsUsed`, `registrationLink`) VALUES
-('Novi Bunar', 10, 0, 'BVb7cVUBiWjUiOHdITbk');
+('Novi Bunar', 10, 0, 'WQcCXJ3BRM9Cff95DpkA');
 
 -- --------------------------------------------------------
 
@@ -133,8 +133,35 @@ CREATE TABLE IF NOT EXISTS `is_working` (
 --
 
 INSERT INTO `is_working` (`email`, `teamName`, `companyName`) VALUES
-('nenadko@gmail.com', 'Tim3', 'Novi Bunar'),
-('nenadko@gmail.com', 'Tim4', 'Novi Bunar');
+('milan@gmail.com', 'Tim1', 'Novi Bunar'),
+('milan@gmail.com', 'Tim2', 'Novi Bunar'),
+('milinko@gmail.com', 'Tim2', 'Novi Bunar'),
+('milan@gmail.com', 'Tim3', 'Novi Bunar'),
+('milinko@gmail.com', 'Tim3', 'Novi Bunar');
+
+--
+-- Triggers `is_working`
+--
+DROP TRIGGER IF EXISTS `DeleteTrigger`;
+DELIMITER $$
+CREATE TRIGGER `DeleteTrigger` AFTER DELETE ON `is_working` FOR EACH ROW BEGIN
+UPDATE team
+SET numWorkers = numWorkers-1
+WHERE teamName = OLD.teamName AND
+companyName = OLD.companyName;
+END
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `InsertTrigger`;
+DELIMITER $$
+CREATE TRIGGER `InsertTrigger` AFTER INSERT ON `is_working` FOR EACH ROW BEGIN
+UPDATE team
+SET numWorkers = numWorkers+1
+WHERE teamName = NEW.teamName
+AND companyName = NEW.companyName;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -155,9 +182,30 @@ CREATE TABLE IF NOT EXISTS `manager` (
 --
 
 INSERT INTO `manager` (`email`, `companyName`) VALUES
-('milan@gmail.com', 'Novi Bunar'),
-('milinko@gmail.com', 'Novi Bunar'),
+('nenadko@gmail.com', 'Novi Bunar'),
 ('ranko@gmail.com', 'Novi Bunar');
+
+--
+-- Triggers `manager`
+--
+DROP TRIGGER IF EXISTS `DeleteTriggerManagerAcc`;
+DELIMITER $$
+CREATE TRIGGER `DeleteTriggerManagerAcc` BEFORE DELETE ON `manager` FOR EACH ROW BEGIN
+UPDATE company
+SET numAccountsUsed = numAccountsUsed-1
+WHERE companyName = OLD.companyName;
+END
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `InsertTriggerManagerAcc`;
+DELIMITER $$
+CREATE TRIGGER `InsertTriggerManagerAcc` BEFORE INSERT ON `manager` FOR EACH ROW BEGIN
+UPDATE company
+SET numAccountsUsed = numAccountsUsed+1
+WHERE companyName = NEW.companyName;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -207,10 +255,10 @@ CREATE TABLE IF NOT EXISTS `team` (
 --
 
 INSERT INTO `team` (`teamName`, `numWorkers`, `numInProgressTasks`, `companyName`, `email`) VALUES
-('Tim1', 0, 0, 'Novi Bunar', 'milan@gmail.com'),
-('Tim2', 0, 0, 'Novi Bunar', 'ranko@gmail.com'),
-('Tim3', 0, 0, 'Novi Bunar', 'milan@gmail.com'),
-('Tim4', 0, 0, 'Novi Bunar', 'milinko@gmail.com');
+('Tim1', 1, 0, 'Novi Bunar', 'ranko@gmail.com'),
+('Tim2', 2, 0, 'Novi Bunar', 'nenadko@gmail.com'),
+('Tim3', 2, 0, 'Novi Bunar', 'ranko@gmail.com'),
+('Tim4', 0, 0, 'Novi Bunar', 'nenadko@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -231,7 +279,37 @@ CREATE TABLE IF NOT EXISTS `worker` (
 --
 
 INSERT INTO `worker` (`email`, `companyName`) VALUES
-('nenadko@gmail.com', 'Novi Bunar');
+('milan@gmail.com', 'Novi Bunar'),
+('milinko@gmail.com', 'Novi Bunar');
+
+--
+-- Triggers `worker`
+--
+DROP TRIGGER IF EXISTS `DeleteTriggerWorker`;
+DELIMITER $$
+CREATE TRIGGER `DeleteTriggerWorker` BEFORE DELETE ON `worker` FOR EACH ROW BEGIN
+DELETE FROM is_working WHERE email = OLD.email;
+END
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `DeleteTriggerWorkerAcc`;
+DELIMITER $$
+CREATE TRIGGER `DeleteTriggerWorkerAcc` BEFORE DELETE ON `worker` FOR EACH ROW BEGIN
+UPDATE company
+SET numAccountsUsed = numAccountsUsed-1
+WHERE companyName = OLD.companyName;
+END
+$$
+DELIMITER ;
+DROP TRIGGER IF EXISTS `InsertTriggerWorkerAcc`;
+DELIMITER $$
+CREATE TRIGGER `InsertTriggerWorkerAcc` BEFORE INSERT ON `worker` FOR EACH ROW BEGIN
+UPDATE company
+SET numAccountsUsed = numAccountsUsed+1
+WHERE companyName = NEW.companyName;
+END
+$$
+DELIMITER ;
 
 --
 -- Constraints for dumped tables
@@ -254,7 +332,7 @@ ALTER TABLE `director`
 -- Constraints for table `is_working`
 --
 ALTER TABLE `is_working`
-  ADD CONSTRAINT `R_14` FOREIGN KEY (`email`) REFERENCES `worker` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `R_14` FOREIGN KEY (`email`) REFERENCES `worker` (`email`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `R_15` FOREIGN KEY (`teamName`,`companyName`) REFERENCES `team` (`teamName`, `companyName`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

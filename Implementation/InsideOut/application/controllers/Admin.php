@@ -1,8 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+/**
+ * Nikola Nedeljkovic 2015/0058
+ * Admin Controller - klasa za metode specificne ulozi admina
+ * 
+ * @version 1.0.0
+ */
 
+class Admin extends CI_Controller {
+    /**
+     * Kreiranje kontrolera
+     * 
+     * @return void
+     */
 	public function __construct() {
         parent::__construct();
         $this->load->model("ModelCompany");
@@ -19,18 +30,34 @@ class Admin extends CI_Controller {
         }
     }
 
+    /**
+     * Ucitava pocetnu stranicu admina
+     *
+     * @return void
+     */
 	public function index()
 	{
         $companies = $this->ModelCompany->getCompanies();
 		$this->load->view('admin', array('companies' => $companies));
 	}
 
+    /**
+     * Brise firmu iz sistema sa zadatim imenom
+     *
+     * @param String $company
+     * @return void
+     */
     public function removeCompany($company){
         $company = urldecode($company);
         $this->ModelCompany->deleteCompany($company);
         redirect("Admin");
     }
 
+    /**
+     * Logout admina
+     *
+     * @return void
+     */
     public function signout(){
         $this->session->sess_destroy();
         redirect("Guest");

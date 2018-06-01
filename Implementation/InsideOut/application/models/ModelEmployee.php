@@ -1,11 +1,29 @@
 <?php
 
+/**
+ * Nikola Nedeljkovic 2015/0058
+ * Marija Kostić 2015/96
+ * 
+ * ModelEmployee - klasa model za rad sa nalozima uopsteno
+ * 
+ * @version 1.0.0
+ */
+
 class ModelEmployee extends CI_Model{
-    
+    /**
+     * Konstruise model
+     */    
     public function __construct() {
         parent::__construct();
     }
 
+    /**
+     * Dohvata nalog preko $email mejla, i $tip tipa(Menadzer, Radnik)
+     *
+     * @param String $email
+     * @param String $tip
+     * @return object
+     */
     public function getAccount($email, $tip){
         $this->db->reset_query();
         $this->db->where("email", $email);
@@ -14,6 +32,13 @@ class ModelEmployee extends CI_Model{
         return $result;
     }
 
+    /**
+     * Dohvata zaposlene u kompaniji $company po tipu $tip
+     *
+     * @param String $company
+     * @param String $tip
+     * @return array
+     */
     public function getEmployeeByCompany($company, $tip){
         $this->db->where("$tip.companyName", $company);
         $this->db->from($tip);
@@ -22,6 +47,13 @@ class ModelEmployee extends CI_Model{
         return $query->result();
     }
 
+    /**
+     * Dovata sve zaposlene koji rade u timu $team i kompaniji $company
+     *
+     * @param String $company
+     * @param String $team
+     * @return array
+     */
     public function getEmployeesByTeam($company, $team){
         $this->db->where("companyName", $company);
         $this->db->where("teamName", $team);
@@ -31,6 +63,14 @@ class ModelEmployee extends CI_Model{
         return $query->result();
     }
 
+
+    /**
+     * Dohvata nalog menadzera tima $team iz firme $company
+     *
+     * @param strnig $company
+     * @param string $team
+     * @return object
+     */
     public function getTeamManager($company, $team) {
         $this->db->where("companyName", $company);
         $this->db->where("teamName", $team);
@@ -40,27 +80,57 @@ class ModelEmployee extends CI_Model{
         return $query->row();
     }
 
-    public function deleteEmployee($id) {
-        $this->db->where("id", $id);
-        $this->db->delete('Account');
+    /**
+     * Brise nalog sa email-om $email iz tabela $tip i Account
+     *
+     * @param string $email
+     * @param string $tip
+     * @return void
+     */
+    public function deleteEmployee($email, $tip) {
+        $this->db->where("email", $email);
+        $this->db->delete($tip);
+
+        $this->db->where("email", $email);
+        $this->db->delete("Account");
     }
     
+    /**
+     * Dohvata nalog prema id-ju naloga $idAccount
+     *
+     * @param int $idAccount
+     * @return object
+     */
     public function getAccountById($idAccount){
         $this->db->where("Id", $idAccount);
         $query = $this->db->get('Account');
         return $query->row();
     }
 
+    /**
+     * Brise nalog tipa $tip preko mejla $email
+     *
+     * @param String $tip
+     * @param String $email
+     * @return void
+     */
     public function delete($tip, $email){
         $this->db->where("email", $email);
         $this->db->delete($tip);
     }
-
+    
+    /**
+     * Dodaje nalog tipa $tip preko mejla $email za firmu $company
+     *
+     * @param String $tip
+     * @param String $email
+     * @param String $company
+     * @return void
+     */
     public function add($tip, $email, $company){
         $this->db->set("email", $email);
         $this->db->set("companyName", $company);
         $this->db->insert($tip);
     }
-    
 }
 

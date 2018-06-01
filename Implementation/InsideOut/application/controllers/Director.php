@@ -3,8 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once('Employee.php');
 
-class Director extends Employee {
+/**
+ * Nikola Nedeljkovic 2015/0058
+ * Marija Kostić 2015/96
+ * Director Controller - klasa za metode specificne ulozi direktora
+ * 
+ * @version 1.0.0
+ */
 
+class Director extends Employee {
+    /**
+     * Kreiranje kontrolera
+     * 
+     * @return void
+     */
 	public function __construct() {
         parent::__construct();
         
@@ -24,13 +36,23 @@ class Director extends Employee {
         }
     }
 
+    /**
+     * Redirektuje na accounts
+     * 
+     * @return void
+     */
+
     public function index()
 	{
 		$this->accounts();
 	}
 
+    /**
+     * Prikazuje stranicu sa nalozima direktora
+     * 
+     * @return void
+     */
     public function accounts($message = NULL, $accountId = NULL, $price = null, $calcModal = null, $priceModal = null){
-
         $data = array();
         $data['company'] = $this->ModelCompany->getCompanyByName($this->session->userdata('employee')->companyName);
         $data['menadzeri'] = $this->ModelEmployee->getEmployeeByCompany($this->session->userdata('employee')->companyName, 'Manager');
@@ -60,12 +82,23 @@ class Director extends Employee {
         $this->load_view('director/accounts', $data);
     }
 
+    /**
+     * Generise i postavlja random string kao link za kreiranja naloga
+     *
+     * @return void
+     */
     public function generate(){
         for ($s = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 20; $x = rand(0,$z), $s .= $a{$x}, $i++); 
         $this->ModelCompany->setGeneratedLink($this->session->userdata('employee')->companyName, $s);
         redirect("Director");
     }
 
+    /**
+     * Reaguje na promenu statusa menadzera i raspodelu timova
+     *
+     * @param int $accountId
+     * @return void
+     */ 
     public function editAccountManager($accountId){
         $message = NULL;
         $checkbox = $this->input->post("ismngr$accountId");
@@ -108,6 +141,12 @@ class Director extends Employee {
         redirect("Director");
     }
 
+    /**
+     * Reaguje na promenu statusa radnika i raspodelu timova
+     *
+     * @param int $accountId
+     * @return void
+     */ 
     public function editAccountWorker($accountId){
         $message = NULL;
         $checkbox = $this->input->post("ismngr$accountId");
@@ -140,6 +179,12 @@ class Director extends Employee {
         redirect("Director");
     }
 
+    /**
+     * Prikazuje stranicu sa spiskom timova
+     *
+     * @param String $message
+     * @return void
+     */
     public function teams($message = null){
         $data = array();
         $data['teams'] = $this->ModelTeam->getTeamsByCompany($this->session->userdata('employee')->companyName);
@@ -161,6 +206,12 @@ class Director extends Employee {
         //TO DO
     }
 
+    /**
+     * Prikazuje stranicu tima sa imenom $teamName direktoru
+     *
+     * @param String $teamName
+     * @return void
+     */
     public function viewTeam($teamName) {
         $companyName = $this->session->userdata('employee')->companyName;
 
@@ -171,6 +222,11 @@ class Director extends Employee {
         $this->load_view('director/team', $data);
     }
 
+    /**
+     * brise tim iz baze
+     *
+     * @return void
+     */
     public function deleteTeam() {
         
         $companyName = $this->session->userdata('employee')->companyName;
@@ -181,6 +237,11 @@ class Director extends Employee {
         redirect("Director/teams");
     }
 
+    /**
+     * Kreira novi tim
+     *
+     * @return void
+     */
     public function createTeam() {
         $message = null;
 
@@ -202,21 +263,30 @@ class Director extends Employee {
         $this->teams($message);
     }
 
-    /* smanjiti broj aktivnih naloga u firmi; smanjiti broj radnika u timu i ukupan broj zadataka u timu - triger? */
+    /**
+     * brise nalog iz baze
+     *
+     * @return void
+     */
     public function resetAccount() {
-        $id = $this->input->post("id");
-        $companyName = $this->session->userdata('employee')->companyName;        
+        $email = $this->input->post("email");
+        $tip = $this->input->post("tip");
+        $companyName = $this->session->userdata('employee')->companyName;            
 
-        $this->ModelEmployee->deleteEmployee($id);
+        $this->ModelEmployee->deleteEmployee($email, $tip);
 
         redirect("Director/accounts");
     }
 
+    /**
+     * racuna cenu za novi broj naloga i prikazuje novu formu za potvrdu promene broja naloga
+     *
+     * @return void
+     */
     public function calculatePrice() {
         $numOfAccounts = $this->input->post("numOfAccounts");
         $company = $this->ModelCompany->getCompanyByName($this->session->userdata('employee')->companyName); 
 
-        // echo $numOfAccounts . " " . $case;
         if (isset($numOfAccounts) && is_numeric($numOfAccounts) && $numOfAccounts > 0) {
             if ($numOfAccounts < $company->numAccountsUsed) {
                 $this->accounts("Reset accounts before decreasing", null, null, 1, null);  
@@ -228,6 +298,11 @@ class Director extends Employee {
         }
     }
 
+    /**
+     * promena broja naloga firme u bazi
+     *
+     * @return void
+     */
     public function changeNumOfAccounts() {
         $price = $this->input->post("price");
         $numOfAccounts = $price / 20;
