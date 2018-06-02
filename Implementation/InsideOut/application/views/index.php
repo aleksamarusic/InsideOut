@@ -3,7 +3,7 @@ Autori:
     Aleksa Marusic
     Marija Kostic
 
-    php> Nikola Nedeljkovic
+    php> Nikola Nedeljkovic, Stefan Milanovic
 -->
 
 <body>
@@ -227,7 +227,7 @@ Autori:
             </div>
             <div class="media-middle">
                 <div id="sign-up" class="media-middle text-center">
-                    <a href="sign-up.html" title="sign up" class="btn btn-lg pmd-btn-outline pmd-ripple-effect btn-default">Sign up</a>
+                <a href="<?php echo site_url('guest/signup')?>" title="Sign up" class="btn btn-lg pmd-btn-outline pmd-ripple-effect btn-default">Sign up</a>
                 </div>
             </div>
         </div>
@@ -242,7 +242,7 @@ Autori:
         <!--log in form -->
         <div class="card-form">
             <div class="text-center">
-                    <?php if (isset($bad_login)) echo "<h5 class='inverse'>Please insert correct login data!</h5>" ?>
+            <?php if (isset($bad_login)) echo "<h5 class='inverse' style='color:red'>Please insert correct login data!</h5>" ?>
             </div>
 
             <form class="form-inverse" action="<?php echo site_url('Guest/login')?>" method="post">
@@ -254,6 +254,7 @@ Autori:
                             <input type="email" name="email" class="form-control">
                         </div>
                     </div>
+                    
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
                         <div class="input-group">

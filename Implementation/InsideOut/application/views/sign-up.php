@@ -1,5 +1,12 @@
-
-<body style="background: #4acc8e">
+<!--
+Autori:
+    Aleksa Marusic
+    Marija Kostic
+	
+	php> Stefan Milanovic
+-->
+<body  >
+<!-- style="background: #4acc8e"> -->
     <nav class="navbar navbar-fixed-top pmd-navbar primary-navbar">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" title="" href="<?php echo base_url()."index.php/Guest"?>">
+                <a class="navbar-brand" title="" href="<?php echo site_url('guest/index')?>">
                     <h3 style="color:#4acc8e;">Inside Out</h3>
                 </a>
             </div>
@@ -19,7 +26,7 @@
                 <!-- Navbar Right -->
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="<?php echo base_url()."index.php/Guest"?>">Home</a>
+                        <a href="<?php echo site_url('guest/index')?>">Home</a>
                     </li>
                 </ul>
                 <!-- End Navbar Right -->
@@ -29,21 +36,18 @@
     </nav>
     <!-- End Navbar -->
 
-    <div class="container-fluid" style="background-image: url('<?php echo base_url()?>assets/img/bg-1.jpg'); background-size: cover;">
+    <div class="container-fluid"  style="background-image: url('<?php echo base_url()?>assets/img/bg-1.jpg'); background-size: cover;">
 
         <div class="section section-custom">
             <!--section-title -->
-            <h2 align="center" style="margin-top: 70px; color: #4acc8e;">Register for the company <span style="color:white"><?php echo $companyName ?></span></h2>
+            <h2 align="center" style="margin-top: 70px; color: #4acc8e">Sign up</h2>
             <!--section-title end -->
 
             <!-- section content start-->
             <div class="pmd-card pmd-z-depth" style="width:75%; margin-left:auto; margin-right:auto">
                 <div class="pmd-card-body">
-                    <form class="form-horizontal" role="form" name="registrationForm" method="post" action="<?php echo site_url('guest/attempt_create/' . $regLink); ?>">
-                  
-						<input type="hidden" id="companyName" class="form-control" name="companyName" value="<?php echo $companyName ?>"/>
-						
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <form class="form-horizontal" role="form" id="signupForm" name="signupForm" method="post" action="<?php echo site_url('guest/attempt_signup/')?>">
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
                             <label for="name" class="control-label" <?php if (isset($nameInvalid) && $nameInvalid == 1) { echo "style='color: red'"; } ?> >Name</label>
 							<?php
 								if (!isset($nameInvalid)) {
@@ -130,10 +134,52 @@
 							?>
 							
                         </div>
-						
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <label for="company" class="control-label" <?php if (isset($companyInvalid) && $companyInvalid == 1) { echo "style='color: red'"; } ?> >Company name</label>
+
+							<?php
+								if (!isset($companyInvalid)) {
+									echo "<input type='text' id='company' name='company' class='form-control' aria-describedby='companyWarningBlock'>";
+								}
+								else if ($companyInvalid == 1) {
+									echo "<input type='text' id='company' name='company' class='form-control' aria-describedby='companyWarningBlock'>";
+									echo "<small id='companyWarningBlock' class='form-text' style='color:red'> The company name field cannot be empty! </small>";
+								}
+								else if ($companyInvalid == 0) {
+									echo "<input type='text' id='company' name='company' class='form-control' aria-describedby='companyWarningBlock' value='" . $company . "'/>";
+								}
+								else {
+									echo "<input type='text' id='company' name='company' class='form-control' aria-describedby='companyWarningBlock' value='" . $company . "'/>";
+									echo "<small id='companyWarningBlock' class='form-text' style='color:red'> This company name is already taken! </small>";
+								}
+							?>
+							
+                        </div>
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                            <label for="accountNumber" class="control-label" <?php if (isset($accountNumberInvalid) && $accountNumberInvalid == 1) { echo "style='color: red'"; } ?> >Number of accounts</label>
+                          
+							<?php
+								if (!isset($accountNumberInvalid)) {
+									echo "<input type='number' id='accountNumber' name='accountNumber' class='form-control' aria-describedby='numberWarningBlock' min='1' value='1'>";
+								}
+								else if ($accountNumberInvalid == 1) {
+									echo "<input type='number' id='accountNumber' name='accountNumber' class='form-control' aria-describedby='numberWarningBlock' min='1' value='1'>";
+									echo "<small id='numberWarningBlock' class='form-text' style='color:red'> The account number cannot be lesser than 0! </small>";
+								}
+								else {
+									echo "<input type='number' id='accountNumber' name='accountNumber' class='form-control' aria-describedby='numberWarningBlock' min='1' value='" . $accountNumber . "'/>";
+								}
+							?>
+							
+                        </div>
                         <div class="form-group">
-                            <div class="text-center">
-                                <input type="submit" class="btn btn-primary pmd-checkbox-ripple-effect" value="Sign up"/>
+                            <div class="pull-right">
+                                <a href="javascript:;" class="btn btn-primary pmd-checkbox-ripple-effect" data-target="#price-modal" data-toggle="modal"
+								onclick="(function(){
+									document.confirmationForm.accountNumberField.value = document.signupForm.accountNumber.value;
+									document.confirmationForm.totalField.value= '$' + (document.signupForm.accountNumber.value * 20) + '.00';
+								})()"
+								>Sign up</a>
                             </div>
                         </div>
                     </form>
@@ -142,26 +188,6 @@
             <!-- section content end -->
         </div>
     </div>
-
-    <!-- -->
-    <div tabindex="-1" class="modal fade" id="price-modal" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button" style="color:black;">×</button>
-                    <h2 class="pmd-card-title-text text-center">Registration is not possible</h2>
-                </div>
-                <div class="modal-body">
-                </div>
-                <div class="pmd-modal-action text-center">
-                    <a href="director-dashboard.html" class="btn pmd-ripple-effect btn-primary" type="button">Confirm</a>
-                    <a href="" data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="button">Cancel</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
 
     <!-- footer-->
     <footer class="section site-footer">
@@ -180,4 +206,44 @@
             <!-- End Copyrights -->
 
         </div>
+
+        <div tabindex="-1" class="modal fade" id="price-modal" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button" style="color:black;">×</button>
+                        <h2 class="pmd-card-title-text text-center">Thank you for considering our product</h2>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table" style="width:60%; margin-left:auto; margin-right:auto; margin-top:50px">
+                            
+							<form name="confirmationForm">
+                            <tr>
+                                <td>Number of accounts</td>
+                                <td id="accountNumberColumn">
+									<input type="text" name="accountNumberField" style="border:0; margin-left: 160px;"/>
+								</td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td style="font-weight: bold;"> <input type="text" style="border:0; margin-left: 160px;" name="totalField"/> </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+							</form>
+                        </table>
+                    </div>
+                    <div class="pmd-modal-action text-center">
+						<input type="submit" form="signupForm" class="btn pmd-ripple-effect btn-primary" value="Confirm"/>
+                        <!-- <a href="director-dashboard.html" class="btn pmd-ripple-effect btn-primary" type="button">Confirm</a> --> 
+                        <a href="" data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="button">Cancel</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </footer>
+    <!-- .site-footer -->

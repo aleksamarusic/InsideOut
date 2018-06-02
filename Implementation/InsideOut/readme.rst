@@ -12,8 +12,8 @@ Resene su funkcionalnosti 1.,4.,20.,23., jer mi je tako bilo najpotrebnije i naj
 
                                                                           
 1. Pregled glavne sranice sajta                         |Nikola |DONE   |      
-2. Kreiranje naloga Direktora                           |       |       |
-3. Kreiranje naloga Radnika                             |       |       |
+2. Kreiranje naloga Direktora                           |Stefan |DONE   |
+3. Kreiranje naloga Radnika                             |Stefan |DONE   |
 4. Autorizacija korisnika                               |Nikola |DONE   | 
 5. Resetovanje lozinke                                  |       |       |
 6. Radnik - Kreiranje privatnog zadatka                 |       |       |

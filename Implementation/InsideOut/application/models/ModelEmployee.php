@@ -3,6 +3,7 @@
 /**
  * Nikola Nedeljkovic 2015/0058
  * Marija Kostić 2015/96
+ * Stefan Milanovic 2015/0361
  * 
  * ModelEmployee - klasa model za rad sa nalozima uopsteno
  * 
@@ -132,5 +133,31 @@ class ModelEmployee extends CI_Model{
         $this->db->set("companyName", $company);
         $this->db->insert($tip);
     }
+
+    /**
+     * Pravi novog radnika u bazi podataka i vezuje ga za odgovarajucu firmu $companyName
+     * 
+     * @param String $name
+     * @param String $surname
+     * @param String $email
+     * @param String $password
+     * @param String $companyName
+     * 
+     * @return void
+     */
+    public function createEmployee($name, $surname, $email, $password, $companyName) {
+		$accountData = array(
+			'email' => $email,
+			'name' => $name,
+			'surname' => $surname,
+			'password' => $password
+		);
+		
+		$this->db->insert('account', $accountData);
+		
+		$employeeData = array( 'email' => $email, 'companyName' => $companyName);
+		
+		$this->db->insert('worker', $employeeData);
+	}
 }
 

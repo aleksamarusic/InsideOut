@@ -34,12 +34,35 @@
         <div class="wrapper">
             <div class="container text-center" style="margin-top:300px">
                 <div class="content-primary">
+				
+					<?php 
+						if ($invalidLink == 1) {
+							echo '
                     <h1 class="title">Page Not Found</h1>
                     <p class="description">The page you are looking for was moved, removed,
-                        <br> renamed or might never existed.</p>
+                        <br> renamed or might never have existed.</p>
                     <div class="section-footer">
-                        <a href="<?php echo base_url()."index.php/Guest"?>" class="btn btn-default pmd-btn-outline">Back To Homepage</a>
-                    </div>
+                        <a href="' . base_url()."index.php/Guest" . '" class="btn btn-default pmd-btn-outline">Back To Homepage</a>
+                    </div>';
+						}
+						else if ($noAccountsLeft == 1) {
+							echo '
+                    <h1 class="title">No Accounts Left</h1>
+                    <p class="description">The company you attempted to register to has used up all of its account slots. Contact your director for more information.</p>
+                    <div class="section-footer">
+                        <a href="' . base_url()."index.php/Guest" . '" class="btn btn-default pmd-btn-outline">Back To Homepage</a>
+                    </div>';
+						}
+						else {
+							echo '
+                    <h1 class="title">Page Not Found</h1>
+                    <p class="description">The page you are looking for was moved, removed,
+                        <br> renamed or might never have existed.</p>
+                    <div class="section-footer">
+                        <a href="' . base_url()."index.php/Guest" . '" class="btn btn-default pmd-btn-outline">Back To Homepage</a>
+                    </div>';
+						}
+					?>
                 </div>
                 <!-- content-primary -->
             </div>

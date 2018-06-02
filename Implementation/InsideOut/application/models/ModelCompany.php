@@ -92,5 +92,38 @@ class ModelCompany extends CI_Model{
         $this->db->where("companyName", $company);
         $this->db->update("Company");
     }
+
+    /**
+     * Kreira novu kompaniju u bazi podataka sa imenom $companyName i $accountNumber maksimalnim brojem naloga
+     * 
+     * @param String $companyName
+     * @param int $accountNumber
+     * 
+     * @return void
+     */
+    public function createCompany($companyName, $accountNumber) {
+		
+		$companyData = array(
+			'companyName' => $companyName,
+			'numAccounts' => $accountNumber,
+			'numAccountsUsed' => 0
+		);
+		
+		$this->db->insert('company', $companyData);
+	}
+    
+    /** 
+     * Kompaniji sa nazivom $companyName povecava broj koriscenih naloga za 1
+     * @param String $companyName
+     * 
+     * @return void
+     */
+	public function increaseNumAccountsUsed($companyName) {
+		$this->db->reset_query();
+		$this->db->where("companyName", $companyName);
+		$this->db->set('numAccountsUsed', 'numAccountsUsed+1', FALSE);
+		$this->db->update('company');
+    }
+    
 }
 
