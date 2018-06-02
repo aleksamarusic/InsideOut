@@ -30,7 +30,7 @@ Resene su funkcionalnosti 1.,4.,20.,23., jer mi je tako bilo najpotrebnije i naj
 17. Direktor - Promena statusa zaposlenog               |Nikola |DONE   |
 18. Direktor - Podela Menadžera u timove                |Nikola |DONE   |
 19. Direktor - Kreiranje Zadatog zadatka                |Marija |       |
-20. Direktor - Generisanje novog prijavnog linka        |Nikola |DONE   | napraviti da bude 100% jedinstven?
+20. Direktor - Generisanje novog prijavnog linka        |Nikola |DONE   | napraviti da bude 100% jedinstven
 21. Direktor - Resetovanje naloga unutar firme          |Marija |DONE   | 
 22. Direktor - Promena broja naloga firme               |Marija |DONE   |
 23. Administrator - Uklanjanje firme                    |Nikola |DONE   | 
