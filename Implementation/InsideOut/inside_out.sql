@@ -216,7 +216,7 @@ DELIMITER ;
 DROP TABLE IF EXISTS `task`;
 CREATE TABLE IF NOT EXISTS `task` (
   `email` char(35) COLLATE utf8_unicode_ci NOT NULL,
-  `taskId` char(18) COLLATE utf8_unicode_ci NOT NULL,
+  `taskId` int(11) NOT NULL AUTO_INCREMENT,
   `teamName` char(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `companyName` char(25) COLLATE utf8_unicode_ci DEFAULT NULL,
   `statusPrivacy` char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'P',

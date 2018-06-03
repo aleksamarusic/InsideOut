@@ -5,7 +5,9 @@ class Worker extends CI_Controller {
 
 	public function __construct() {
         parent::__construct();
-        // $this->load->model("X"); ucitaj modele ovde
+        
+		$this->load->model("ModelTask");
+				
         if ($this->session->userdata('worker') == NULL){
             if ($this->session->userdata('manager') == 1)
 			    redirect("Manager");
@@ -19,13 +21,87 @@ class Worker extends CI_Controller {
     }
 
 	private function load_view($name, $data=[]){
-		$this->load->view("templates/css_guest.php", $data);
+		$this->load->view("templates/worker_header.php", $data);
         $this->load->view($name, $data);
-        $this->load->view("templates/js_guest.php");
+        $this->load->view("templates/worker_footer.php");
 	}
 
     public function index()
 	{
-		$this->load_view('index');
+		$this->dashboard();
 	}
+	
+	public function dashboard($taskCreationData = []) {
+		$this->load_view('worker/dashboard.php', $taskCreationData);
+	}
+	
+	public function createTask() {
+		
+		$taskCreationData['createTaskModal'] = NULL;
+		
+		if ($this->input->post('name') == NULL) {
+			$taskCreationData['nameInvalid'] = 1;
+			$taskCreationData['name'] = NULL;		
+			
+		}
+		else {
+            if ($this->input->post('name') == "") {
+				$taskCreationData['nameInvalid'] = 1;
+				$taskCreationData['name'] = NULL;		
+			}
+			else {
+				$taskCreationData['nameInvalid'] = 0;
+				$taskCreationData['name'] = $this->input->post('name');
+			}
+		}
+		
+		if ($this->input->post('startDate') != NULL) {
+			$datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9] (0|1|2)[0-9]:(0|1|2|3|4|5)[0-9]:(0|1|2|3|4|5)[0-9]/';
+			if (preg_match($datePattern, $this->input->post('startDate'))) {
+				$taskCreationData['startDateInvalid'] = 0;
+				$taskCreationData['startDate'] = $this->input->post('startDate');
+			}
+			else {
+				$taskCreationData['startDateInvalid'] = 1;
+				$taskCreationData['startDate'] = NULL;
+			}
+		}
+		
+		if ($this->input->post('endDate') != NULL) {
+			$datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9] (0|1|2)[0-9]:(0|1|2|3|4|5)[0-9]:(0|1|2|3|4|5)[0-9]/';
+			if (preg_match($datePattern, $this->input->post('endDate'))) {
+				$taskCreationData['endDateInvalid'] = 0;
+				$taskCreationData['endDate'] = $this->input->post('endDate');
+			}
+			else {
+				$taskCreationData['endDateInvalid'] = 1;
+				$taskCreationData['endDate'] = NULL;
+			}
+		}
+		
+		$taskCreationData['descriptionData'] = $this->input->post('description');
+		$taskCreationData['commentData'] = $this->input->post('comment');
+		
+		if ($taskCreationData['nameInvalid'] == 1 || $taskCreationData['startDateInvalid'] == 1 || $taskCreationData['endDateInvalid'] == 1)
+		{
+			$taskCreationData['createTaskModal'] = 1;
+			$this->dashboard($taskCreationData);
+		}
+		else {
+			
+			
+			// create the task
+			$this->ModelTask->createTask($this->session->userdata('account')->email, $this->input->post('name'), 
+			$this->input->post('startDate'), $this->input->post('endDate'), $this->input->post('taskStatusRadio'), $this->input->post('description'), $this->input->post('comment'));
+			
+			redirect('Worker');
+			
+		}
+	}
+	
+	public function deleteTask($taskId) {
+		$this->ModelTask->deleteTask($taskId);
+		redirect('Worker');
+	}
+	
 }

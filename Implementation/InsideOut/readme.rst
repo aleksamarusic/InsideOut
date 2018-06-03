@@ -16,8 +16,8 @@ Resene su funkcionalnosti 1.,4.,20.,23., jer mi je tako bilo najpotrebnije i naj
 3. Kreiranje naloga Radnika                             |Stefan |DONE   |
 4. Autorizacija korisnika                               |Nikola |DONE   | 
 5. Resetovanje lozinke                                  |       |       |
-6. Radnik - Kreiranje privatnog zadatka                 |       |       |
-7. Radnik - Brisanje privatnog zadatka                  |       |       |
+6. Radnik - Kreiranje privatnog zadatka                 |Stefan |DONE   |
+7. Radnik - Brisanje privatnog zadatka                  |Stefan |DONE   |
 8. Radnik - Prihvaranja ili odbijanje zadatog zadatka   |       |       |
 9. Radnik - Ažuriranje svojih zadataka                  |       |       |
 10. Radnik - Pristup stranici svog tima                 |       |       | odradjen pregled tima za direktora       

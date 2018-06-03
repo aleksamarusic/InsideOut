@@ -19,7 +19,7 @@ class Guest extends CI_Controller {
         parent::__construct();
         $this->load->model("ModelEmployee");
 		$this->load->model("ModelCompany");
-
+		$this->load->model("ModelDirector");
         if ($this->session->userdata('admin') == 1)
             redirect("Admin");
 		else if ($this->session->userdata('worker') == 1)
@@ -252,7 +252,8 @@ class Guest extends CI_Controller {
 			$this->ModelDirector->createDirector($this->input->post('name'), $this->input->post('surname'), $this->input->post('email'), $this->input->post('pass'), $this->input->post('company'));
 			
 			// perform login and redirection
-			$this->session->set_userdata('director', $this->ModelDirector->getAccount($this->input->post('email'), 'director'));
+			$this->session->set_userdata('director', 1);
+			$this->session->set_userdata('employee', $this->ModelDirector->getAccount($this->input->post('email'), 'director'));
 			$this->session->set_userdata('account', $this->ModelDirector->getAccount($this->input->post('email'), 'Account'));
 			redirect('Director');
 			
@@ -410,9 +411,10 @@ class Guest extends CI_Controller {
 			$this->ModelCompany->increaseNumAccountsUsed($this->input->post('companyName'));
 			
 			// perform login and redirection
+			$this->session->set_userdata('worker', 1);
 			$this->session->set_userdata('employee', $this->ModelEmployee->getAccount($this->input->post('email'), 'worker'));
 			$this->session->set_userdata('account', $this->ModelEmployee->getAccount($this->input->post('email'), 'Account'));
-			redirect('Employee');
+			redirect('Worker');
 			
 		}
 	}
