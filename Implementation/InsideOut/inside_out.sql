@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 04, 2018 at 12:09 PM
+-- Generation Time: Jun 04, 2018 at 04:08 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -223,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `companyName` char(25) COLLATE utf8_unicode_ci DEFAULT NULL,
   `statusPrivacy` char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'P',
   `statusCompletion` char(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'NS',
-  `statusAcceptance` char(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'A',
+  `statusAcceptance` char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'A',
   `taskName` char(30) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL,
   `comment` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -239,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `task` (
 --
 
 INSERT INTO `task` (`email`, `taskId`, `teamName`, `companyName`, `statusPrivacy`, `statusCompletion`, `statusAcceptance`, `taskName`, `description`, `comment`, `expectedStartDate`, `expectedEndDate`) VALUES
-('milan@gmail.com', 1, 'Tim3', 'Novi Bunar', 'G', 'NS', 'NA', 'Instaliraj Eclipse', 'Instalirati Eclipse na racunarima u Racunarskom centru', NULL, '2018-06-04', '2018-06-08');
+('milan@gmail.com', 1, 'Tim3', 'Novi Bunar', 'G', 'NS', 'P', 'Instaliraj Eclipse', 'Instalirati Eclipse na racunarima u Racunarskom centru', NULL, '2018-06-04', '2018-06-08');
 
 -- --------------------------------------------------------
 

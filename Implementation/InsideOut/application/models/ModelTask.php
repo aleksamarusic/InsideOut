@@ -68,5 +68,19 @@ class ModelTask extends CI_Model{
         $query = $this->db->get('Task');
 		return $query->result();
 	}
+
+    public function accepteTask($id) {
+        $this->db->where("taskId", $id);
+        $this->db->set("statusAcceptance", 'A');
+        $this->db->delete('task');
+    }
+
+    public function denyTask($id) {
+        $this->db->where("taskId", $id);
+        $this->db->set("statusAcceptance", 'D');
+        $this->db->delete('task');
+    }
+
+
 }
 
