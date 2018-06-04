@@ -61,5 +61,12 @@ class ModelTask extends CI_Model{
         $this->db->where("taskId", $id);
         $this->db->delete('task');
 	}
+
+	public function getTasksByEmailAndCompany($email, $companyName){
+		$this->db->where("email", $email);
+        $this->db->where("companyName", $companyName);
+        $query = $this->db->get('Task');
+		return $query->result();
+	}
 }
 

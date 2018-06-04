@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Worker extends CI_Controller {
+require_once('Employee.php');
+
+class Worker extends Employee {
 
 	public function __construct() {
         parent::__construct();
@@ -20,15 +22,16 @@ class Worker extends CI_Controller {
         }
     }
 
-	private function load_view($name, $data=[]){
-		$this->load->view("templates/worker_header.php", $data);
-        $this->load->view($name, $data);
-        $this->load->view("templates/worker_footer.php");
+	public function getTasks(){
+		$tasks = $this->ModelTask->getTasksByEmailAndCompany($this->session->userdata('employee')->email, $this->session->userdata('employee')->companyName);
+		$data['tasks'] = $tasks;
+		return $data;
+
 	}
 
-    public function index()
-	{
-		$this->dashboard();
+    public function index(){
+	    $data = $this->getTasks();
+		$this->dashboard($data);
 	}
 	
 	public function dashboard($taskCreationData = []) {

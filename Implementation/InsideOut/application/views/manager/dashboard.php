@@ -47,32 +47,6 @@
 
 						</thead>
                         <tbody>
-
-						<?php
-							foreach($tasks as $task){
-							    $id = $task->taskId;
-							    $statusPrivacy = $task->statusPrivacy;
-                                $statusCompletion = $task->statusCompletion;
-                                $statusAcceptance = $task->statusAcceptance;
-                                $taskName = $task->taskName;
-                                $description = $task->description;
-                                $comment = $task->comment;
-                                $expectedStartDate = $task->expectedStartDate;
-                                $expectedEndDate = $task->expectedEndDate;
-                                if ($statusPrivacy == 'G' && $statusAcceptance == "NA"){
-                                    echo "<tr>";
-                                    echo "<td>$taskName</td>";
-                                    echo "<form method=\"post\" action=\"".base_url()."index.php/Worker/acceptTask/$id"."\">
-                                        <td class=\"td-actions text-right\">
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs\" type=\"submit\" value = \"acceptTask\" style=\"display: block;\"><i class=\"material-icons pmd-xs\">check</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#info-pending-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#decline-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">clear</i></button>
-
-                                    </td>
-                                    </tr>";
-                                }
-							}
-							?>
                             
                             <tr>
                                 <td>Sign contract for "What are conference organizers afraid of?"</td>
@@ -483,7 +457,7 @@
 	</div>
 </div>
 
-<div tabindex="-1" class="modal fade" id="edit-open-task-modal-taskId" style="display: none;" aria-hidden="true">
+<div tabindex="-1" class="modal fade" id="edit-open-task-modal" style="display: none;" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">

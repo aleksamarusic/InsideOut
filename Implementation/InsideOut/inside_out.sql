@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 31, 2018 at 03:21 PM
--- Server version: 5.7.20-log
+-- Generation Time: Jun 04, 2018 at 12:09 PM
+-- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `inside_out`
 --
+CREATE DATABASE IF NOT EXISTS `inside_out` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `inside_out`;
 
 -- --------------------------------------------------------
 
@@ -90,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `company` (
 --
 
 INSERT INTO `company` (`companyName`, `numAccounts`, `numAccountsUsed`, `registrationLink`) VALUES
-('Novi Bunar', 10, 0, 'WQcCXJ3BRM9Cff95DpkA');
+('Novi Bunar', 10, 0, 'oH3VaDyJqtj1gV9bfnbW');
 
 -- --------------------------------------------------------
 
@@ -220,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `teamName` char(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `companyName` char(25) COLLATE utf8_unicode_ci DEFAULT NULL,
   `statusPrivacy` char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'P',
-  `statusCompletition` char(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'NS',
+  `statusCompletion` char(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'NS',
   `statusAcceptance` char(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'A',
   `taskName` char(30) COLLATE utf8_unicode_ci NOT NULL,
   `description` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -230,7 +232,14 @@ CREATE TABLE IF NOT EXISTS `task` (
   PRIMARY KEY (`taskId`),
   KEY `R_19` (`email`),
   KEY `R_20` (`teamName`,`companyName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `task`
+--
+
+INSERT INTO `task` (`email`, `taskId`, `teamName`, `companyName`, `statusPrivacy`, `statusCompletion`, `statusAcceptance`, `taskName`, `description`, `comment`, `expectedStartDate`, `expectedEndDate`) VALUES
+('milan@gmail.com', 1, 'Tim3', 'Novi Bunar', 'G', 'NS', 'NA', 'Instaliraj Eclipse', 'Instalirati Eclipse na racunarima u Racunarskom centru', NULL, '2018-06-04', '2018-06-08');
 
 -- --------------------------------------------------------
 
@@ -257,8 +266,7 @@ CREATE TABLE IF NOT EXISTS `team` (
 INSERT INTO `team` (`teamName`, `numWorkers`, `numInProgressTasks`, `companyName`, `email`) VALUES
 ('Tim1', 1, 0, 'Novi Bunar', 'ranko@gmail.com'),
 ('Tim2', 2, 0, 'Novi Bunar', 'nenadko@gmail.com'),
-('Tim3', 2, 0, 'Novi Bunar', 'ranko@gmail.com'),
-('Tim4', 0, 0, 'Novi Bunar', 'nenadko@gmail.com');
+('Tim3', 2, 0, 'Novi Bunar', 'ranko@gmail.com');
 
 -- --------------------------------------------------------
 
