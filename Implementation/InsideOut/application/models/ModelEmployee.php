@@ -49,7 +49,7 @@ class ModelEmployee extends CI_Model{
     }
 
     /**
-     * Dovata sve zaposlene koji rade u timu $team i kompaniji $company
+     * Dohvata sve zaposlene koji rade u timu $team i kompaniji $company
      *
      * @param String $company
      * @param String $team
@@ -158,6 +158,19 @@ class ModelEmployee extends CI_Model{
 		$employeeData = array( 'email' => $email, 'companyName' => $companyName);
 		
 		$this->db->insert('worker', $employeeData);
+	}
+	
+	public function getCompanyForEmployee($employeeEmail) {
+		$this->db->where('email', $employeeEmail);
+		$query = $this->db->get('worker');
+        $result = $query->row();
+		return $result->companyName;
+	}
+	
+	public function getTeamsForEmployee($employeeEmail) {
+		$this->db->where('email', $employeeEmail);
+		$query = $this->db->get('is_working');
+        return $query->result();
 	}
 }
 

@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Worker extends CI_Controller {
+require_once('Employee.php');
+
+class Worker extends Employee {
 
 	public function __construct() {
         parent::__construct();
@@ -20,15 +22,16 @@ class Worker extends CI_Controller {
         }
     }
 
-	private function load_view($name, $data=[]){
-		$this->load->view("templates/worker_header.php", $data);
-        $this->load->view($name, $data);
-        $this->load->view("templates/worker_footer.php");
+	public function getTasks(){
+		$tasks = $this->ModelTask->getTasksByEmailAndCompany($this->session->userdata('employee')->email, $this->session->userdata('employee')->companyName);
+		$data['tasks'] = $tasks;
+		return $data;
+
 	}
 
-    public function index()
-	{
-		$this->dashboard();
+    public function index(){
+	    $data = $this->getTasks();
+		$this->dashboard($data);
 	}
 	
 	public function dashboard($taskCreationData = []) {
@@ -66,6 +69,10 @@ class Worker extends CI_Controller {
 				$taskCreationData['startDate'] = NULL;
 			}
 		}
+		else {
+			$taskCreationData['startDate'] = $this->input->post('startDate');
+			$taskCreationData['startDateInvalid'] = 0;
+		}
 		
 		if ($this->input->post('endDate') != NULL) {
 			$datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9] (0|1|2)[0-9]:(0|1|2|3|4|5)[0-9]:(0|1|2|3|4|5)[0-9]/';
@@ -77,6 +84,10 @@ class Worker extends CI_Controller {
 				$taskCreationData['endDateInvalid'] = 1;
 				$taskCreationData['endDate'] = NULL;
 			}
+		}
+		else {
+			$taskCreationData['endDateInvalid'] = 0;
+			$taskCreationData['endDate'] = $this->input->post('endDate');
 		}
 		
 		$taskCreationData['descriptionData'] = $this->input->post('description');
