@@ -176,5 +176,11 @@ class ModelEmployee extends CI_Model{
         $query = $this->db->get('is_working');
         return $query->result();
     }
+
+    public function resetPassword($email, $password){
+        $this->db->set("password", $password);
+        $this->db->where("email", $email);
+        $this->db->update("Account");
+    }
 }
 

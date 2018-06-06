@@ -260,8 +260,38 @@ class Guest extends CI_Controller {
 		}
 	}
 
+	private function bad_email(){
+		$data = array();
+		$data['bad_email'] = 1;
+		$this->load_view('index', $data);
+	}
+
+	public function check_email(){
+		if ($this->input->post('reset_email') == NULL)
+			return $this->bad_email();
+		$user = $this->ModelEmployee->getAccount($this->input->post('reset_email'), 'Account');
+		if ($user == NULL)
+			return $this->bad_email();
+		else{
+			$data = array();
+			$data['email'] = $this->input->post('reset_email');
+			$this->load_view('Guest/pass-reset', $data);
+		}
+	}
+
+	private function bad_reset(){
+		$data = array();
+		$data['bad_reset'] = 1;
+		$this->load_view('index', $data);
+	}
+
 	public function reset_password(){
-		//TO DO
+		if (($this->input->post('password') == '') || ($this->input->post('password') != $this->input->post('repeated_password')))
+			return $this->bad_reset();
+		$this->ModelEmployee->resetPassword($this->input->post('reset_email'), $this->input->post('password'));
+		$data = array();
+		$data['password_changed'] = 1;
+		$this->load_view('index', $data);
 	}
 
 	/**

@@ -77,17 +77,18 @@ Autori:
             <div class="pmd-card pmd-z-depth"  style="width:75%; margin-left:auto; margin-right:auto">
                 <div class="pmd-card-body">
                 
+                
                     <form class="form-horizontal" role="form"  action="<?php echo site_url('Guest/reset_password')?>" method="post">
                         <div class="form-group pmd-textfield pmd-textfield-floating-label" style = "visible: false">
-                            <input id="conf-pass" class="form-control" type="hidden" name = "reset_email" value = $user['email']>
+                            <input class="form-control" type="hidden" name = "reset_email" value = <?php echo $email;?>>
                         </div> 
                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
                             <label for="pass" class="control-label">Password</label>
-                            <input id="pass" class="form-control" type="password" name = "password1">
+                            <input id="pass" class="form-control" type="password" name = "password">
                         </div>
                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
                             <label for="conf-pass" class="control-label">Confirm password</label>
-                            <input id="conf-pass" class="form-control" type="password" name = "password2">
+                            <input id="conf-pass" class="form-control" type="password" name = "repeated_password">
                         </div>                        
 
                         <div class="form-group">
