@@ -10,99 +10,8 @@
 		<br>
 		<div class="row">
 
-			
 
-
-			 <div class="col-lg-3 col-sm-6 col-xs-12">
-				<div class="pmd-card pmd-z-depth todos">     
-					<div class="pmd-card-title">
-						<div class="media-left">
-							<span class="service-icon img-circle bg-fill-feedback">
-								<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="31.999px" height="30.769px" viewBox="281.642 394.113 31.999 30.769" enable-background="new 281.642 394.113 31.999 30.769" xml:space="preserve">
-									<g>
-										<path fill="#FFFFFF" d="M290.526,394.574l-4.218,5.273l-2.753-1.835c-0.567-0.379-1.331-0.224-1.707,0.341
-										s-0.224,1.331,0.341,1.707l3.692,2.461c0.209,0.139,0.447,0.207,0.683,0.207c0.362,0,0.72-0.16,0.961-0.462l4.923-6.154
-										c0.425-0.53,0.338-1.306-0.192-1.729C291.726,393.958,290.951,394.044,290.526,394.574z"/>
-										<path fill="#FFFFFF" d="M290.526,405.651l-4.218,5.272l-2.753-1.835c-0.566-0.379-1.331-0.225-1.707,0.341
-										c-0.376,0.565-0.224,1.33,0.341,1.707l3.692,2.462c0.209,0.139,0.447,0.207,0.683,0.207c0.362,0,0.72-0.16,0.961-0.461l4.923-6.154
-										c0.425-0.531,0.338-1.306-0.192-1.729C291.726,405.036,290.951,405.12,290.526,405.651z"/>
-										<path fill="#FFFFFF" d="M290.526,416.729l-4.218,5.272l-2.753-1.835c-0.566-0.378-1.331-0.224-1.707,0.341
-										c-0.376,0.566-0.224,1.329,0.341,1.707l3.692,2.462c0.209,0.139,0.447,0.206,0.683,0.206c0.362,0,0.72-0.159,0.961-0.461
-										l4.923-6.154c0.425-0.531,0.338-1.306-0.192-1.73C291.726,416.113,290.951,416.198,290.526,416.729z"/>
-										<rect x="296.41" y="419.959" fill="#FFFFFF" width="17.23" height="2.462"/>
-										<rect x="296.41" y="408.882" fill="#FFFFFF" width="17.23" height="2.461"/>
-										<rect x="296.41" y="397.805" fill="#FFFFFF" width="17.23" height="2.461"/>
-									</g>
-								</svg>
-							</span> 
-						</div>
-						<div class="media-body media-middle">
-							<h2 class="pmd-card-title-text typo-fill-secondary"><b>Pending tasks</b></h2>
-						</div>
-					</div>
-					<table id="example-checkbox" class="table pmd-table table-hover table-striped display responsive nowrap">
-						<thead>
-							<th></th>
-							<th></th>
-
-						</thead>
-                        <tbody>
-
-						<?php
-							foreach($tasks as $task){
-							    $id = $task->taskId;
-							    $statusPrivacy = $task->statusPrivacy;
-                                $statusCompletion = $task->statusCompletion;
-                                $statusAcceptance = $task->statusAcceptance;
-                                $taskName = $task->taskName;
-                                $description = $task->description;
-                                $comment = $task->comment;
-                                $expectedStartDate = $task->expectedStartDate;
-                                $expectedEndDate = $task->expectedEndDate;
-                                $taskData = array(
-                                    'taskId' => $id,
-                                    'statusCompletion' => $statusCompletion,
-                                    'taskName' => $name,
-                                    'description' => $description,
-                                    'comment' => $comment,
-                                    'expectedStartDate' => $expectedStartDate,
-                                    'expectedEndDate' => $expectedEndDate
-                                );
-                                if ($statusPrivacy == 'G' && $statusAcceptance == 'P'){
-                                    echo "<tr>";
-                                    echo "<td>$taskName</td>";
-                                    echo "<form method=\"post\" action=\"".base_url()."index.php/Worker/acceptTask/$id"."\">
-                                        <td class=\"td-actions text-right\">
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs\" type=\"submit\" value = \"acceptTask\" style=\"display: block;\"><i class=\"material-icons pmd-xs\">check</i></button>
-										
-										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
-											document.infoPendingTaskForm.taskName.value='$taskName';
-											document.infoPendingTaskForm.startDate.value='$expectedStartDate';
-											document.infoPendingTaskForm.endDate.value='$expectedEndDate';
-											document.infoPendingTaskForm.description.value='$description';
-											document.infoPendingTaskForm.comment.value='$comment';
-										})()\"
-								style=\"display: block;\" data-target=\"#info-pending-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
-										
-								<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" onclick=\"(function(){
-									document.declineTaskForm.taskId.value='$id';
-								})()\"
-						style=\"display: block;\" data-target=\"#decline-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">clear</i></button>
-                                    </td>
-                                    </tr>";
-                                }
-							}
-							?>
-                            
-
-                        </tbody>
-                    </table>
-					<span class="btn-loader loader hidden">Loading...</span>
-				</div>
-			 </div>
-
-
-			 <div class="col-lg-3 col-sm-6 col-xs-12">
+			 <div class="col-lg-4 col-sm-6 col-xs-12">
 				<div class="pmd-card pmd-z-depth todos">     
 					<div class="pmd-card-title">
 						<div class="media-left">
@@ -147,16 +56,17 @@
                             $comment = $task->comment;
                             $expectedStartDate = $task->expectedStartDate;
                             $expectedEndDate = $task->expectedEndDate;
-                            if ($statusCompletion == "NS" && ($statusPrivacy == 'P' || ($statusPrivacy == 'G' && $statusAcceptance == 'A'))){
+                            if ($statusCompletion == "NS"){
                                 echo "<tr>";
                                 echo "<td>$taskName</td>";
                                 echo "<td class=\"td-actions text-right\">
 										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
-											document.editOpenTaskForm.taskName.value='$taskName';
+											document.editOpenTaskForm.value='$taskName';
 											document.editOpenTaskForm.startDate.value='$expectedStartDate';
 											document.editOpenTaskForm.endDate.value='$expectedEndDate';
 											document.editOpenTaskForm.description.value='$description';
 											document.editOpenTaskForm.comment.value='$comment';
+											document.editOpenTaskForm.name.value='$taskName';
 											document.editOpenTaskForm.taskId.value='$id';
 										})()\"
 								style=\"display: block;\" data-target=\"#edit-open-task-modal\" data-toggle=\"modal\">
@@ -183,7 +93,7 @@
 			 </div><!--end Todo Lists-->
 
 
-			  <div class="col-lg-3 col-sm-6 col-xs-12">
+			  <div class="col-lg-4 col-sm-6 col-xs-12">
 				<div class="pmd-card pmd-z-depth todos">     
 					<div class="pmd-card-title">
 						<div class="media-left">
@@ -228,16 +138,17 @@
                             $comment = $task->comment;
                             $expectedStartDate = $task->expectedStartDate;
                             $expectedEndDate = $task->expectedEndDate;
-                            if ($statusCompletion == "S" && ($statusPrivacy == 'P' || ($statusPrivacy == 'G' && $statusAcceptance == 'A'))){
+                            if ($statusCompletion == "S"){
                                 echo "<tr>";
                                 echo "<td>$taskName</td>";
                                 echo "<td class=\"td-actions text-right\">
 										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
-											document.editInProgressTaskForm.taskName.value='$taskName';
+											document.editInProgressTaskForm.value='$taskName';
 											document.editInProgressTaskForm.startDate.value='$expectedStartDate';
 											document.editInProgressTaskForm.endDate.value='$expectedEndDate';
 											document.editInProgressTaskForm.description.value='$description';
 											document.editInProgressTaskForm.comment.value='$comment';
+											document.editInProgressTaskForm.name.value='$taskName';
 											document.editInProgressTaskForm.taskId.value='$id';
 										})()\"
 								style=\"display: block;\" data-target=\"#edit-open-task-modal\" data-toggle=\"modal\">
@@ -264,7 +175,7 @@
 			 </div>
 
 
-			  <div class="col-lg-3 col-sm-6 col-xs-12">
+			  <div class="col-lg-4 col-sm-6 col-xs-12">
 				<div class="pmd-card pmd-z-depth todos">     
 					<div class="pmd-card-title">
 						<div class="media-left">
@@ -309,16 +220,17 @@
                             $comment = $task->comment;
                             $expectedStartDate = $task->expectedStartDate;
                             $expectedEndDate = $task->expectedEndDate;
-                            if ($statusCompletion == "D" && ($statusPrivacy == 'P' || ($statusPrivacy == 'G' && $statusAcceptance == 'A'))){
+                            if ($statusCompletion == "D"){
                                 echo "<tr>";
                                 echo "<td>$taskName</td>";
                                 echo "<td class=\"td-actions text-right\">
 										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
-											document.editDoneTaskForm.taskName.value='$taskName';
+											document.editDoneTaskForm.value='$taskName';
 											document.editDoneTaskForm.startDate.value='$expectedStartDate';
 											document.editDoneTaskForm.endDate.value='$expectedEndDate';
 											document.editDoneTaskForm.description.value='$description';
 											document.editDoneTaskForm.comment.value='$comment';
+											document.editDoneTaskForm.name.value='$taskName';
 											document.editDoneTaskForm.taskId.value='$id';
 										})()\"
 								style=\"display: block;\" data-target=\"#edit-open-task-modal\" data-toggle=\"modal\">
@@ -365,7 +277,7 @@
 				<h2 class="pmd-card-title-text">Create task</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal" name="taskCreationForm" id="taskCreationForm" method="post" action="<?php echo site_url('Worker/createTask/'); ?>">
+				<form class="form-horizontal" name="taskCreationForm" id="taskCreationForm" method="post" action="<?php echo site_url('Director/createTask/'); ?>">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label"> 
 						<!-- class="mat-input form-control" -->
 						<label for="name" class="control-label" <?php if (isset($nameInvalid) && $nameInvalid == 1) { echo "style='color: red'"; } ?> >Task name</label>
@@ -471,7 +383,7 @@
 				<h2 class="pmd-card-title-text">Edit task</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal" name="editOpenTaskForm" method="post" action=<?php echo base_url()."index.php/Worker/updateTask/" ?> >
+				<form class="form-horizontal" name="editOpenTaskForm" method="post" action=<?php echo base_url()."index.php/Director/updateTask/" ?> >
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Task name</label>
 						<input type="text" class="mat-input form-control" id="name" name="taskName">
@@ -536,7 +448,7 @@
 				<h2 class="pmd-card-title-text">Edit task</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal" name="editInProgressTaskForm" method="post" action=<?php echo base_url()."index.php/Worker/updateTask/" ?> >
+				<form class="form-horizontal" name="editInProgressTaskForm" method="post" action=<?php echo base_url()."index.php/Director/updateTask/" ?> >
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Task name</label>
 						<input type="text" class="mat-input form-control" id="name" name="taskName">
@@ -602,7 +514,7 @@
 				<h2 class="pmd-card-title-text">Edit task</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal" name="editDoneTaskForm" method="post" action=<?php echo base_url()."index.php/Worker/updateTask/" ?> >
+				<form class="form-horizontal" name="editDoneTaskForm" method="post" action=<?php echo base_url()."index.php/Director/updateTask/" ?> >
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Task name</label>
 						<input type="text" class="mat-input form-control" id="name" name="taskName">
@@ -730,7 +642,7 @@
 					<h2 class="pmd-card-title-text">Decline task</h2>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" name="declineForm" method="post" action=<?php echo base_url()."index.php/Worker/declineTask/" ?> >
+					<form class="form-horizontal" name="declineForm" method="post" action=<?php echo base_url()."index.php/Director/declineTask/" ?> >
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Description</label>
 							<textarea required class="form-control" name="description">Please provide a reason for declining this taks</textarea>
@@ -739,7 +651,7 @@
 					</form>
 				</div>
 				<div class="pmd-modal-action text-right">
-					<button class="btn pmd-ripple-effect btn-primary" type="submit">Decline</button>
+					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="submit">Decline</button>
 					<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard</button>
 				</div>
 			</div>
@@ -757,12 +669,15 @@
 					Are you sure? This will permanently remove selected task from your list.
 				</div>
 				<div class="pmd-modal-action text-right">
-				<form class="form-horizontal" name="deleteForm" method="post" action=<?php echo base_url()."index.php/worker/deleteTask/" ?> >
+				<form class="form-horizontal" name="deleteForm" method="post" action=<?php echo base_url()."index.php/Director/deleteTask/" ?> >
 					<input type="hidden" name = "taskId">
-					<button class="btn pmd-ripple-effect btn-primary" type="submit">Yes, remove it</button>
+					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="submit">Yes, remove it</button>
 					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-default pmd-btn-flat" type="button">Discard</button>
 				</form>
 				</div>
 			</div>
 		</div>
 	</div>
+
+
+

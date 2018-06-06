@@ -18,12 +18,12 @@ Resene su funkcionalnosti 1.,4.,20.,23., jer mi je tako bilo najpotrebnije i naj
 5. Resetovanje lozinke                                  |Aleksa |DONE   |
 6. Radnik - Kreiranje privatnog zadatka                 |Stefan |DONE   |
 7. Radnik - Brisanje privatnog zadatka                  |Stefan |DONE   |
-8. Radnik - Prihvaranja ili odbijanje zadatog zadatka   |Aleksa |       |
-9. Radnik - Ažuriranje svojih zadataka                  |Aleksa |       |
+8. Radnik - Prihvaranja ili odbijanje zadatog zadatka   |Aleksa |DONE   |
+9. Radnik - Ažuriranje svojih zadataka                  |Aleksa |DONE   |
 10. Radnik - Pristup stranici svog tima                 |Aleksa |       | odradjen pregled tima za direktora       
 11. Radnik - Pregled stranice drugog Radnika            |Aleksa |       | 
-12. Menadžer - Kreiranje Zadatog zadatka                |       |       |
-13. Menadžer - Brisanje Zadatog zadatka                 |       |       |
+12. Menadžer - Kreiranje Zadatog zadatka                |Stefan |       |
+13. Menadžer - Brisanje Zadatog zadatka                 |Stefan |       |
 14. Direktor - Kreiranje tima                           |Marija |DONE   |
 15. Direktor - Brisanje tima                            |Marija |DONE   |
 16. Direktor - Podela radnika u timove                  |Nikola |DONE   |

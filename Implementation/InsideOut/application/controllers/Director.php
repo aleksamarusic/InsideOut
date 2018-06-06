@@ -21,8 +21,7 @@ class Director extends Employee {
         parent::__construct();
         
         $this->load->model("ModelCompany");
-        $this->load->model("ModelEmployee");
-        $this->load->model("ModelTeam");
+
 
         if ($this->session->userdata('director') == NULL){
             if ($this->session->userdata('worker') == 1)
@@ -41,11 +40,13 @@ class Director extends Employee {
      * 
      * @return void
      */
+    
+    public function getTeams(){
+        $teams = $this->ModelTeam->getTeamsByCompany($this->session->userdata('employee')->companyName);
+        $data['teams'] = $teams;
+        return $data;
+    }
 
-    public function index()
-	{
-		$this->accounts();
-	}
 
     /**
      * Prikazuje stranicu sa nalozima direktora
@@ -198,13 +199,7 @@ class Director extends Employee {
         $this->load_view('director/teams', $data);
     }
 
-    public function tasks(){
-        //TO DO
-    }
 
-    public function viewEmployee($employeeId){
-        //TO DO
-    }
 
     /**
      * Prikazuje stranicu tima sa imenom $teamName direktoru
@@ -212,15 +207,7 @@ class Director extends Employee {
      * @param String $teamName
      * @return void
      */
-    public function viewTeam($teamName) {
-        $companyName = $this->session->userdata('employee')->companyName;
-
-        $data = array();
-        $data['employees'] = $this->ModelEmployee->getEmployeesByTeam($companyName, $teamName);
-        $data['manager'] = $this->ModelEmployee->getTeamManager($companyName, $teamName);
-
-        $this->load_view('director/team', $data);
-    }
+    
 
     /**
      * brise tim iz baze

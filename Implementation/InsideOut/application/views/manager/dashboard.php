@@ -65,7 +65,15 @@
                                     echo "<form method=\"post\" action=\"".base_url()."index.php/Worker/acceptTask/$id"."\">
                                         <td class=\"td-actions text-right\">
 	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs\" type=\"submit\" value = \"acceptTask\" style=\"display: block;\"><i class=\"material-icons pmd-xs\">check</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#info-pending-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
+	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
+											document.info-pendeing-task-form.name.value='$taskName';
+											document.info-pendeing-task-form.startDate.value='$expectedStartDate';
+											document.info-pendeing-task-form.endDate.value='$expectedEndDate';
+											document.info-pendeing-task-form.description.value='$description';
+											document.info-pendeing-task-form.comment.value='$comment';
+											document.info-pendeing-task-form.name.value='$taskName';
+										})()\"
+								style=\"display: block;\" data-target=\"#info-pending-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
 	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#decline-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">clear</i></button>
 
                                     </td>
@@ -129,13 +137,24 @@
                             $expectedEndDate = $task->expectedEndDate;
                             if ($statusCompletion == "NS" && ($statusPrivacy == 'P' || ($statusPrivacy == 'G' && $statusAcceptance == 'A'))){
                                 echo "<tr>";
-                                echo "<td>$taskName</td>";
-                                echo "<form method=\"post\" action=\"".base_url()."index.php/Worker/acceptTask/$id"."\">
+                                    echo "<td>$taskName</td>";
+                                    echo "<form method=\"post\" action=\"".base_url()."index.php/Worker/acceptTask/$id"."\">
                                         <td class=\"td-actions text-right\">
 	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs\" type=\"submit\" value = \"acceptTask\" style=\"display: block;\"><i class=\"material-icons pmd-xs\">check</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#info-pending-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#decline-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">clear</i></button>
-
+										
+										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
+											document.infoPendingTaskForm.taskName.value='$taskName';
+											document.infoPendingTaskForm.startDate.value='$expectedStartDate';
+											document.infoPendingTaskForm.endDate.value='$expectedEndDate';
+											document.infoPendingTaskForm.description.value='$description';
+											document.infoPendingTaskForm.comment.value='$comment';
+										})()\"
+								style=\"display: block;\" data-target=\"#info-pending-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
+										
+								<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" onclick=\"(function(){
+									document.declineTaskForm.taskId.value='$id';
+								})()\"
+						style=\"display: block;\" data-target=\"#decline-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">clear</i></button>
                                     </td>
                                     </tr>";
                             }
@@ -197,12 +216,26 @@
                             if ($statusCompletion == "S" && ($statusPrivacy == 'P' || ($statusPrivacy == 'G' && $statusAcceptance == 'A'))){
                                 echo "<tr>";
                                 echo "<td>$taskName</td>";
-                                echo "<form method=\"post\" action=\"".base_url()."index.php/Worker/acceptTask/$id"."\">
-                                        <td class=\"td-actions text-right\">
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs\" type=\"submit\" value = \"acceptTask\" style=\"display: block;\"><i class=\"material-icons pmd-xs\">check</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#info-pending-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#decline-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">clear</i></button>
+                                echo "<td class=\"td-actions text-right\">
+										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
+											document.editInProgressTaskForm.taskName.value='$taskName';
+											document.editInProgressTaskForm.startDate.value='$expectedStartDate';
+											document.editInProgressTaskForm.endDate.value='$expectedEndDate';
+											document.editInProgressTaskForm.description.value='$description';
+											document.editInProgressTaskForm.comment.value='$comment';
+											document.editInProgressTaskForm.taskId.value='$id';
+										})()\"
+								style=\"display: block;\" data-target=\"#edit-open-task-modal\" data-toggle=\"modal\">
+											<i class=\"material-icons pmd-xs\">edit</i>
+										</button>
 
+										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" onclick=\"(function(){
+											document.deleteTaskForm.taskId.value='$id';
+										})()\"
+								style=\"display: block;\" data-target=\"#delete-private-task-modal\"
+										 data-toggle=\"modal\">
+											<i class=\"material-icons pmd-xs\">clear</i>
+										</button>
                                     </td>
                                     </tr>";
                             }
@@ -264,12 +297,26 @@
                             if ($statusCompletion == "D" && ($statusPrivacy == 'P' || ($statusPrivacy == 'G' && $statusAcceptance == 'A'))){
                                 echo "<tr>";
                                 echo "<td>$taskName</td>";
-                                echo "<form method=\"post\" action=\"".base_url()."index.php/Worker/acceptTask/$id"."\">
-                                        <td class=\"td-actions text-right\">
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs\" type=\"submit\" value = \"acceptTask\" style=\"display: block;\"><i class=\"material-icons pmd-xs\">check</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#info-pending-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
-	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#decline-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">clear</i></button>
+                                echo "<td class=\"td-actions text-right\">
+										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
+											document.editDoneTaskForm.taskName.value='$taskName';
+											document.editDoneTaskForm.startDate.value='$expectedStartDate';
+											document.editDoneTaskForm.endDate.value='$expectedEndDate';
+											document.editDoneTaskForm.description.value='$description';
+											document.editDoneTaskForm.comment.value='$comment';
+											document.editDoneTaskForm.taskId.value='$id';
+										})()\"
+								style=\"display: block;\" data-target=\"#edit-open-task-modal\" data-toggle=\"modal\">
+											<i class=\"material-icons pmd-xs\">edit</i>
+										</button>
 
+										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" onclick=\"(function(){
+											document.deleteTaskForm.taskId.value='$id';
+										})()\"
+								style=\"display: block;\" data-target=\"#delete-private-task-modal\"
+										 data-toggle=\"modal\">
+											<i class=\"material-icons pmd-xs\">clear</i>
+										</button>
                                     </td>
                                     </tr>";
                             }
@@ -401,7 +448,7 @@
 	</div>
 </div>
 
-<div tabindex="-1" class="modal fade" id="edit-open-task-modal-taskId" style="display: none;" aria-hidden="true">
+<div tabindex="-1" class="modal fade" id="edit-open-task-modal" style="display: none;" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header bordered">
@@ -409,19 +456,19 @@
 				<h2 class="pmd-card-title-text">Edit task</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" name="editOpenTaskForm" method="post" action=<?php echo base_url()."index.php/Manager/updateTask/" ?> >
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Task name</label>
-						<input type="text" class="mat-input form-control" id="name" value="Task name">
+						<input type="text" class="mat-input form-control" id="name" name="taskName">
 						<span class="help-text">Input is required!</span> 
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="start-date" class="control-label">Expected start date</label>
-						<input type="text" id="datepicker-left-header" class="form-control" value="some date" />
+						<input type="text" id="datepicker-left-header" class="form-control" name="startDate" />
 					</div>		
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="end-date" class="control-label">Expected end date</label>
-						<input type="text" id="datetimepicker-default" class="form-control" value="some date" />
+						<input type="text" id="datetimepicker-default" class="form-control" name="endDate" />
 					</div>	
 
 					<div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -430,35 +477,36 @@
 							<!-- Simple radio with label -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="click4" value="open" checked>
+									<input type="radio" name="taskStatusRadio" id="click4" value="open" checked>
 									<span for="click4">Open</span> </label>
 							</div>
 							<!-- Radio button checked -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="click5" value="in-progress">
+									<input type="radio" name="taskStatusRadio" id="click5" value="inProgress">
 									<span for="click5">In progress</span> </label>
 							</div>
 							<!-- Radio button disable -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="optionsRadios3" value="done">
+									<input type="radio" name="taskStatusRadio" id="optionsRadios3" value="done">
 									<span for="optionsRadios3">Done</span> </label>
 							</div>
 						</div>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Description</label>
-						<textarea required class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+						<textarea class="form-control" name="description"></textarea>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Any other comment</label>
-						<textarea required class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+						<textarea class="form-control" name="comment"></textarea>
 					</div>
+					<input type="hidden" name = "taskId">
 				</form>
 			</div>
 			<div class="pmd-modal-action text-right">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Update</button>
+				<input type="submit" form="editOpenTaskForm" class="btn pmd-ripple-effect btn-primary" value="Update">
 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard changes</button>
 			</div>
 		</div>
@@ -473,19 +521,19 @@
 				<h2 class="pmd-card-title-text">Edit task</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" name="editInProgressTaskForm" method="post" action=<?php echo base_url()."index.php/Manager/updateTask/" ?> >
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Task name</label>
-						<input type="text" class="mat-input form-control" id="name" value="Task name">
+						<input type="text" class="mat-input form-control" id="name" name="taskName">
 						<span class="help-text">Input is required!</span> 
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="start-date" class="control-label">Expected start date</label>
-						<input type="text" id="datepicker-left-header" class="form-control" value="some date" />
+						<input type="text" id="datepicker-left-header" class="form-control" name="startDate" />
 					</div>		
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="end-date" class="control-label">Expected end date</label>
-						<input type="text" id="datetimepicker-default" class="form-control" value="some date" />
+						<input type="text" id="datetimepicker-default" class="form-control" name="endDate" />
 					</div>	
 
 					<div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -494,35 +542,37 @@
 							<!-- Simple radio with label -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="click4" value="open">
+									<input type="radio" name="taskStatusRadio" id="click4" value="open">
 									<span for="click4">Open</span> </label>
 							</div>
 							<!-- Radio button checked -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="click5" value="in-progress" checked>
+									<input type="radio" name="taskStatusRadio" id="click5" value="inProgress" checked>
 									<span for="click5">In progress</span> </label>
 							</div>
 							<!-- Radio button disable -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="optionsRadios3" value="done">
+									<input type="radio" name="taskStatusRadio" id="optionsRadios3" value="done">
 									<span for="optionsRadios3">Done</span> </label>
 							</div>
 						</div>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Description</label>
-						<textarea required class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+						<textarea class="form-control" name="description"></textarea>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Any other comment</label>
-						<textarea required class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+						<textarea class="form-control" name="comment"></textarea>
+						
 					</div>
+					<input type="hidden" name = "taskId">
 				</form>
 			</div>
 			<div class="pmd-modal-action text-right">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Update</button>
+			<input type="submit" form="editInProgressTaskForm" class="btn pmd-ripple-effect btn-primary" value="Update">
 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard changes</button>
 			</div>
 		</div>
@@ -537,19 +587,19 @@
 				<h2 class="pmd-card-title-text">Edit task</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" name="editDoneTaskForm" method="post" action=<?php echo base_url()."index.php/Manager/updateTask/" ?> >
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Task name</label>
-						<input type="text" class="mat-input form-control" id="name" value="Task name">
+						<input type="text" class="mat-input form-control" id="name" name="taskName">
 						<span class="help-text">Input is required!</span> 
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="start-date" class="control-label">Expected start date</label>
-						<input type="text" id="datepicker-left-header" class="form-control" value="some date" />
+						<input type="text" id="datepicker-left-header" class="form-control" name="startDate" />
 					</div>		
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="end-date" class="control-label">Expected end date</label>
-						<input type="text" id="datetimepicker-default" class="form-control" value="some date" />
+						<input type="text" id="datetimepicker-default" class="form-control" name="endDate" />
 					</div>	
 
 					<div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -558,35 +608,36 @@
 							<!-- Simple radio with label -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="click4" value="open">
+									<input type="radio" name="taskStatusRadio" id="click4" value="open">
 									<span for="click4">Open</span> </label>
 							</div>
 							<!-- Radio button checked -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="click5" value="in-progress">
+									<input type="radio" name="taskStatusRadio" id="click5" value="inProgress">
 									<span for="click5">In progress</span> </label>
 							</div>
 							<!-- Radio button disable -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="optionsRadios3" value="done" checked>
+									<input type="radio" name="taskStatusRadio" id="optionsRadios3" value="done" checked>
 									<span for="optionsRadios3">Done</span> </label>
 							</div>
 						</div>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Description</label>
-						<textarea required class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+						<textarea class="form-control" name="description"></textarea>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Any other comment</label>
-						<textarea required class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+						<textarea class="form-control" name="comment"></textarea>
 					</div>
+					<input type="hidden" name = "taskId">
 				</form>
 			</div>
 			<div class="pmd-modal-action text-right">
-				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Update</button>
+				<input type="submit" form="editDoneTaskForm" class="btn pmd-ripple-effect btn-primary" value="Update">
 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard changes</button>
 			</div>
 		</div>
@@ -601,19 +652,19 @@
 				<h2 class="pmd-card-title-text">About task</h2>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">
+				<form class="form-horizontal" name="infoPendingTaskForm">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="first-name">Task name</label>
-						<input type="text" class="mat-input form-control" id="name" value="Task name" disabled="">
+						<input type="text" class="mat-input form-control" id="name" name="taskName" disabled="">
 						<span class="help-text">Input is required!</span> 
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="start-date" class="control-label">Expected start date</label>
-						<input type="text" id="datepicker-left-header" class="form-control" value="some date" disabled="">
+						<input type="text" id="datepicker-left-header" class="form-control" name="startDate" disabled="">
 					</div>		
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label for="end-date" class="control-label">Expected end date</label>
-						<input type="text" id="datetimepicker-default" class="form-control" value="some date" disabled="">
+						<input type="text" id="datetimepicker-default" class="form-control" name="endDate" disabled="">
 					</div>	
 
 					<div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -622,30 +673,30 @@
 							<!-- Simple radio with label -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="click4" value="open" disabled="" checked="">
+									<input type="radio" name="taskStatusRadio" id="click4" value="open" disabled="" checked="">
 									<span for="click4">Open</span> </label>
 							</div>
 							<!-- Radio button checked -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="click5" value="in-progress" disabled="">
+									<input type="radio" name="taskStatusRadio" id="click5" value="inProgress" disabled="">
 									<span for="click5">In progress</span> </label>
 							</div>
 							<!-- Radio button disable -->
 							<div class="radio">
 								<label class="pmd-radio pmd-radio-ripple-effect">
-									<input type="radio" name="optionsRadios" id="optionsRadios3" value="done" disabled="">
+									<input type="radio" name="taskStatusRadio" id="optionsRadios3" value="done" disabled="">
 									<span for="optionsRadios3">Done</span> </label>
 							</div>
 						</div>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Description</label>
-						<textarea required class="form-control" disabled="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+						<textarea required class="form-control" name="description" disabled=""></textarea>
 					</div>
 					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 						<label class="control-label">Any other comment</label>
-						<textarea required class="form-control" disabled="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+						<textarea required class="form-control" name="comment" disabled=""></textarea>
 					</div>
 				</form>
 			</div>
@@ -664,15 +715,16 @@
 					<h2 class="pmd-card-title-text">Decline task</h2>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal">
+					<form class="form-horizontal" name="declineForm" method="post" action=<?php echo base_url()."index.php/Manager/declineTask/" ?> >
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Description</label>
-							<textarea required class="form-control">Please provide a reason for declining this taks</textarea>
+							<textarea required class="form-control" name="description">Please provide a reason for declining this taks</textarea>
 						</div>
+						<input type="hidden" name="taskId">
 					</form>
 				</div>
 				<div class="pmd-modal-action text-right">
-					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="button">Decline</button>
+					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="submit">Decline</button>
 					<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard</button>
 				</div>
 			</div>
@@ -690,12 +742,12 @@
 					Are you sure? This will permanently remove selected task from your list.
 				</div>
 				<div class="pmd-modal-action text-right">
-					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="button">Yes, remove it</button>
+				<form class="form-horizontal" name="deleteForm" method="post" action=<?php echo base_url()."index.php/Manager/deleteTask/" ?> >
+					<input type="hidden" name = "taskId">
+					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="submit">Yes, remove it</button>
 					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-default pmd-btn-flat" type="button">Discard</button>
+				</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-

@@ -17,20 +17,6 @@ class ModelTask extends CI_Model{
     }
 	
 	public function createTask($email, $name, $startDate, $endDate, $taskStatus, $description, $comment) {
-	
-		// status completion:
-		// NS - not started
-		// S - started
-		// D - done
-		
-		// status privacy:
-		// P - private
-		// G - given
-	
-		// status acceptance: 
-		// P - pending
-		// D - declined
-		// A - accepted
 		
 		if ($taskStatus == 'open') {
 			$statusCompletion = 'NS';		// not started
@@ -70,47 +56,83 @@ class ModelTask extends CI_Model{
 		
 		$this->db->insert('task', $taskData);
 	}
-	
-	public function createGivenTask($email, $teamName, $companyName, $name, $startDate, $endDate, $taskStatus, $description, $comment) {
-		if ($taskStatus == 'open') {
-			$statusCompletion = 'NS';		// not started
-		} 
-		else if ($taskStatus == 'inProgress') {
-			$statusCompletion = 'S'; 	    // started
-		}
-		else {
-			$statusCompletion = 'D';		// done
-		}
-		
-		if ($startDate == '') {
-			$expectedStartDate = NULL;
-		}
-		else {
-			$expectedStartDate = $startDate;
-		}
-		
-		if ($endDate == '') {
-			$expectedEndDate = NULL;
-		}
-		else {
-			$expectedEndDate = $endDate;
-		}
-		
-		$taskData = array(
-			'email' => $email,
-			'teamName' => $teamName,
-			'companyName' => $companyName,
-			'statusPrivacy' => 'G',
-			'statusCompletion' => $statusCompletion,
-			'statusAcceptance' => 'P',
-			'taskName' => $name,
-			'description' => $description,
-			'comment' => $comment,
-			'expectedStartDate' => $expectedStartDate,
-			'expectedEndDate' => $expectedEndDate
-		);
-	}
-	
+
+    public function createGivenTask($email, $teamName, $companyName, $name, $startDate, $endDate, $taskStatus, $description, $comment) {
+        if ($taskStatus == 'open') {
+            $statusCompletion = 'NS';		// not started
+        }
+        else if ($taskStatus == 'inProgress') {
+            $statusCompletion = 'S'; 	    // started
+        }
+        else {
+            $statusCompletion = 'D';		// done
+        }
+
+        if ($startDate == '') {
+            $expectedStartDate = NULL;
+        }
+        else {
+            $expectedStartDate = $startDate;
+        }
+
+        if ($endDate == '') {
+            $expectedEndDate = NULL;
+        }
+        else {
+            $expectedEndDate = $endDate;
+        }
+
+        $taskData = array(
+            'email' => $email,
+            'teamName' => $teamName,
+            'companyName' => $companyName,
+            'statusPrivacy' => 'G',
+            'statusCompletion' => $statusCompletion,
+            'statusAcceptance' => 'P',
+            'taskName' => $name,
+            'description' => $description,
+            'comment' => $comment,
+            'expectedStartDate' => $expectedStartDate,
+            'expectedEndDate' => $expectedEndDate
+        );
+        $this->db->insert('task', $taskData);
+    }
+
+    public function updateTask($taskId, $name, $startDate, $endDate, $taskStatus, $description, $comment) {
+
+        if ($taskStatus == 'open') {
+            $statusCompletion = 'NS';		// not started
+        }
+        else if ($taskStatus == 'inProgress') {
+            $statusCompletion = 'S'; 	    // started
+        }
+        else {
+            $statusCompletion = 'D';		// done
+        }
+
+        if ($startDate == '') {
+            $expectedStartDate = NULL;
+        }
+        else {
+            $expectedStartDate = $startDate;
+        }
+
+        if ($endDate == '') {
+            $expectedEndDate = NULL;
+        }
+        else {
+            $expectedEndDate = $endDate;
+        }
+
+        $this->db->where('taskId', $taskId);
+        $this->db->set('statusCompletion', $statusCompletion);
+        $this->db->set('taskName', $name);
+        $this->db->set('comment', $comment);
+        $this->db->set('expectedStartDate', $expectedStartDate);
+        $this->db->set('expectedEndDate', $expectedEndDate);
+        $this->db->update('task');
+    }
+
 	public function deleteTask($id) {
         $this->db->where("taskId", $id);
         $this->db->delete('task');
@@ -126,13 +148,13 @@ class ModelTask extends CI_Model{
     public function acceptTask($id) {
         $this->db->where("taskId", $id);
         $this->db->set("statusAcceptance", 'A');
-        $this->db->delete('task');
+        $this->db->update('task');
     }
 
     public function denyTask($id) {
         $this->db->where("taskId", $id);
         $this->db->set("statusAcceptance", 'D');
-        $this->db->delete('task');
+        $this->db->update('task');
     }
 
 

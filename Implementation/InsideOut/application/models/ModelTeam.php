@@ -40,6 +40,12 @@ class ModelTeam extends CI_Model{
         return $query->result();
     }
 
+    public function getTeamsByEmailManager($email){
+        $this->db->where("email", $email);
+        $query = $this->db->get('team');
+        return $query->result();
+    }
+
     /**
      * Dohvata timove u okviru kompanije sa imenom $company
      *

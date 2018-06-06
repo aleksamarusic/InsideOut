@@ -97,8 +97,20 @@ Autori:
 				<div class="media-right media-bottom"><i class="dic-more-vert dic"></i></div>
 			</a> 
 			<ul class="dropdown-menu">
-				<li><a href="manager-team-machine-learning.html">Machine Learning</a></li>
-				<li><a href="manager-team-data-science.html">Data Science</a></li>
+			<?php
+                foreach($teams as $team){
+                    $teamName = $team->teamName;
+                    $email = $team->email;
+                    $companyName = $team->companyName;
+                    $dataTeam = array(
+                            'teamName' => $teamName,
+                            'companyName' => $companyName
+                    );
+					echo "<form id = \"viewTeamForm-".$teamName."\" method=\"post\" action=\"".base_url()."index.php/Manager/viewTeam/$teamName"."\">
+                        <li><a onclick='document.getElementById(\"viewTeamForm-".$teamName."\").submit();'>$teamName</a></li>
+                        </form>";
+                }
+                ?>
 			</ul>
 		</li>
 		<!--
