@@ -298,7 +298,7 @@ class Guest extends CI_Controller {
 		$this->load_view('index', $data);
 	}
 
-	public function reset_password(){
+	public function resetPassword(){
 		if (($this->input->post('password') == '') || ($this->input->post('password') != $this->input->post('repeated_password')))
 			return $this->bad_reset();
 		$this->ModelEmployee->resetPassword($this->input->post('reset_email'), $this->input->post('password'));

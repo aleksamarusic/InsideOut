@@ -227,7 +227,7 @@ Autori:
             </div>
             <div class="media-middle">
                 <div id="sign-up" class="media-middle text-center">
-                <a href="<?php echo site_url('guest/signup')?>" title="Sign up" class="btn btn-lg pmd-btn-outline pmd-ripple-effect btn-default">Sign up</a>
+                    <a href="sign-up.html" title="sign up" class="btn btn-lg pmd-btn-outline pmd-ripple-effect btn-default">Sign up</a>
                 </div>
             </div>
         </div>
@@ -242,26 +242,29 @@ Autori:
         <!--log in form -->
         <div class="card-form">
             <div class="text-center">
-            <?php if (isset($bad_login)) echo "<h5 class='inverse' style='color:red'>Please insert correct login data!</h5>" ?>
+                    <?php if (isset($bad_login)) echo "<h5 class='inverse'>Please insert correct login data!</h5>" ?>
+                    <?php if (isset($bad_email)) echo "<h5 class='inverse'>Please insert correct email!</h5>" ?>
+                    <?php if (isset($bad_reset)) echo "<h5 class='inverse'>Passwords do not match!</h5>" ?>
+                    <?php if (isset($password_changed)) echo "<h5 class='inverse'>Password changed successfully.</h5>" ?>
             </div>
 
             <form class="form-inverse" action="<?php echo site_url('Guest/login')?>" method="post">
                 <div class="text-left">
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                        <label for="inputError1" class="control-label pmd-input-group-label">Email</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons pmd-sm">email</i></div>
-                            <input type="email" name="email" class="form-control">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
-                        <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
-                        <div class="input-group">
-                            <div class="input-group-addon"><i class="material-icons pmd-sm">lock_outline</i></div>
-                            <input type="password" name="password" class="form-control">
-                        </div>
-                    </div>
+                        <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="inputError1" class="control-label pmd-input-group-label">Email</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="material-icons pmd-sm">email</i></div>
+                                    <input type="email" name="email" class="form-control">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                                <label for="inputError1" class="control-label pmd-input-group-label">Password</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="material-icons pmd-sm">lock_outline</i></div>
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+                            </div>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary pmd-ripple-effect btn-lg">Log in</button>
@@ -355,18 +358,20 @@ Autori:
                     <h2 class="pmd-card-title-text text-center">Forgot password?</h2>
                     <h6 class="text-center">Submit your email address and we'll send you a link to reset your password</h6>
                 </div>
+                <form class="form-horizontal" action="<?php echo site_url('Guest/checkEmail')?>" method="post">
                 <div class="modal-body">
-                    <form class="form-horizontal" id="resetPasswordForm" method="post" action="<?php echo base_url()."index.php/Guest/checkEmail/" ?>">
+                   
                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
                             <label for="email">Email Address</label>
-                            <input type="text" class="mat-input form-control" name = "reset_email">
+                            <input type="email" class="mat-input form-control" id="email" name="reset_email" value="">
                         </div>
-                    </form>
+                    
                 </div>
                 <div class="pmd-modal-action text-center">
-                    <button  class="btn pmd-ripple-effect btn-primary" type="submit" form = "resetPasswordForm">Send me a reset link</button>
+                    <button href = "#log-in" class="btn pmd-ripple-effect btn-primary" type="submit">Send me a reset link</button>
+                    
                 </div>
-
+                </form>
             </div>
         </div>
     </div>
