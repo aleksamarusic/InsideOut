@@ -229,20 +229,20 @@ class Guest extends CI_Controller {
 		if ($signupData['nameInvalid'] == 1 || $signupData['surnameInvalid'] == 1 || $signupData['emailInvalid'] == 1 || $signupData['passInvalid'] == 1 || $signupData['confPassInvalid'] == 1 ||
 				$signupData['companyInvalid'] == 1 || $signupData['accountNumberInvalid'] == 1) 
 		{
-			$this->signup($signupData);
+			return $this->signup($signupData);
 		}
 		else {
 			
 			// check if this email is in use
 			if ($this->ModelEmployee->getAccount($this->input->post('email'), 'Account') != NULL) {
 				$signupData['emailInvalid'] = 2;
-				$this->signup($signupData);
+				return $this->signup($signupData);
 			}
 			
 			// check if this company exists
 			if ($this->ModelCompany->getCompanyByName($this->input->post('company')) != NULL) {
 				$signupData['companyInvalid'] = 2;
-				$this->signup($signupData);
+				return $this->signup($signupData);
 			}
 			
 			// create company
@@ -437,14 +437,14 @@ class Guest extends CI_Controller {
 		
 		if ($regData['nameInvalid'] == 1 || $regData['surnameInvalid'] == 1 || $regData['emailInvalid'] == 1 || $regData['passInvalid'] == 1 || $regData['confPassInvalid'] == 1)
 		{
-			$this->create($regLink, $regData);
+			return $this->create($regLink, $regData);
 		}
 		else {
 			
 			// check if this email is in use
 			if ($this->ModelEmployee->getAccount($this->input->post('email'), 'Account') != NULL) {
 				$regData['emailInvalid'] = 2;
-				$this->create($regLink, $regData);
+				return $this->create($regLink, $regData);
 			}
 			
 			// create employee (account + worker)

@@ -227,7 +227,7 @@ Autori:
             </div>
             <div class="media-middle">
                 <div id="sign-up" class="media-middle text-center">
-                    <a href="<?php echo site_url() . "/Guest/signup" ?>" title="sign up" class="btn btn-lg pmd-btn-outline pmd-ripple-effect btn-default">Sign up</a>
+                    <a href="<?php echo site_url().'/guest/signup'?>" title="sign up" class="btn btn-lg pmd-btn-outline pmd-ripple-effect btn-default">Sign up</a>
                 </div>
             </div>
         </div>
