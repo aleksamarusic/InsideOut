@@ -22,8 +22,8 @@ Resene su funkcionalnosti 1.,4.,20.,23., jer mi je tako bilo najpotrebnije i naj
 9. Radnik - Ažuriranje svojih zadataka                  |Aleksa |DONE   |
 10. Radnik - Pristup stranici svog tima                 |Aleksa |       | odradjen pregled tima za direktora       
 11. Radnik - Pregled stranice drugog Radnika            |Aleksa |       | 
-12. Menadžer - Kreiranje Zadatog zadatka                |Stefan |       |
-13. Menadžer - Brisanje Zadatog zadatka                 |Stefan |       |
+12. Menadžer - Kreiranje Zadatog zadatka                |Stefan |DONE   |
+13. Menadžer - Brisanje Zadatog zadatka                 |Stefan |DONE   |
 14. Direktor - Kreiranje tima                           |Marija |DONE   |
 15. Direktor - Brisanje tima                            |Marija |DONE   |
 16. Direktor - Podela radnika u timove                  |Nikola |DONE   |
@@ -46,3 +46,12 @@ Pored funkcionalnosti sredjen je i framework(prilagodjen aplikaciji), kao i doda
 se da sve radi dobro, i da je i vama olaksano, ako nesto nije jasno, pitajte.
 	
 Hint: Novi Bunar firma FTW! (podaci kao i baza su u inside_out.sql, koji je u folderu gde i gledate ovaj readme)
+
+*****
+TODO:
+*****
+
+	- srediti za datume pri kreiranju taska
+	- srediti edit task (npr. "Input is required" ne treba da postoji, prebacivanje iz In Progress u Done ili iz Done u bilo sta drugo prikazuje stranicu sa nizom)
+	- dodati statistiku za direktora
+	- proveriti za svaki generisani link da li je 100% jedinstven
