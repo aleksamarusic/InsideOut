@@ -356,16 +356,17 @@ Autori:
                     <h6 class="text-center">Submit your email address and we'll send you a link to reset your password</h6>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" id="resetPasswordForm" method="post" action="<?php echo base_url()."index.php/Guest/checkEmail/" ?>">
                         <div class="form-group pmd-textfield pmd-textfield-floating-label">
                             <label for="email">Email Address</label>
-                            <input type="text" class="mat-input form-control" id="email" value="">
+                            <input type="text" class="mat-input form-control" name = "reset_email">
                         </div>
                     </form>
                 </div>
                 <div class="pmd-modal-action text-center">
-                    <a hred="#log-in" data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="button">Send me a reset link</a>
+                    <button  class="btn pmd-ripple-effect btn-primary" type="submit" form = "resetPasswordForm">Send me a reset link</button>
                 </div>
+
             </div>
         </div>
     </div>

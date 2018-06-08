@@ -266,16 +266,29 @@ class Guest extends CI_Controller {
 		$this->load_view('index', $data);
 	}
 
-	public function check_email(){
+	public function checkEmail(){
 		if ($this->input->post('reset_email') == NULL)
 			return $this->bad_email();
 		$user = $this->ModelEmployee->getAccount($this->input->post('reset_email'), 'Account');
 		if ($user == NULL)
 			return $this->bad_email();
 		else{
+            /*
+            $this->load->library('email');
+
+            $this->email->from('your@example.com', 'Your Name');
+            $this->email->to('someone@example.com');
+            $this->email->cc('another@another-example.com');
+            $this->email->bcc('them@their-example.com');
+
+            $this->email->subject('Email Test');
+            $this->email->message('Testing the email class.');
+
+            $this->email->send();
+            */
 			$data = array();
 			$data['email'] = $this->input->post('reset_email');
-			$this->load_view('Guest/pass-reset', $data);
+            $this->load_view('Guest/pass-reset', $data);
 		}
 	}
 
@@ -335,7 +348,7 @@ class Guest extends CI_Controller {
 			}
 		}
 	}
-	
+
 	/**
 	 * Vrsi proveru podataka iz registracione forme i ili redirektuje nazad na signup stranicu,
 	 * u slucaju greske, ili vrsi logovanje radnika i redirekciju

@@ -38,9 +38,12 @@ class Employee extends CI_Controller{
 
     public function dashboard($taskCreationData = []) {
         $controller = $this->router->fetch_class();
-        $data = $this->getTasks() + $this->getTeams();
-        $data += $taskCreationData;
-		$this->load_view($controller."/dashboard.php", $data);
+        //$data = $this->getTasks() + $this->getTeams();
+       // $data += $taskCreationData;
+
+        $taskCreationData += $this->getTasks() + $this->getTeams();
+
+		$this->load_view($controller."/dashboard.php", $taskCreationData);
 	}
 
 
@@ -81,7 +84,7 @@ class Employee extends CI_Controller{
 		}
 		
 		if ($this->input->post('startDate') != NULL) {
-			$datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9] (0|1|2)[0-9]:(0|1|2|3|4|5)[0-9]:(0|1|2|3|4|5)[0-9]/';
+			$datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9]/';
 			if (preg_match($datePattern, $this->input->post('startDate'))) {
 				$taskCreationData['startDateInvalid'] = 0;
 				$taskCreationData['startDate'] = $this->input->post('startDate');
@@ -93,7 +96,7 @@ class Employee extends CI_Controller{
 		}
 		
 		if ($this->input->post('endDate') != NULL) {
-			$datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9] (0|1|2)[0-9]:(0|1|2|3|4|5)[0-9]:(0|1|2|3|4|5)[0-9]/';
+			$datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9]/';
 			if (preg_match($datePattern, $this->input->post('endDate'))) {
 				$taskCreationData['endDateInvalid'] = 0;
 				$taskCreationData['endDate'] = $this->input->post('endDate');
@@ -106,7 +109,7 @@ class Employee extends CI_Controller{
 		
 		$taskCreationData['descriptionData'] = $this->input->post('description');
 		$taskCreationData['commentData'] = $this->input->post('comment');
-		
+
 		if ($taskCreationData['nameInvalid'] == 1 || $taskCreationData['startDateInvalid'] == 1 || $taskCreationData['endDateInvalid'] == 1)
 		{
 			$taskCreationData['createTaskModal'] = 1;
@@ -116,10 +119,11 @@ class Employee extends CI_Controller{
 			
 			
 			// create the task
-			$this->ModelTask->createTask($this->session->userdata('account')->email, $this->input->post('name'), 
+			$this->ModelTask->createTask($this->session->userdata('account')->email, $this->input->post('name'),
 			$this->input->post('startDate'), $this->input->post('endDate'), $this->input->post('taskStatusRadio'), $this->input->post('description'), $this->input->post('comment'));
 			$controller = $this->router->fetch_class();
-			redirect($controller);
+            //$this->test($taskCreationData);
+            redirect($controller);
 			
 		}
 	}
@@ -128,24 +132,24 @@ class Employee extends CI_Controller{
 
         $taskCreationData['updateTaskModal'] = NULL;
 
-        if ($this->input->post('taskName') == NULL) {
+        if ($this->input->post('name') == NULL) {
             $taskCreationData['nameInvalid'] = 1;
             $taskCreationData['name'] = NULL;
 
         }
         else {
-            if ($this->input->post('taksName') == "") {
+            if ($this->input->post('name') == "") {
                 $taskCreationData['nameInvalid'] = 1;
                 $taskCreationData['name'] = NULL;
             }
             else {
                 $taskCreationData['nameInvalid'] = 0;
-                $taskCreationData['name'] = $this->input->post('taskName');
+                $taskCreationData['name'] = $this->input->post('name');
             }
         }
 
         if ($this->input->post('startDate') != NULL) {
-            $datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9] (0|1|2)[0-9]:(0|1|2|3|4|5)[0-9]:(0|1|2|3|4|5)[0-9]/';
+            $datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9]/';
             if (preg_match($datePattern, $this->input->post('startDate'))) {
                 $taskCreationData['startDateInvalid'] = 0;
                 $taskCreationData['startDate'] = $this->input->post('startDate');
@@ -157,7 +161,7 @@ class Employee extends CI_Controller{
         }
 
         if ($this->input->post('endDate') != NULL) {
-            $datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9] (0|1|2)[0-9]:(0|1|2|3|4|5)[0-9]:(0|1|2|3|4|5)[0-9]/';
+            $datePattern = '/(1|2)[0-9]{3}-(0|1)[0-9]-(0|1|2|3)[0-9]/';
             if (preg_match($datePattern, $this->input->post('endDate'))) {
                 $taskCreationData['endDateInvalid'] = 0;
                 $taskCreationData['endDate'] = $this->input->post('endDate');
@@ -174,15 +178,16 @@ class Employee extends CI_Controller{
         if ($taskCreationData['nameInvalid'] == 1 || $taskCreationData['startDateInvalid'] == 1 || $taskCreationData['endDateInvalid'] == 1)
         {
             $taskCreationData['updateTaskModal'] = 1;
-            $this->dashboard($taskCreationData);
+            $this->test($taskCreationData);
         }
         else {
 
 
             // create the task
-            $this->ModelTask->updateTask($this->input->post('taskId'), $this->input->post('taskName'),
+            $this->ModelTask->updateTask($this->input->post('taskId'), $this->input->post('name'),
                 $this->input->post('startDate'), $this->input->post('endDate'), $this->input->post('taskStatusRadio'), $this->input->post('description'), $this->input->post('comment'));
             $controller = $this->router->fetch_class();
+            //$this->test($taskCreationData);
             redirect($controller);
 
         }
@@ -233,11 +238,24 @@ class Employee extends CI_Controller{
 	}
 
     public function deleteTask(){
-        $taskId = $this->input->post('taskId');
+        $taskId = $this->input->post("taskId");
 		$this->ModelTask->deleteTask($taskId);
 		$controller = $this->router->fetch_class();
+		$data['taskid'] = $taskId;
+        //$this->test($data);
 		redirect($controller);
 	}
+
+	public function test($taskCreationData = []){
+        $controller = $this->router->fetch_class();
+        $data = $this->getTasks() + $this->getTeams();
+        $data += $taskCreationData;
+        $controller = $this->router->fetch_class();
+        $data['name'] = $this->session->userdata('account')->name;
+        $data['controller'] = $controller;
+        $this->session->set_userdata('taskCreationData', $taskCreationData);
+        $this->load->view("templates/test", $taskCreationData);
+    }
 
     /**
      * Logout za Menadzera, Radnika i Direktora

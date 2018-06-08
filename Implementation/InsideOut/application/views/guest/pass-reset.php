@@ -78,7 +78,7 @@ Autori:
                 <div class="pmd-card-body">
                 
                 
-                    <form class="form-horizontal" role="form"  action="<?php echo site_url('Guest/reset_password')?>" method="post">
+                    <form class="form-horizontal" role="form"  action=<?php echo site_url('Guest/reset_password')?> method="post">
                         <div class="form-group pmd-textfield pmd-textfield-floating-label" style = "visible: false">
                             <input class="form-control" type="hidden" name = "reset_email" value = <?php echo $email;?>>
                         </div> 

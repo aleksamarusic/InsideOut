@@ -259,7 +259,7 @@
 				</div>
 				
 				<div class="modal-body">
-				<form class="form-horizontal" name="giveTaskForm" id="giveTaskForm" method="post" action="<?php echo site_url('manager/giveTask/'); ?>">
+				<form class="form-horizontal" name="giveTaskForm" id="giveTaskForm" method="post" action="<?php echo site_url($controller.'/giveTask/'.$employeeId); ?>">
 					<div class="form-group pmd-textfield pmd-textfield-floating-label"> 
 						<!-- class="mat-input form-control" -->
 						<label for="name" class="control-label" <?php if (isset($nameInvalid) && $nameInvalid == 1) { echo "style='color: red'"; } ?> >Task name</label>

@@ -38,7 +38,8 @@ class Worker extends Employee {
         redirect('Worker');
     }
 
-    public function denyTask($taskId){
+    public function declineTask(){
+        $taskId = $this->input->post("taskId");
         $this->ModelTask->denyTask($taskId);
         redirect('Worker');
     }

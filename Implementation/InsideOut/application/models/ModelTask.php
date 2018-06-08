@@ -27,23 +27,24 @@ class ModelTask extends CI_Model{
 		else {
 			$statusCompletion = 'D';		// done
 		}
-		
-		if ($startDate == '') {
-			$expectedStartDate = NULL;
-		}
-		else {
-			$expectedStartDate = $startDate;
-		}
-		
-		if ($endDate == '') {
-			$expectedEndDate = NULL;
-		}
-		else {
-			$expectedEndDate = $endDate;
-		}
+
+        if ($startDate == '') {
+            $expectedStartDate = NULL;
+        }
+        else {
+            $expectedStartDate = substr($startDate, 0, 10);
+        }
+
+        if ($endDate == '') {
+            $expectedEndDate = NULL;
+        }
+        else {
+            $expectedEndDate = substr($endDate, 0, 10);
+        }
 		
 		$taskData = array(
 			'email' => $email,
+			'companyName' => $this->session->userdata('employee')->companyName,
 			'statusPrivacy' => 'P',
 			'statusCompletion' => $statusCompletion,
 			'statusAcceptance' => 'A',
@@ -72,14 +73,14 @@ class ModelTask extends CI_Model{
             $expectedStartDate = NULL;
         }
         else {
-            $expectedStartDate = $startDate;
+            $expectedStartDate = substr($startDate, 0, 10);
         }
 
         if ($endDate == '') {
             $expectedEndDate = NULL;
         }
         else {
-            $expectedEndDate = $endDate;
+            $expectedEndDate = substr($endDate, 0, 10);
         }
 
         $taskData = array(
@@ -114,28 +115,29 @@ class ModelTask extends CI_Model{
             $expectedStartDate = NULL;
         }
         else {
-            $expectedStartDate = $startDate;
+            $expectedStartDate = substr($startDate, 0, 10);
         }
 
         if ($endDate == '') {
             $expectedEndDate = NULL;
         }
         else {
-            $expectedEndDate = $endDate;
+            $expectedEndDate = substr($endDate, 0, 10);
         }
 
         $this->db->where('taskId', $taskId);
         $this->db->set('statusCompletion', $statusCompletion);
         $this->db->set('taskName', $name);
-        $this->db->set('comment', $comment);
         $this->db->set('expectedStartDate', $expectedStartDate);
         $this->db->set('expectedEndDate', $expectedEndDate);
+        $this->db->set('description', $description);
+        $this->db->set('comment', $comment);
         $this->db->update('task');
     }
 
-	public function deleteTask($id) {
-        $this->db->where("taskId", $id);
-        $this->db->delete('task');
+	public function deleteTask($taskId) {
+        $this->db->where("taskId", $taskId);
+        $this->db->delete("task");
 	}
 
 	public function getTasksByEmailAndCompany($email, $companyName){
