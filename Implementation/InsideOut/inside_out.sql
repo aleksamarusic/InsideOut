@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 04, 2018 at 04:08 PM
+-- Generation Time: Jun 08, 2018 at 05:13 PM
 -- Server version: 5.7.21
 -- PHP Version: 5.6.35
 
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `company` (
 --
 
 INSERT INTO `company` (`companyName`, `numAccounts`, `numAccountsUsed`, `registrationLink`) VALUES
-('Novi Bunar', 10, 0, 'oH3VaDyJqtj1gV9bfnbW');
+('Novi Bunar', 10, 0, 'WJMkzxlgzIjRUuzKxvmD');
 
 -- --------------------------------------------------------
 
@@ -232,14 +232,29 @@ CREATE TABLE IF NOT EXISTS `task` (
   PRIMARY KEY (`taskId`),
   KEY `R_19` (`email`),
   KEY `R_20` (`teamName`,`companyName`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `task`
 --
 
 INSERT INTO `task` (`email`, `taskId`, `teamName`, `companyName`, `statusPrivacy`, `statusCompletion`, `statusAcceptance`, `taskName`, `description`, `comment`, `expectedStartDate`, `expectedEndDate`) VALUES
-('milan@gmail.com', 1, 'Tim3', 'Novi Bunar', 'G', 'NS', 'P', 'Instaliraj Eclipse', 'Instalirati Eclipse na racunarima u Racunarskom centru', NULL, '2018-06-04', '2018-06-08');
+('milan@gmail.com', 1, 'Tim3', 'Novi Bunar', 'G', 'NS', 'A', 'Instaliraj Eclipse', 'Instalirati Eclipse na racunarima u Racunarskom centru', NULL, '2018-06-04', '2018-06-08'),
+('milan@gmail.com', 2, 'Tim3', 'Novi Bunar', 'G', 'D', 'A', 'ssss', 'dummy', 'dummy', '2018-06-05', '2018-06-22'),
+('milan@gmail.com', 3, NULL, NULL, 'P', 'S', 'A', 'asd', '', '', '2018-06-06', NULL),
+('milan@gmail.com', 4, NULL, NULL, 'P', 'S', 'A', 'ads', '', 'dasdasd', '2018-06-05', '2018-06-05'),
+('milan@gmail.com', 5, NULL, NULL, 'P', 'NS', 'A', 'Milan', 'asd', 'asd', '2018-06-06', '2018-06-08'),
+('milan@gmail.com', 6, NULL, NULL, 'P', 'NS', 'A', 'dummy again', 'Instalirati Eclipse na racunarima u Racunarskom centru', 'dasdad', '2018-06-13', '2018-06-15'),
+('milan@gmail.com', 7, NULL, NULL, 'P', 'NS', 'A', 'sssdasdsa', 'dasdsa', 'dsadasdsa', '2018-06-12', '2018-06-12'),
+('milan@gmail.com', 8, NULL, NULL, 'P', 'NS', 'A', 'sdsadasd', 'sadsadasd', 'dsadsadasd', '2018-05-30', '2018-05-30'),
+('milan@gmail.com', 9, NULL, NULL, 'P', 'NS', 'A', 'ajde vise', 'asdsadsa', 'dasdasdasd', '2018-06-08', '2018-06-08'),
+('milan@gmail.com', 10, NULL, NULL, 'P', 'NS', 'A', 'ajde breee', 'dsadasdsa', 'dsadasd', '2018-06-08', '2018-06-08'),
+('milan@gmail.com', 11, NULL, 'Novi Bunar', 'P', 'S', 'A', 'ajde breee', 'dsadsad', 'asddasaaaaaa', '2018-06-08', '2018-06-08'),
+('milan@gmail.com', 13, NULL, 'Novi Bunar', 'P', 'S', 'A', 'Test', 'dsdsd', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', '2018-06-08', '2018-06-08'),
+('milan@gmail.com', 14, NULL, 'Novi Bunar', 'P', 'S', 'A', 'Zasto ne radis', '', '', '2018-06-08', '2018-06-22'),
+('milan@gmail.com', 15, NULL, 'Novi Bunar', 'G', 'NS', 'A', 'Zadatak', '', '', '2018-06-05', '2018-06-08'),
+('milan@gmail.com', 16, NULL, 'Novi Bunar', 'G', 'NS', 'D', 'Uradi ovo odmah', '', '', '2018-06-08', '2018-06-08'),
+('ranko@gmail.com', 17, NULL, 'Novi Bunar', 'G', 'D', 'A', 'Hitno bitno', '', '', '2018-06-05', '2018-06-05');
 
 -- --------------------------------------------------------
 
