@@ -451,7 +451,8 @@ class Guest extends CI_Controller {
 			$this->ModelEmployee->createEmployee($this->input->post('name'), $this->input->post('surname'), $this->input->post('email'), $this->input->post('pass'), $this->input->post('companyName'));
 			
 			// update account number for the current company
-			$this->ModelCompany->increaseNumAccountsUsed($this->input->post('companyName'));
+			// ne treba, postoji triger
+			//$this->ModelCompany->increaseNumAccountsUsed($this->input->post('companyName'));
 			
 			// perform login and redirection
 			$this->session->set_userdata('worker', 1);

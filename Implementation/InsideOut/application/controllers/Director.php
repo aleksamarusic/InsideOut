@@ -205,7 +205,7 @@ class Director extends Employee {
     public function generate(){
         for ($s = '', $i = 0, $z = strlen($a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789')-1; $i != 20; $x = rand(0,$z), $s .= $a{$x}, $i++); 
         $this->ModelCompany->setGeneratedLink($this->session->userdata('employee')->companyName, $s);
-        redirect("Director");
+        redirect("Director/accounts");
     }
 
     /**
@@ -234,7 +234,7 @@ class Director extends Employee {
             $this->ModelEmployee->delete('Manager', $email);
             //prebaci u radnika
             $this->ModelEmployee->add('Worker', $email, $this->session->userdata('employee')->companyName);
-            redirect("Director");
+            redirect("Director/accounts");
         }
 
         //ostaje isti tip
@@ -253,7 +253,7 @@ class Director extends Employee {
         $this->ModelEmployee->add('Manager', $email, $this->session->userdata('employee')->companyName);
         foreach($selection as $team)
             $this->ModelTeam->setTeamManager($team, $this->session->userdata('employee')->companyName, $email);
-        redirect("Director");
+        redirect("Director/accounts");
     }
 
     /**
@@ -282,7 +282,7 @@ class Director extends Employee {
             $this->ModelEmployee->delete('Worker', $email);
             //prebaci u menadzera
             $this->ModelEmployee->add('Manager', $email, $this->session->userdata('employee')->companyName);
-            redirect("Director");
+            redirect("Director/accounts");
         }
 
         //izbrisi sve veze radnika
@@ -291,7 +291,7 @@ class Director extends Employee {
         $this->ModelEmployee->add('Worker', $email, $this->session->userdata('employee')->companyName);
         foreach($selection as $team)
             $this->ModelTeam->addWorkerTeam($team, $this->session->userdata('employee')->companyName, $email);
-        redirect("Director");
+        redirect("Director/accounts");
     }
 
     /**
@@ -311,16 +311,7 @@ class Director extends Employee {
         }
 
         $this->load_view('director/teams', $data);
-    }
-
-
-
-    /**
-     * Prikazuje stranicu tima sa imenom $teamName direktoru
-     *
-     * @param String $teamName
-     * @return void
-     */
+    }   
     
 
     /**
@@ -361,7 +352,7 @@ class Director extends Employee {
                 $this->ModelTeam->createTeam($teamName, $companyName);
             }
         }
-        $this->teams($message);
+        Redirect("Director/teams/" . $message);
     }
 
     /**

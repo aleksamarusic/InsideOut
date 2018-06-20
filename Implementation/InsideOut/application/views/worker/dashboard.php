@@ -76,7 +76,7 @@
 	                                    <button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-success btn-xs\" type=\"submit\" value = \"acceptTask\" style=\"display: block;\"><i class=\"material-icons pmd-xs\">check</i></button>
 										
 										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
-											document.infoPendingTaskForm.name.value='$taskName';
+											document.infoPendingTaskForm.taskName.value='$taskName';
 											document.infoPendingTaskForm.startDate.value='$expectedStartDate';
 											document.infoPendingTaskForm.endDate.value='$expectedEndDate';
 											document.infoPendingTaskForm.description.value='$description';
@@ -668,16 +668,15 @@
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" name="infoPendingTaskForm" id="infoPendingTaskForm">
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <div class="form-group pmd-textfield">
                         <label for="first-name">Task name</label>
                         <input type="text" class="mat-input form-control" id="name" name="taskName" disabled="">
-                        <span class="help-text">Input is required!</span>
                     </div>
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <div class="form-group pmd-textfield">
                         <label for="start-date" class="control-label">Expected start date</label>
                         <input type="text" id="datepicker-left-header" class="form-control" name="startDate" disabled="">
                     </div>
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <div class="form-group pmd-textfield">
                         <label for="end-date" class="control-label">Expected end date</label>
                         <input type="text" id="datetimepicker-default" class="form-control" name="endDate" disabled="">
                     </div>
@@ -705,18 +704,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <div class="form-group pmd-textfield">
                         <label class="control-label">Description</label>
                         <textarea required class="form-control" name="description" disabled=""></textarea>
                     </div>
-                    <div class="form-group pmd-textfield pmd-textfield-floating-label">
+                    <div class="form-group pmd-textfield">
                         <label class="control-label">Any other comment</label>
                         <textarea required class="form-control" name="comment" disabled=""></textarea>
                     </div>
                 </form>
             </div>
             <div class="pmd-modal-action text-right">
-                <button data-dismiss="modal"  class="btn pmd-ripple-effect btn-primary" type="button">Close</button>
+                <button data-dismiss="modal"  class="btn pmd-ripple-effect btn-success" type="button">Close</button>
             </div>
         </div>
     </div>
