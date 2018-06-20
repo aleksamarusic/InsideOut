@@ -159,26 +159,24 @@ Autori:
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <!-- Team Member Card -->
                 <div class="pmd-card pmd-card-border pmd-z-depth">
-                    <div class="pmd-card-icon">
-                        <img class="svg" src="<?php echo base_url()?>assets/img/awesome.svg" alt="Awesome" title="Awesome">
+                    <div class="pmd-card-media">
+                        <img class="img-fluid" style="border-radius: 5px" src="<?php echo base_url()?>assets/img/nikola.jpg" alt="Nikola Nedeljković" title="Nikola Nedeljković">
                     </div>
                     <div class="pmd-card-body">
-                        <h4 class="pmd-card-title-text">Nikola Nedeljkovic</h4>
-                        <p class="pmd-card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur
-                            adipisicing elit.</p>
+                        <h4 class="pmd-card-title-text">Nikola Nedeljković</h4>
+                        <p class="pmd-card-description">Third year student of Software Engineering at the University of Belgrade.</p>
                     </div>
                 </div>
                 <!-- end Team Member Card -->
             </div>
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="pmd-card pmd-card-border pmd-z-depth">
-                    <div class="pmd-card-icon">
-                        <img class="svg" src="<?php echo base_url()?>assets/img/innovative.svg" alt="Innovative" title="Innovative">
+                    <div class="pmd-card-media">
+                        <img class="img-fluid" style="border-radius: 5px" src="<?php echo base_url()?>assets/img/marija.jpg" alt="Marija Kostić" title="Marija Kostić">
                     </div>
                     <div class="pmd-card-body">
                         <h4 class="pmd-card-title-text">Marija Kostić</h4>
-                        <p class="pmd-card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur
-                            adipisicing elit.</p>
+                        <p class="pmd-card-description">Third year student of Software Engineering at the University of Belgrade.</p>
                     </div>
                 </div>
                 <!-- End Team Member Card -->
@@ -186,13 +184,12 @@ Autori:
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <!-- Team Member Card -->
                 <div class="pmd-card pmd-card-border pmd-z-depth">
-                    <div class="pmd-card-icon">
-                        <img class="svg" src="<?php echo base_url()?>assets/img/creative.svg" alt="Creative" title="Creative">
+                    <div class="pmd-card-media">
+                        <img class="img-fluid" style="border-radius: 5px" src="<?php echo base_url()?>assets/img/stefan.jpg" alt="Stefan Milanović" title="Stefan Milanović">
                     </div>
                     <div class="pmd-card-body">
                         <h4 class="pmd-card-title-text">Stefan Milanović</h4>
-                        <p class="pmd-card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur
-                            adipisicing elit.</p>
+                        <p class="pmd-card-description">Third year student of Software Engineering at the University of Belgrade.</p>
                     </div>
                 </div>
                 <!-- End Team Member Card -->
@@ -200,13 +197,12 @@ Autori:
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <!-- Team Member Card -->
                 <div class="pmd-card pmd-card-border pmd-z-depth">
-                    <div class="pmd-card-icon">
-                        <img class="svg" src="<?php echo base_url()?>assets/img/experimental.svg" alt="Experimental" title="Experimental">
+                    <div class="pmd-card-media">
+                        <img class="img-fluid" style="border-radius: 5px" src="<?php echo base_url()?>assets/img/aleksa.jpg" alt="Aleksa Marušić" title="Aleksa Marušić">
                     </div>
                     <div class="pmd-card-body">
                         <h4 class="pmd-card-title-text">Aleksa Marušić</h4>
-                        <p class="pmd-card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur
-                            adipisicing elit.</p>
+                        <p class="pmd-card-description">Third year student of Software Engineering at the University of Belgrade.</p>
                     </div>
                 </div>
                 <!-- End Team Member Card -->
@@ -242,10 +238,10 @@ Autori:
         <!--log in form -->
         <div class="card-form">
             <div class="text-center">
-                    <?php if (isset($bad_login)) echo "<h5 class='inverse'>Please insert correct login data!</h5>" ?>
-                    <?php if (isset($bad_email)) echo "<h5 class='inverse'>Please insert correct email!</h5>" ?>
-                    <?php if (isset($bad_reset)) echo "<h5 class='inverse'>Passwords do not match!</h5>" ?>
-                    <?php if (isset($password_changed)) echo "<h5 class='inverse'>Password changed successfully.</h5>" ?>
+                    <?php if (isset($bad_login)) echo "<h5 class='inverse' style='color:red'>Please insert correct login data!</h5>" ?>
+                    <?php if (isset($bad_email)) echo "<h5 class='inverse' style='color:red'>Please insert correct email!</h5>" ?>
+                    <?php if (isset($bad_reset)) echo "<h5 class='inverse' style='color:red'>Passwords do not match!</h5>" ?>
+                    <?php if (isset($password_changed)) echo "<h5 class='inverse' style='color:red'>Password changed successfully.</h5>" ?>
             </div>
 
             <form class="form-inverse" action="<?php echo site_url('Guest/login')?>" method="post">

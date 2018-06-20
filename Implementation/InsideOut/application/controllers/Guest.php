@@ -295,7 +295,7 @@ class Guest extends CI_Controller {
 	private function bad_reset(){
 		$data = array();
 		$data['bad_reset'] = 1;
-		$this->load_view('index', $data);
+		$this->load_view('index#log-in', $data);
 	}
 
 	public function resetPassword(){
@@ -304,7 +304,7 @@ class Guest extends CI_Controller {
 		$this->ModelEmployee->resetPassword($this->input->post('reset_email'), $this->input->post('password'));
 		$data = array();
 		$data['password_changed'] = 1;
-		$this->load_view('index', $data);
+		$this->load_view('index#log-in', $data);
 	}
 
 	/**
@@ -322,19 +322,19 @@ class Guest extends CI_Controller {
 		if ($regLink == NULL) {
 			// flag - link doesn't exist
 			$regData['invalidLink'] = 1;
-			$this->load_view('reg_expired', $regData);
+			return $this->load_view('reg_expired', $regData);
 		}
 		else {
 			$company = $this->ModelCompany->getCompany($regLink);
 			if ($company == NULL) {
 				// flag - link doesn't apply to any company
 				$regData['invalidLink'] = 1;
-				$this->load_view('reg_expired', $regData);
+				return $this->load_view('reg_expired', $regData);
 			}
 			else if ($company->numAccounts == $company->numAccountsUsed) {
 				// flag - all accounts used for current company
 				$regData['noAccountsLeft'] = 1;
-				$this->load_view('reg_expired', $regData);
+				return $this->load_view('reg_expired', $regData);
 			}
 			else {
 				// successful access
@@ -344,7 +344,7 @@ class Guest extends CI_Controller {
 				
 				$regData['regLink'] = $regLink;
 				$regData['companyName'] = $company->companyName;
-				$this->load_view('reg', $regData);
+				return $this->load_view('reg', $regData);
 			}
 		}
 	}
