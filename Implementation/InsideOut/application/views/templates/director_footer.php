@@ -80,7 +80,13 @@
             "$(document).ready(function(){
                 $('#price-modal').modal('show');
             })";
-        }
+		}
+		if (isset($giveTaskModal)) {
+			echo
+            "$(document).ready(function(){
+                $('#give-task-modal').modal('show');
+            })";
+		}
     ?>
 		
     </script>

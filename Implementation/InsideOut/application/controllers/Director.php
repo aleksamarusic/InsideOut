@@ -136,7 +136,7 @@ class Director extends Employee {
         if ($taskCreationData['nameInvalid'] == 1 || $taskCreationData['startDateInvalid'] == 1 || $taskCreationData['endDateInvalid'] == 1)
         {
             $taskCreationData['giveTaskModal'] = 1;
-            $this->dashboard($taskCreationData);
+            return $this->viewEmployee($idEmployee, $taskCreationData);
         }
         else {
 
@@ -145,16 +145,15 @@ class Director extends Employee {
 
             $managerEmail = $this->session->userdata('account')->email;
 
-            // get team and company (from manager)
-
-            $team = NULL; // ??
-
+            // get company (from manager)
             $company = $this->session->userdata('employee')->companyName;
 
             // give the task
             $this->ModelTask->createGivenTask($employeeEmail, NULL, $company, $this->input->post('name'),
                 $this->input->post('startDate'), $this->input->post('endDate'), $this->input->post('taskStatusRadio'), $this->input->post('description'), $this->input->post('comment'));
 
+            
+            // redirect('Director/viewEmployee/' + $idEmployee);
             redirect('Director');
 
         }
