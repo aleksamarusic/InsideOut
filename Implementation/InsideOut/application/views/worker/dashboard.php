@@ -4,7 +4,7 @@
 	<div class="container-fluid full-width-container">
 		<div class="row">
 			<div class="col-lg-6 col-lg-offset-3">
-				<button class="btn pmd-btn-raised btn-primary btn-block pmd-ripple-effect btn-primary" type="button" data-target="#create-task-modal" data-toggle="modal">Create task</button>
+				<button class="btn pmd-btn-raised btn-primary btn-block pmd-ripple-effect btn-success" type="button" data-target="#create-task-modal" data-toggle="modal">Create task</button>
 			</div>
 		</div>
 		<br>
@@ -456,7 +456,7 @@
                 </form>
             </div>
             <div class="pmd-modal-action text-right">
-                <input type="submit" form="taskCreationForm" class="btn pmd-ripple-effect btn-primary" value="Create task" />
+                <input type="submit" form="taskCreationForm" class="btn pmd-ripple-effect btn-success" value="Create task" />
                 <button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard</button>
             </div>
         </div>
@@ -475,7 +475,6 @@
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="first-name">Task name</label>
                         <input type="text" class="mat-input form-control" id="name" name="name">
-                        <span class="help-text">Input is required!</span>
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="start-date" class="control-label">Expected start date</label>
@@ -540,7 +539,6 @@
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="first-name">Task name</label>
                         <input type="text" class="mat-input form-control" id="name" name="name">
-                        <span class="help-text">Input is required!</span>
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="start-date" class="control-label">Expected start date</label>
@@ -606,7 +604,6 @@
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="first-name">Task name</label>
                         <input type="text" class="mat-input form-control" id="name" name="name">
-                        <span class="help-text">Input is required!</span>
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="start-date" class="control-label">Expected start date</label>
@@ -664,7 +661,7 @@
         <div class="modal-content">
             <div class="modal-header bordered">
                 <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                <h2 class="pmd-card-title-text">About task</h2>
+                <h2 class="pmd-card-title-text">About the task</h2>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" name="infoPendingTaskForm" id="infoPendingTaskForm">

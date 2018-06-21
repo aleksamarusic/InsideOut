@@ -4,7 +4,7 @@
 	<div class="container-fluid full-width-container">
 		<div class="row">
 			<div class="col-lg-6 col-lg-offset-3">
-				<button class="btn pmd-btn-raised btn-primary btn-block pmd-ripple-effect btn-primary" type="button" data-target="#create-task-modal" data-toggle="modal">Create task</button>
+				<button class="btn pmd-btn-raised btn-primary btn-block pmd-ripple-effect btn-success" type="button" data-target="#create-task-modal" data-toggle="modal">Create task</button>
 			</div>
 		</div>
 		<br>
@@ -443,7 +443,7 @@
                 </form>
             </div>
             <div class="pmd-modal-action text-right">
-                <input type="submit" form="taskCreationForm" class="btn pmd-ripple-effect btn-primary" value="Create task" />
+                <input type="submit" form="taskCreationForm" class="btn pmd-ripple-effect btn-success" value="Create task" />
                 <button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard</button>
             </div>
         </div>

@@ -113,7 +113,7 @@ class Employee extends CI_Controller{
 		if ($taskCreationData['nameInvalid'] == 1 || $taskCreationData['startDateInvalid'] == 1 || $taskCreationData['endDateInvalid'] == 1)
 		{
 			$taskCreationData['createTaskModal'] = 1;
-			$this->dashboard($taskCreationData);
+			return $this->dashboard($taskCreationData);
 		}
 		else {
 			
@@ -233,7 +233,7 @@ class Employee extends CI_Controller{
 
         );
         $employeeData += $teams;
-		
+		$employeeData += $giveTaskData;
 		$this->load_view("templates/viewEmployee.php", $employeeData);
 	}
 

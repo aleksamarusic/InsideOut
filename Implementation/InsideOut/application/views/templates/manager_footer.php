@@ -69,6 +69,12 @@
                 $('#create-task-modal').modal('show');
             })";
 		}
+		if (isset($giveTaskModal)) {
+			echo
+            "$(document).ready(function(){
+                $('#give-task-modal').modal('show');
+            })";
+		}
 	?>
 </script> 
 

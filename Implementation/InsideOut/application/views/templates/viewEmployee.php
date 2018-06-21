@@ -7,7 +7,7 @@
 			if ($canGiveTask)
 				echo "<div class=\"row\">
 				<div class=\"col-lg-6 col-lg-offset-3\">
-					<button class=\"btn pmd-btn-raised btn-primary btn-block pmd-ripple-effect btn-primary\" type=\"button\" data-target=\"#give-task-modal\"
+					<button class=\"btn pmd-btn-raised btn-primary btn-block pmd-ripple-effect btn-success\" type=\"button\" data-target=\"#give-task-modal\"
 					 data-toggle=\"modal\">Give task</button>
 				</div>
 			</div>
@@ -352,7 +352,7 @@
 				
 				<div class="pmd-modal-action text-right">
 				<input type="hidden" name="employeeId" value="<?php echo $employeeId; ?>" />
-				<input type="submit" form="giveTaskForm" class="btn pmd-ripple-effect btn-primary" value="Give task" />
+				<input type="submit" form="giveTaskForm" class="btn pmd-ripple-effect btn-success" value="Give task" />
 				<button data-dismiss="modal"  class="btn pmd-ripple-effect btn-default" type="button">Discard</button>
 			</div>
 			</div>
