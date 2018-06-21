@@ -92,13 +92,33 @@
                                 if ($statusCompletion == "NS" && $statusPrivacy == 'G' && $statusAcceptance == 'A'){
                                     echo "<tr>";
                                     echo "<td>$taskName</td>";
-                                    echo "<td class=\"td-actions text-right\">
-										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#info-open-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
-                                    	</td>
-                                    	</tr>";
+                                    echo "<td class=\"td-actions text-right pull-right\">
+										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
+											document.infoOpenTaskForm.name.value='$taskName';
+											document.infoOpenTaskForm.startDate.value='$expectedStartDate';
+											document.infoOpenTaskForm.endDate.value='$expectedEndDate';
+											document.infoOpenTaskForm.description.value='$description';
+											document.infoOpenTaskForm.comment.value='$comment';
+											document.infoOpenTaskForm.taskId.value='$id';
+										})()\"
+								style=\"display: block;\" data-target=\"#info-open-task-modal\" data-toggle=\"modal\">
+								<i class=\"material-icons pmd-xs\">info</i></button>";
+										
+
+								if ($canGiveTask)
+								echo "<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" onclick=\"(function(){
+									document.deleteTaskForm.taskId.value='$id';
+								})()\"
+								style=\"display: block;\" data-target=\"#delete-given-task-modal\"
+								 data-toggle=\"modal\">
+									<i class=\"material-icons pmd-xs\">clear</i>
+								</button>";
+
+								echo "</td>
+								</tr>";
                                 }
 							}
-							?>
+                        	?>
 
 							</tbody>
 						</table>
@@ -158,13 +178,33 @@
                                 if ($statusCompletion == "S" && $statusPrivacy == 'G' && $statusAcceptance == 'A'){
                                     echo "<tr>";
                                     echo "<td>$taskName</td>";
-                                    echo "<td class=\"td-actions text-right\">
-										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#info-open-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
-                                    	</td>
-                                    	</tr>";
+                                    echo "<td class=\"td-actions text-right pull-right\">
+										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
+											document.infoInProgressTaskForm.name.value='$taskName';
+											document.infoInProgressTaskForm.startDate.value='$expectedStartDate';
+											document.infoInProgressTaskForm.endDate.value='$expectedEndDate';
+											document.infoInProgressTaskForm.description.value='$description';
+											document.infoInProgressTaskForm.comment.value='$comment';
+											document.infoInProgressTaskForm.taskId.value='$id';
+										})()\"
+								style=\"display: block;\" data-target=\"#info-in-progress-task-modal\" data-toggle=\"modal\">
+								<i class=\"material-icons pmd-xs\">info</i></button>";
+										
+
+								if ($canGiveTask)
+								echo "<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" onclick=\"(function(){
+									document.deleteTaskForm.taskId.value='$id';
+								})()\"
+								style=\"display: block;\" data-target=\"#delete-given-task-modal\"
+								 data-toggle=\"modal\">
+									<i class=\"material-icons pmd-xs\">clear</i>
+								</button>";
+
+								echo "</td>
+								</tr>";
                                 }
 							}
-							?>
+                        	?>
 
 							</tbody>
 						</table>
@@ -223,13 +263,33 @@
                                 if ($statusCompletion == "D" && $statusPrivacy == 'G' && $statusAcceptance == 'A'){
                                     echo "<tr>";
                                     echo "<td>$taskName</td>";
-                                    echo "<td class=\"td-actions text-right\">
-										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" style=\"display: block;\" data-target=\"#info-open-task-modal\" data-toggle=\"modal\"><i class=\"material-icons pmd-xs\">info</i></button>
-                                    	</td>
-                                    	</tr>";
+                                    echo "<td class=\"td-actions text-right pull-right\">
+										<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-primary btn-xs\" type=\"button\" onclick=\"(function(){
+											document.infoDoneTaskForm.name.value='$taskName';
+											document.infoDoneTaskForm.startDate.value='$expectedStartDate';
+											document.infoDoneTaskForm.endDate.value='$expectedEndDate';
+											document.infoDoneTaskForm.description.value='$description';
+											document.infoDoneTaskForm.comment.value='$comment';
+											document.infoDoneTaskForm.taskId.value='$id';
+										})()\"
+								style=\"display: block;\" data-target=\"#info-done-task-modal\" data-toggle=\"modal\">
+								<i class=\"material-icons pmd-xs\">info</i></button>";
+										
+
+								if ($canGiveTask)
+								echo "<button class=\"btn pmd-btn-fab pmd-btn-flat pmd-ripple-effect btn-danger btn-xs\" type=\"button\" onclick=\"(function(){
+									document.deleteTaskForm.taskId.value='$id';
+								})()\"
+								style=\"display: block;\" data-target=\"#delete-given-task-modal\"
+								 data-toggle=\"modal\">
+									<i class=\"material-icons pmd-xs\">clear</i>
+								</button>";
+
+								echo "</td>
+								</tr>";
                                 }
 							}
-							?>
+                        	?>
 
 							</tbody>
 						</table>
@@ -367,19 +427,18 @@
 					<h2 class="pmd-card-title-text">About task</h2>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal">
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<form class="form-horizontal" name="infoOpenTaskForm" id="infoOpenTaskForm">
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="first-name">Task name</label>
-							<input type="text" class="mat-input form-control" id="name" value="Task name" disabled="">
-							<span class="help-text">Input is required!</span>
+							<input type="text" class="mat-input form-control" id="name" name="name" disabled="">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="start-date" class="control-label">Expected start date</label>
-							<input type="text" id="datepicker-left-header" class="form-control" value="some date" disabled="">
+							<input type="text" class="form-control" name="startDate"  disabled="">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="end-date" class="control-label">Expected end date</label>
-							<input type="text" id="datetimepicker-default" class="form-control" value="some date" disabled="">
+							<input type="text" class="form-control" name="endDate"  disabled="">
 						</div>
 
 						<div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -410,11 +469,11 @@
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Description</label>
-							<textarea required class="form-control" disabled="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+							<textarea required class="form-control"  name="description" disabled=""></textarea>
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Any other comment</label>
-							<textarea required class="form-control" disabled="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+							<textarea required class="form-control"  name="comment" disabled=""></textarea>
 						</div>
 					</form>
 				</div>
@@ -433,19 +492,18 @@
 					<h2 class="pmd-card-title-text">About task</h2>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal">
-						<div class="form-group pmd-textfield pmd-textfield-floating-label">
+					<form class="form-horizontal" name="infoInProgressTaskForm" id="infoInProgressTaskForm">
+					<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="first-name">Task name</label>
-							<input type="text" class="mat-input form-control" id="name" value="Task name" disabled="">
-							<span class="help-text">Input is required!</span>
+							<input type="text" class="mat-input form-control" id="name" name="name" disabled="">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="start-date" class="control-label">Expected start date</label>
-							<input type="text" id="datepicker-left-header" class="form-control" value="some date" disabled="">
+							<input type="text" class="form-control" name="startDate"  disabled="">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="end-date" class="control-label">Expected end date</label>
-							<input type="text" id="datetimepicker-default" class="form-control" value="some date" disabled="">
+							<input type="text" class="form-control" name="endDate"  disabled="">
 						</div>
 
 						<div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -476,11 +534,11 @@
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Description</label>
-							<textarea required class="form-control" disabled="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+							<textarea required class="form-control"  name="description" disabled=""></textarea>
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Any other comment</label>
-							<textarea required class="form-control" disabled="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+							<textarea required class="form-control"  name="comment" disabled=""></textarea>
 						</div>
 					</form>
 				</div>
@@ -499,19 +557,18 @@
 					<h2 class="pmd-card-title-text">About task</h2>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal">
+					<form class="form-horizontal" name="infoDoneTaskForm" id="infoDoneTaskForm">
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="first-name">Task name</label>
-							<input type="text" class="mat-input form-control" id="name" value="Task name" disabled="">
-							<span class="help-text">Input is required!</span>
+							<input type="text" class="mat-input form-control" id="name" name="name" disabled="">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="start-date" class="control-label">Expected start date</label>
-							<input type="text" id="datepicker-left-header" class="form-control" value="some date" disabled="">
+							<input type="text" class="form-control" name="startDate"  disabled="">
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label for="end-date" class="control-label">Expected end date</label>
-							<input type="text" id="datetimepicker-default" class="form-control" value="some date" disabled="">
+							<input type="text" class="form-control" name="endDate"  disabled="">
 						</div>
 
 						<div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -542,16 +599,37 @@
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Description</label>
-							<textarea required class="form-control" disabled="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+							<textarea required class="form-control"  name="description" disabled=""></textarea>
 						</div>
 						<div class="form-group pmd-textfield pmd-textfield-floating-label">
 							<label class="control-label">Any other comment</label>
-							<textarea required class="form-control" disabled="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolores cupiditate vitae. consectetur adipisicing elit.</textarea>
+							<textarea required class="form-control"  name="comment" disabled=""></textarea>
 						</div>
 					</form>
 				</div>
 				<div class="pmd-modal-action">
 					<button data-dismiss="modal" class="btn pmd-ripple-effect btn-primary" type="button">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div tabindex="-1" class="modal fade" id="delete-given-task-modal" style="display: none;" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header bordered">
+					<button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+					<h2 class="pmd-card-title-text">Remove task</h2>
+				</div>
+				<div class="modal-body">
+					Are you sure? This will permanently remove selected task from your list.
+				</div>
+				<div class="pmd-modal-action text-right">
+					<form class="form-horizontal" name="deleteTaskForm" method="post" action="<?php echo site_url($controller.'/deleteTask/'); ?>">
+						<input type="hidden" name = "taskId">
+						<button class="btn pmd-ripple-effect btn-primary" type="submit">Yes, remove it</button>
+						<button data-dismiss="modal" class="btn pmd-ripple-effect btn-default pmd-btn-flat" type="button">Discard</button>
+					</form>
 				</div>
 			</div>
 		</div>
