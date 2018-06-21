@@ -15,7 +15,19 @@ class ModelTask extends CI_Model{
     public function __construct() {
         parent::__construct();
     }
-	
+    
+    /**
+     * Kreiranje privatnog zadatka Radnika, Menadzera ili Direktora u bazi
+     *
+     * @param String $email
+     * @param String $name
+     * @param String $startDate
+     * @param String $endDate
+     * @param String $taskStatus
+     * @param String $description
+     * @param String $comment
+     * 
+     */
 	public function createTask($email, $name, $startDate, $endDate, $taskStatus, $description, $comment) {
 		
 		if ($taskStatus == 'open') {
@@ -58,6 +70,19 @@ class ModelTask extends CI_Model{
 		$this->db->insert('task', $taskData);
 	}
 
+
+    /**
+     * Kreiranje zadatog zadatka (Menadzer Radniku ili Direktor Menadzeru ili Radniku) u bazi
+     *
+     * @param String $email
+     * @param String $name
+     * @param String $startDate
+     * @param String $endDate
+     * @param String $taskStatus
+     * @param String $description
+     * @param String $comment
+     * 
+     */
     public function createGivenTask($email, $teamName, $companyName, $name, $startDate, $endDate, $taskStatus, $description, $comment) {
         if ($taskStatus == 'open') {
             $statusCompletion = 'NS';		// not started
@@ -99,6 +124,19 @@ class ModelTask extends CI_Model{
         $this->db->insert('task', $taskData);
     }
 
+
+    /**
+     * Menjanje zadatka u bazi
+     *
+     * @param String $email
+     * @param String $name
+     * @param String $startDate
+     * @param String $endDate
+     * @param String $taskStatus
+     * @param String $description
+     * @param String $comment
+     * 
+     */
     public function updateTask($taskId, $name, $startDate, $endDate, $taskStatus, $description, $comment) {
 
         if ($taskStatus == 'open') {
@@ -135,11 +173,26 @@ class ModelTask extends CI_Model{
         $this->db->update('task');
     }
 
+
+    /**
+     * Brise odredjeni zadatak iz baze podataka
+     *
+     * @param int $taskId
+     * 
+     */
 	public function deleteTask($taskId) {
         $this->db->where("taskId", $taskId);
         $this->db->delete("task");
 	}
 
+    /**
+     * Dovlaci zadatke za odredjenog zaposlenog iz baze podataka
+     *
+     * @param string $email
+     * @param string $companyName
+     * @return object
+     * 
+     */
 	public function getTasksByEmailAndCompany($email, $companyName){
 		$this->db->where("email", $email);
         $this->db->where("companyName", $companyName);
@@ -147,12 +200,24 @@ class ModelTask extends CI_Model{
 		return $query->result();
 	}
 
+    /**
+     * Prihvata zadatak od nekog nadredjenog u firmi
+     *
+     * @param int $id
+     * 
+     */
     public function acceptTask($id) {
         $this->db->where("taskId", $id);
         $this->db->set("statusAcceptance", 'A');
         $this->db->update('task');
     }
-
+    
+    /**
+     * Odbija zadatak od nekog nadredjenog u firmi
+     *
+     * @param int $id
+     * 
+     */
     public function denyTask($id) {
         $this->db->where("taskId", $id);
         $this->db->set("statusAcceptance", 'D');
