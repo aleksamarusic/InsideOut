@@ -227,7 +227,7 @@
 											document.editInProgressTaskForm.comment.value='$comment';
 											document.editInProgressTaskForm.taskId.value='$id';
 										})()\"
-								style=\"display: block;\" data-target=\"#edit-open-task-modal\" data-toggle=\"modal\">
+								style=\"display: block;\" data-target=\"#edit-in-progress-task-modal\" data-toggle=\"modal\">
 											<i class=\"material-icons pmd-xs\">edit</i>
 										</button>
 
@@ -308,7 +308,7 @@
 											document.editDoneTaskForm.comment.value='$comment';
 											document.editDoneTaskForm.taskId.value='$id';
 										})()\"
-								style=\"display: block;\" data-target=\"#edit-open-task-modal\" data-toggle=\"modal\">
+								style=\"display: block;\" data-target=\"#edit-done-modal\" data-toggle=\"modal\">
 											<i class=\"material-icons pmd-xs\">edit</i>
 										</button>
 
@@ -376,14 +376,15 @@
 
                         <?php
                         if (!isset($startDateInvalid)) {
-                            echo "<input type='text' id='datepicker-left-header' name='startDate' class='form-control' aria-describedby='startDateWarningBlock' />";
+                            echo "<input type='text' name='startDate' class='form-control' aria-describedby='startDateWarningBlock' />";
+                            echo "<small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>";
                         }
                         else if ($startDateInvalid == 1) {
-                            echo "<input type='text' id='datepicker-left-header' name='startDate' class='form-control' aria-describedby='startDateWarningBlock' />";
+                            echo "<input type='text' name='startDate' class='form-control' aria-describedby='startDateWarningBlock' />";
                             echo "<small id='startDateWarningBlock' class='form-text' style='color:red'> This field must contain a valid date (or it can be left empty)! </small>";
                         }
                         else {
-                            echo "<input type='text' id='datepicker-left-header' name='startDate' class='form-control' aria-describedby='startDateWarningBlock' value='" . $startDate . "'/>";
+                            echo "<input type='text' name='startDate' class='form-control' aria-describedby='startDateWarningBlock' value='" . $startDate . "'/>";
                         }
                         ?>
 
@@ -466,11 +467,13 @@
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="start-date" class="control-label">Expected start date</label>
-                        <input type="text" id="datepicker-left-header" class="form-control" name="startDate" />
+                        <input type="text" class="form-control" name="startDate" />
+                        <small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="end-date" class="control-label">Expected end date</label>
-                        <input type="text" id="datetimepicker-default" class="form-control" name="endDate" />
+                        <input type="text" class="form-control" name="endDate" />
+                        <small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>
                     </div>
 
                     <div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -531,11 +534,13 @@
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="start-date" class="control-label">Expected start date</label>
-                        <input type="text" id="datepicker-left-header" class="form-control" name="startDate" />
+                        <input type="text" class="form-control" name="startDate" />
+                        <small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="end-date" class="control-label">Expected end date</label>
-                        <input type="text" id="datetimepicker-default" class="form-control" name="endDate" />
+                        <input type="text" class="form-control" name="endDate" />
+                        <small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>
                     </div>
 
                     <div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -597,11 +602,13 @@
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="start-date" class="control-label">Expected start date</label>
-                        <input type="text" id="datepicker-left-header" class="form-control" name="startDate" />
+                        <input type="text" class="form-control" name="startDate" />
+                        <small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="end-date" class="control-label">Expected end date</label>
-                        <input type="text" id="datetimepicker-default" class="form-control" name="endDate" />
+                        <input type="text" class="form-control" name="endDate" />
+                        <small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>
                     </div>
 
                     <div class="pmd-card pmd-z-depth pmd-card-custom-view">
@@ -662,11 +669,13 @@
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="start-date" class="control-label">Expected start date</label>
-                        <input type="text" id="datepicker-left-header" class="form-control" name="startDate" disabled="">
+                        <input type="text" class="form-control" name="startDate" />
+                        <small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>
                     </div>
                     <div class="form-group pmd-textfield pmd-textfield-floating-label">
                         <label for="end-date" class="control-label">Expected end date</label>
-                        <input type="text" id="datetimepicker-default" class="form-control" name="endDate" disabled="">
+                        <input type="text" class="form-control" name="endDate" />
+                        <small class='form-text' style='color:orange'> Format should be yyyy-mm-dd! </small>
                     </div>
 
                     <div class="pmd-card pmd-z-depth pmd-card-custom-view">
